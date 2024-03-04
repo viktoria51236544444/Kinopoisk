@@ -1,0 +1,14 @@
+.sport__container {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  color: antiquewhite;
+}
+.header__sport {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.header__liga {
+  /* margin: 0; */
+}
