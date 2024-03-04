@@ -5,6 +5,7 @@ import Sport from "./components/sportComponents/Sport";
 const App = () => {
   return (
     <div>
+      <Sport />
       <MainRoutes />
     </div>
   );
