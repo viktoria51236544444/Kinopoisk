@@ -1,0 +1,67 @@
+.formwrapper_login {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.form__text_login {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.form__input_login {
+  background-color: rgb(249, 247, 247);
+  width: 343px;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 13px;
+  text-indent: 20px;
+  font-size: 15px;
+  letter-spacing: 1;
+}
+
+form__input_login::placeholder {
+  text-indent: 20px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  color: rgb(152, 151, 151);
+}
+
+.form__input_login::placeholder {
+  text-indent: 20px;
+}
+
+.form__button_login {
+  margin-top: 48px;
+  width: 343px;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background-color: #292929;
+}
+
+.form__bottomlink_login {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form__bottom_text_login {
+  font-size: 15px;
+  color: mediumgrey;
+}
+
+.adornment {
+  width: 35px;
+}

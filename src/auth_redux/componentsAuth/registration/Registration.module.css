@@ -1,0 +1,42 @@
+.main_reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  margin-left: 18px;
+  font-size: 12px;
+}
+
+.form_reg {
+  display: flex;
+  flex-direction: column;
+  height: 554px;
+  width: 343px;
+}
+
+.form__header_reg {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.form__text {
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 48px;
+}
+
+.adornment {
+  width: 35px;
+}
+
+.form__input_reg {
+  border-radius: 12px;
+}
+
+.form__maintitle_reg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
