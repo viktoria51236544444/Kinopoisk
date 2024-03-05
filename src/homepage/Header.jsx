@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./aidana.scss";
+
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -44,7 +44,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2>В фокусе</h2>
         <Swiper
           // onSwiper={setSwiperRef}
@@ -96,7 +96,7 @@ const Header = () => {
             </SwiperSlide>
           </div>
         </Swiper>
-      </div>
+      </div> */}
     </div>
   );
 };

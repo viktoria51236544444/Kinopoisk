@@ -4,12 +4,16 @@ import Header from "./homepage/Header";
 import SideBar from "./homepage/SideBar";
 import Sport from "./components/sportComponents/Sport";
 import Navbar from "./homepage/Navbar";
+import MainPage from "./pages/MainPage";
+import MovieHeader from "./components/movies/MovieHeader";
 
 const App = () => {
   return (
     <div>
-      <Header />
       <Navbar />
+      <MovieHeader />
+      {/* <MainPage /> */}
+
       <MainRoutes />
     </div>
   );
