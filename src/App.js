@@ -1,4 +1,5 @@
 import React from "react";
+import OnlineCinema from "./components/OnlineCinema/OnlineCinema";
 
 import MainRoutes from "./routes/MainRoutes";
 import Header from "./homepage/Header";
@@ -11,11 +12,7 @@ import MovieHeader from "./components/movies/MovieHeader";
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <MovieHeader />
-      {/* <MainPage /> */}
-
-      <MainRoutes />
+      <OnlineCinema />
     </div>
   );
 };
