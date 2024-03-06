@@ -1,1 +1,1 @@
-export const API = "https://berlin-backender.org.kg/lorby/authentication";
+export const API = "http://localhost:3000";
