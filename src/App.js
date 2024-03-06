@@ -6,12 +6,15 @@ import Sport from "./components/sportComponents/Sport";
 import Navbar from "./homepage/Navbar";
 import MainPage from "./pages/MainPage";
 import MovieHeader from "./components/movies/MovieHeader";
+import KidsNavbar from "./components/kids/KidsNavbar";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <MovieHeader />
+      {/* <Navbar /> */}
+
+      <KidsNavbar />
+
       {/* <MainPage /> */}
 
       <MainRoutes />
