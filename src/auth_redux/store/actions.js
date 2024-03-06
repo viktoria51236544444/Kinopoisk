@@ -7,9 +7,8 @@ export const registerUser = createAsyncThunk(
   async (userObj) => {
     console.log("userObj", userObj);
     try {
-      let res = await axios.post(`${API}/register/`, {
+      let res = await axios.post(`${API}/account/register/`, {
         email: userObj.email,
-        username: userObj.username,
         password: userObj.password,
         password_confirm: userObj.password_confirm,
       });
@@ -29,8 +28,8 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk("user/loginUser", async (userObj) => {
   try {
-    let res = await axios.post(`${API}/login/`, {
-      username: userObj.username,
+    let res = await axios.post(`${API}/account/login/`, {
+      email: userObj.email,
       password: userObj.password,
     });
     console.log("res after login", res);

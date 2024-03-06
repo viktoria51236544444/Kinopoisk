@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = () => {
   const [user, setUser] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -80,7 +80,7 @@ const LoginForm = () => {
               onChange={(e) =>
                 setUser({
                   ...user,
-                  username: e.target.value,
+                  email: e.target.value,
                 })
               }
             />
