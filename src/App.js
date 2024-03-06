@@ -1,4 +1,6 @@
 import React from "react";
+import OnlineCinema from "./components/OnlineCinema/OnlineCinema";
+
 import MainRoutes from "./routes/MainRoutes";
 import Header from "./homepage/Header";
 import SideBar from "./homepage/SideBar";
@@ -11,12 +13,7 @@ import FocusTicketsSection from "./homepage/FocusTicketsSection";
 const App = () => {
   return (
     <div>
-      <Navbar />
-
-      <MainPage />
-
-      <MainRoutes />
-      {/* <FocusTicketsSection /> */}
+      <OnlineCinema />
     </div>
   );
 };
