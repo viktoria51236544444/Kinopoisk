@@ -1,42 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "M PLUS 1p", sans-serif;
-  color: mediumgrey;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.image__top {
-  width: 480px;
-  height: 510px;
-}
-
-.image__lorby {
-  font-family: "M PLUS 1p", sans-serif;
-  font-weight: 500;
-  font-size: 48px;
-  margin-top: 40px;
-}
-.image__text {
-  margin-top: 10px;
-  font-weight: 400;
-  font-size: 28px;
-}
-
 .form__main_text {
   font-weight: 500;
   font-size: 24px;
@@ -45,7 +6,7 @@
   margin-bottom: 40px;
 }
 
-.form {
+.form_conf {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,18 +32,6 @@
   font-weight: 700;
   position: absolute;
   top: 28px;
-}
-
-button {
-  background-color: rgb(218, 216, 216);
-  width: 343px;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 60px;
-  font-size: 16px;
-  color: rgb(42, 42, 42);
-  margin-bottom: 30px;
 }
 
 .form__bottom_text {

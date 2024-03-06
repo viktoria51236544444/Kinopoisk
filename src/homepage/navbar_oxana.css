@@ -1,0 +1,36 @@
+.navbar__main {
+  background-color: black;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar__logo-kinopoisk {
+  height: 20vh;
+  color: white;
+  background-color: white;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link-cinema,
+.navbar__link-oscar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__playericon,
+.navbar__oscar-icon-white,
+.navbar__oscar-icon-grey {
+  height: 5vh;
+  background-color: black;
+}
+
+.navbar__player-text,
+.navbar__oscar-text {
+  color: white;
+}
