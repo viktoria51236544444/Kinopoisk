@@ -1,5 +1,5 @@
 import React from "react";
-
+import css from "../sportComponents/sport.css";
 const OnlineCinema = () => {
   return (
     <div>
