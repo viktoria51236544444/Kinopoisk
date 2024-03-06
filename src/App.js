@@ -8,6 +8,7 @@ import Sport from "./components/sportComponents/Sport";
 import Navbar from "./homepage/Navbar";
 import MainPage from "./pages/MainPage";
 import MovieHeader from "./components/movies/MovieHeader";
+import FocusTicketsSection from "./homepage/FocusTicketsSection";
 
 const App = () => {
   return (
