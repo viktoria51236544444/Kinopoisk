@@ -63,7 +63,7 @@ export const logoutUser = createAsyncThunk("logout/", async () => {
     const refreshToken = localStorage.getItem("refresh_token");
     const accessToken = localStorage.getItem("access_token");
     let res = await axios.post(
-      `${API}/logout/`,
+      `${API}/account/logout/`,
       {
         refresh_token: refreshToken,
       },

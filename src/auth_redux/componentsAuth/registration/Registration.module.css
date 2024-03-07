@@ -1,12 +1,25 @@
 .main_reg {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 10%
+    ),
+    url("https://yastatic.net/s3/passport-auth-customs/customs/_/2V4FB5Yu.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 li {
   margin-left: 18px;
   font-size: 12px;
+  color: white;
 }
 
 .form_reg {
@@ -14,6 +27,8 @@ li {
   flex-direction: column;
   height: 554px;
   width: 343px;
+  justify-content: center;
+  align-items: center;
 }
 
 .form__header_reg {
@@ -39,4 +54,5 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }

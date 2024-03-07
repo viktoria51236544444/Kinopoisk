@@ -36,6 +36,11 @@ const WatchSection = () => {
             <div className="watch-info">1 серия</div>
           </div>
         </div>
+
+        <div>
+          <h2 className="watch-heading">Смотрят сейчас</h2>
+          
+        </div>
       </div>
     </div>
   );

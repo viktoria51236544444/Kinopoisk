@@ -13,7 +13,10 @@ import FocusTicketsSection from "./homepage/FocusTicketsSection";
 const App = () => {
   return (
     <div>
-      <OnlineCinema />
+      <Navbar />
+      <MainPage />
+      <MainRoutes />
+      {/* <Sport /> */}
     </div>
   );
 };
