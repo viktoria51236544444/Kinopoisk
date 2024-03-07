@@ -3,3 +3,62 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; /* Adjust the max-width based on your design */
+  margin: auto;
+  padding: 20px;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+}
+
+.input input {
+  width: calc(
+    30% - 10px
+  ); /* Adjust the width and margin based on your design */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}
+
+.input select {
+  width: calc(
+    30% - 10px
+  ); /* Adjust the width and margin based on your design */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}
+
+.button {
+  width: 29.1%; /* Adjust the width based on your design */
+  background-color: #f50;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 10%;
+}
+
+.button:hover {
+  background-color: rgb(49, 48, 48);
+}
+
+.h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
