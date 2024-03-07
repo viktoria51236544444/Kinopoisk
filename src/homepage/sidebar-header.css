@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.sideBar {
+  list-style-type: none;
+  margin: 0 30px;
+  height: 100%;
+  border-right: 1px solid gray;
+  /* position: fixed; */
+}
+
+.sideBar_menu {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+.sidebar__link {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Graphik Kinopoisk LC Web, Tahoma, Arial, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  /* padding-left: 100%; */
+  margin: 80px 0px;
+  width: 100%;
+  /* position: absolute;
+  left: 20%;
+  top: 23%; */
+  overflow: hidden;
+}
+
+.header_trailer {
+  height: 55vh;
+
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+  overflow: hidden;
+}
+.header_desc {
+  background: url("https:j.gifs.com/nZwDk4.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.overlay {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #000 6.25%,
+    #000 6.26%,
+    rgba(0, 0, 0, 0.99) 14.15%,
+    rgba(0, 0, 0, 0.961) 20.77%,
+    rgba(0, 0, 0, 0.915) 26.27%,
+    rgba(0, 0, 0, 0.856) 30.8%,
+    rgba(0, 0, 0, 0.785) 34.5%,
+    rgba(0, 0, 0, 0.705) 37.54%,
+    rgba(0, 0, 0, 0.619) 40.06%,
+    rgba(0, 0, 0, 0.529) 42.21%,
+    rgba(0, 0, 0, 0.437) 44.15%,
+    rgba(0, 0, 0, 0.347) 46.03%,
+    rgba(0, 0, 0, 0.261) 47.99%,
+    rgba(0, 0, 0, 0.18) 50.2%,
+    rgba(0, 0, 0, 0.108) 52.79%,
+    rgba(0, 0, 0, 0.047) 55.94%,
+    transparent 59.77%
+  );
+}
+
+.header_img_top {
+  position: absolute;
+  top: 20px;
+  width: 200px;
+}
+
+.movie_description {
+  position: absolute;
+  top: 30%;
+  left: 3%;
+}
+.movie_castTitle {
+  position: absolute;
+  top: 41%;
+  left: 3%;
+}
+.movie_castTitle-span {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #fff;
+}
+.movie_directors {
+  position: absolute;
+  top: 51%;
+  left: 3%;
+}
+.movie_subtitle {
+  position: absolute;
+  top: 60%;
+  left: 3%;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #f50;
+}
+.movie_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-top: 20px;
+
+  padding: 14px;
+  width: 80%;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 1000px;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}
+.movie_subtitle-button-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

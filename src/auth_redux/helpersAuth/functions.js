@@ -1,3 +1,6 @@
+import axios from "axios";
+import { API } from "./const";
+
 export const validatePassword = (values) => {
   const errors = {
     symbolsLengthError: { error: false, text: "от 8 до 15 символов" },
@@ -30,3 +33,27 @@ export const validatePassword = (values) => {
   }
   return errors;
 };
+
+// export const updateToken = () => {
+//   console.log("WORK");
+//   let updateFunc = setInterval(async () => {
+//     const refresh = JSON.parse(localStorage.getItem("refresh_token"));
+//     console.log(refresh);
+//     const atoken = JSON.parse(localStorage.getItem("access_token"));
+//     console.log(atoken);
+//     if (!refresh && !atoken) return clearInterval(updateFunc);
+//     const Authorization = `Bearer ${atoken}`;
+//     let res = await axios.post(
+//       `${API}/account/refresh/`,
+//       { refresh: refresh.refresh_token },
+//       { headers: { Authorization } }
+//     );
+//     localStorage.setItem(
+//       "refresh_token",
+//       JSON.stringify({
+//         refresh: refresh.refresh_token,
+//         atoken: res.data.access_token,
+//       })
+//     );
+//   }, 1000 * 60 * 9);
+// };
