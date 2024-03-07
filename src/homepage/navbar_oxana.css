@@ -115,3 +115,11 @@
   width: 30px;
   height: auto;
 }
+
+.navbar__dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+}

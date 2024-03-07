@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./assets-homepage/Kinopoisk_white_color_logo_with_black_background_(2021-present).svg.png";
 import player from "./assets-homepage/player.svg";
 import filter from "./assets-homepage/filter.svg";
@@ -7,9 +7,33 @@ import bookmark from "./assets-homepage/bookmark.svg";
 import usericon from "./assets-homepage/usericon.jpeg";
 
 import "./navbar_oxana.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { updateToken } from "../auth_redux/helpersAuth/functions";
 
 const Navbar = () => {
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const registerHandler = () => {
+    // Обработчик для кнопки register
+  };
+
+  const loginHandler = () => {
+    // Обработчик для кнопки login
+  };
+
+  const logoutHandler = () => {
+    // Обработчик для кнопки logout
+  };
+
+  // useEffect(() => {
+  //   updateToken();
+  // }, []);
+
   return (
     <div className="navbar__main">
       <NavLink className="navbar__main-link" to="/">
@@ -64,7 +88,19 @@ const Navbar = () => {
       <div className="navbar__userblock">
         <img className="navbar__userblock-bmicon" src={bookmark} alt="" />
         <button className="navbar__userblock-button">Расширить подписку</button>
-        <img className="navbar__userblock-usericon" src={usericon} alt="" />
+        <img
+          className="navbar__userblock-usericon"
+          onClick={toggleDropdown}
+          src={usericon}
+          alt=""
+        />
+        {dropdownVisible && (
+          <div className="navbar__dropdown">
+            <button onClick={registerHandler}>Register</button>
+            <button onClick={loginHandler}>Login</button>
+            <button onClick={logoutHandler}>Logout</button>
+          </div>
+        )}
       </div>
     </div>
   );

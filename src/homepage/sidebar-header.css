@@ -3,8 +3,9 @@
 .sideBar {
   list-style-type: none;
   margin: 0 30px;
-  height: 100vh;
+  height: 100%;
   border-right: 1px solid gray;
+  /* position: fixed; */
 }
 
 .sideBar_menu {
