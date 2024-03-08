@@ -44,7 +44,7 @@ const AddProduct = () => {
     newProduct.append("poster", poster);
     newProduct.append("year", year);
     newProduct.append("country", country);
-    newProduct.append("world_premiere", worldPremiere);
+    // newProduct.append("world_premiere", worldPremiere);
     newProduct.append("budget", budget);
     newProduct.append("fees_in_usa", feesInUsa);
     newProduct.append("fees_in_world", feesInWorld);
@@ -210,7 +210,7 @@ const AddProduct = () => {
             <button onClick={decrementFeesInUSA}>-</button>
           </div>
         </div>
-        <div style={{ background: "black", padding: "20px", width: "300px" }}>
+        {/* <div style={{ background: "black", padding: "20px", width: "300px" }}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <button
               onClick={openDatePicker}
@@ -241,7 +241,7 @@ const AddProduct = () => {
               inline
             />
           )}
-        </div>
+        </div> */}
 
         <div style={{ display: "flex", alignItems: "center" }}>
           <input

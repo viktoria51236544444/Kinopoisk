@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 
 const MoviesList = () => {
   const { products, getProducts } = useProduct();
-  const { slug } = useParams();
-  console.log(slug);
+
   useEffect(() => {
     getProducts();
   }, []);
   console.log(products);
+
   return (
     <div>
       {products.map((elem) => (

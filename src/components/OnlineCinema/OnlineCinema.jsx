@@ -173,14 +173,14 @@ const OnlineCinema = () => {
           <div className="matches__container">
             <a href="/your-target-page" class="matches__container-link">
               <p class="matches__container-p">
-                Хоккейный борт: истории от звезд КХЛ
+                Сериалы на основе ваших интересов
               </p>
             </a>
 
             <Slider {...sliderSettings}>
               <div className="b">
                 <img
-                  src="https://avatars.mds.yandex.net/get-ott/212840/2a0000018ddc072eca8b129c0457372728a6/375x234"
+                  src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
                   alt="Match 1"
                 />
                 <p style={{ margin: "0", marginTop: "3%" }}>
@@ -199,7 +199,7 @@ const OnlineCinema = () => {
               </div>
               <div className="b">
                 <img
-                  src="https://avatars.mds.yandex.net/get-ott/2419418/2a0000018d8575c934719495c69c98880c3e/375x234"
+                  src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
                   alt="Match 2"
                 />
                 <p style={{ margin: "0", marginTop: "3%" }}>
@@ -218,7 +218,7 @@ const OnlineCinema = () => {
               </div>
               <div className="b">
                 <img
-                  src="https://avatars.mds.yandex.net/get-ott/374297/2a0000018d85747cc744c99828c6d5fbee95/375x234"
+                  src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
                   alt="Match 3"
                 />
                 <p style={{ margin: "0", marginTop: "3%" }}>
@@ -237,7 +237,7 @@ const OnlineCinema = () => {
               </div>
               <div className="b">
                 <img
-                  src="https://avatars.mds.yandex.net/get-ott/236744/2a0000018d3202eb84e8aff5f2c2e32eeb9c/375x234"
+                  src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
                   alt="Match 4"
                 />
                 <p style={{ margin: "0", marginTop: "3%" }}>
@@ -256,7 +256,114 @@ const OnlineCinema = () => {
               </div>
               <div className="b">
                 <img
-                  src="https://avatars.mds.yandex.net/get-ott/236744/2a0000018d3202578f07f208f74bc2da0a8d/375x234"
+                  src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
+                  alt="Match 5"
+                />
+                <p style={{ margin: "0", marginTop: "3%" }}>
+                  Николай Голдобин, Спартак
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    marginTop: "3%",
+                    fontSize: "13px",
+                    fontWeight: "100",
+                  }}
+                >
+                  Хоккейный борт, выпуск 1
+                </p>
+              </div>
+            </Slider>
+          </div>
+        </div>
+        <div style={{ backgroundColor: "black" }} className="container__slider">
+          <div className="matches__container">
+            <a href="/your-target-page" class="matches__container-link">
+              <p class="matches__container-p">
+                Сериалы на основе ваших интересов
+              </p>
+            </a>
+
+            <Slider {...sliderSettings}>
+              <div className="b">
+                <img
+                  src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
+                  alt="Match 1"
+                />
+                <p style={{ margin: "0", marginTop: "3%" }}>
+                  Андрей Алтыбармакян, Лада
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    marginTop: "3%",
+                    fontSize: "13px",
+                    fontWeight: "100",
+                  }}
+                >
+                  Хоккейный борт, выпуск 5
+                </p>
+              </div>
+              <div className="b">
+                <img
+                  src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
+                  alt="Match 2"
+                />
+                <p style={{ margin: "0", marginTop: "3%" }}>
+                  Андрей Миронов, Динамо Москва
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    marginTop: "3%",
+                    fontSize: "13px",
+                    fontWeight: "100",
+                  }}
+                >
+                  Хоккейный борт, выпуск 4
+                </p>
+              </div>
+              <div className="b">
+                <img
+                  src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
+                  alt="Match 3"
+                />
+                <p style={{ margin: "0", marginTop: "3%" }}>
+                  Дамир Шарипзянов, Авангард
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    marginTop: "3%",
+                    fontSize: "13px",
+                    fontWeight: "100",
+                  }}
+                >
+                  Хоккейный борт, выпуск 3
+                </p>
+              </div>
+              <div className="b">
+                <img
+                  src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
+                  alt="Match 4"
+                />
+                <p style={{ margin: "0", marginTop: "3%" }}>
+                  Василий Атанасов, Торпедо
+                </p>
+                <p
+                  style={{
+                    margin: "0",
+                    marginTop: "3%",
+                    fontSize: "13px",
+                    fontWeight: "100",
+                  }}
+                >
+                  Хоккейный борт, выпуск 2
+                </p>
+              </div>
+              <div className="b">
+                <img
+                  src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
                   alt="Match 5"
                 />
                 <p style={{ margin: "0", marginTop: "3%" }}>
