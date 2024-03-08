@@ -13,11 +13,6 @@ const store = setupStore();
 
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
-      <FavoriteContextProvider>
-        <App />
-      </FavoriteContextProvider>
-    </Provider>
     <ProductContextProvider>
       <Provider store={store}>
         <App />

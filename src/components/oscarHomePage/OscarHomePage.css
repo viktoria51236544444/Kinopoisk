@@ -9,6 +9,8 @@
 .oscarNomineesPage__container {
   background-color: #0c354d;
   margin: 0;
+  width: 100%;
+  overflow: hidden;
 }
 /* ! NavbarOscar Start */
 .navbarOscar__container {
@@ -143,7 +145,7 @@
 }
 
 .next {
-  margin-right: -10%;
+  margin-left: 98%;
   margin-top: -50px;
   height: 100px;
 }

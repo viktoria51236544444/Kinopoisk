@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 const BestActorsNomineeSlide = ({ nominees }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   const nomineeSlideStyles = {
     display: "flex",
     justifyContent: "center",
-    gap: "20px",
+    overflow: "hidden",
   };
+
+  const grayscaleImageStyle = {
+    filter: "grayscale(100%)",
+    width: "160px",
+    transition: "transform 0.5s ease",
+  };
+
+  const coloredImageStyle = {
+    filter: "none",
+    transform: "translateY(-15px)",
+  };
+
   return (
     <div>
       <h3
@@ -15,21 +37,52 @@ const BestActorsNomineeSlide = ({ nominees }) => {
           color: "#b7a261",
           textTransform: "uppercase",
           fontWeight: 600,
-          textAlign: "left",
+          marginLeft: "-60%",
         }}
       >
         Лучшая мужская роль
       </h3>
       <div style={nomineeSlideStyles}>
         {nominees.map((actor, index) => (
-          <div style={{ display: "inline-block", gap: "10px" }} key={index}>
-            <img style={{ width: "150px" }} src={actor.image} alt="" />
-            <p className="actor-name">{actor.name}</p>
-            <p className="actor-movie">{actor.movie}</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "15%",
+            }}
+            key={index}
+          >
+            <img
+              style={{
+                ...grayscaleImageStyle,
+                ...(hoveredIndex === index && coloredImageStyle),
+              }}
+              src={actor.image}
+              alt=""
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            />
+            <p
+              className="actor-name"
+              style={{ color: "white", fontSize: "16px" }}
+            >
+              {actor.name}
+            </p>
+            <p
+              className="actor-movie"
+              style={{
+                color: "rgba(255, 255, 255, 0.5)",
+                fontSize: "16px",
+                marginTop: "-10px",
+              }}
+            >
+              {actor.movie}
+            </p>
           </div>
         ))}
       </div>
     </div>
   );
 };
+
 export default BestActorsNomineeSlide;
