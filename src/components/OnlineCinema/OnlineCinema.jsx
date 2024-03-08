@@ -60,7 +60,37 @@ const OnlineCinema = () => {
       },
     ],
   };
-
+  const sliderSettings2 = {
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    swipe: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
       <div>
@@ -169,222 +199,269 @@ const OnlineCinema = () => {
         </div>
       </div>
       <div>
-        <div style={{ backgroundColor: "black" }} className="container__slider">
-          <div className="matches__container">
-            <a href="/your-target-page" class="matches__container-link">
-              <p class="matches__container-p">
-                Сериалы на основе ваших интересов
-              </p>
-            </a>
+        <div style={{ backgroundColor: "black" }}>
+          <div
+            style={{ backgroundColor: "black" }}
+            className="container__slider"
+          >
+            <div className="matches__container">
+              <a href="/your-target-page" class="matches__container-link">
+                <p class="matches__container-p">
+                  Сериалы на основе ваших интересов
+                </p>
+              </a>
 
-            <Slider {...sliderSettings}>
-              <div className="b">
-                <img
-                  src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
-                  alt="Match 1"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Андрей Алтыбармакян, Лада
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 5
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
-                  alt="Match 2"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Андрей Миронов, Динамо Москва
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 4
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
-                  alt="Match 3"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Дамир Шарипзянов, Авангард
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 3
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
-                  alt="Match 4"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Василий Атанасов, Торпедо
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 2
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
-                  alt="Match 5"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Николай Голдобин, Спартак
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 1
-                </p>
-              </div>
-            </Slider>
+              <Slider {...sliderSettings}>
+                <div className="b">
+                  <img
+                    src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
+                    alt="Match 1"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Алтыбармакян, Лада
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 5
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
+                    alt="Match 2"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Миронов, Динамо Москва
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 4
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
+                    alt="Match 3"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Дамир Шарипзянов, Авангард
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 3
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
+                    alt="Match 4"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Василий Атанасов, Торпедо
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 2
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
+                    alt="Match 5"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Николай Голдобин, Спартак
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 1
+                  </p>
+                </div>
+              </Slider>
+            </div>
           </div>
-        </div>
-        <div style={{ backgroundColor: "black" }} className="container__slider">
-          <div className="matches__container">
-            <a href="/your-target-page" class="matches__container-link">
-              <p class="matches__container-p">
-                Сериалы на основе ваших интересов
-              </p>
-            </a>
+          <div
+            style={{ backgroundColor: "black" }}
+            className="container__slider"
+          >
+            <div className="matches__container">
+              <a href="/your-target-page" class="matches__container-link">
+                <p class="matches__container-p">Фильмы для вас</p>
+              </a>
 
-            <Slider {...sliderSettings}>
-              <div className="b">
-                <img
-                  src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
-                  alt="Match 1"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Андрей Алтыбармакян, Лада
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 5
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
-                  alt="Match 2"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Андрей Миронов, Динамо Москва
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 4
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
-                  alt="Match 3"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Дамир Шарипзянов, Авангард
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 3
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
-                  alt="Match 4"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Василий Атанасов, Торпедо
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 2
-                </p>
-              </div>
-              <div className="b">
-                <img
-                  src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
-                  alt="Match 5"
-                />
-                <p style={{ margin: "0", marginTop: "3%" }}>
-                  Николай Голдобин, Спартак
-                </p>
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "3%",
-                    fontSize: "13px",
-                    fontWeight: "100",
-                  }}
-                >
-                  Хоккейный борт, выпуск 1
-                </p>
-              </div>
-            </Slider>
+              <Slider {...sliderSettings}>
+                <div className="b">
+                  <img
+                    src="https://start.ru/images/unsafe/filters:quality(70)/302765054efc42ab82651975bbf4e02b/images-horizontal_poster_1x"
+                    alt="Match 1"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Алтыбармакян, Лада
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 5
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://tengrinews.kz/userdata/news/2022/news_460356/thumb_m/photo_387142.jpeg"
+                    alt="Match 2"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Миронов, Динамо Москва
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 4
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://images.kinorium.com/movie/poster/1656658/h280_50547197.jpg"
+                    alt="Match 3"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Дамир Шарипзянов, Авангард
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 3
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://cs14.pikabu.ru/post_img/big/2023/03/30/10/1680198395110695782.png"
+                    alt="Match 4"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Василий Атанасов, Торпедо
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 2
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://cdn2.red-media.ru/800x466-2023-01-RM-Vyshka-1280h720.jpg"
+                    alt="Match 5"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Николай Голдобин, Спартак
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 1
+                  </p>
+                </div>
+              </Slider>
+            </div>
+            <div className="matches__container">
+              <p class="matches__container-p">Фильмы для вас</p>
+
+              <Slider {...sliderSettings2}>
+                <div className="b2">
+                  <img
+                    style={{ width: "1300px", height: "600px" }}
+                    src="https://start.ru/images/unsafe/filters:quality(70)/302765054efc42ab82651975bbf4e02b/images-horizontal_poster_1x"
+                    alt="Match 1"
+                  />
+                </div>
+                <div className="b2">
+                  <img
+                    style={{ width: "1300px", height: "600px" }}
+                    src="https://tengrinews.kz/userdata/news/2022/news_460356/thumb_m/photo_387142.jpeg"
+                    alt="Match 2"
+                  />
+                </div>
+                <div className="b2">
+                  <img
+                    style={{ width: "1300px", height: "600px" }}
+                    src="https://images.kinorium.com/movie/poster/1656658/h280_50547197.jpg"
+                    alt="Match 3"
+                  />
+                </div>
+                <div className="b2">
+                  <img
+                    style={{ width: "1300px", height: "600px" }}
+                    src="https://cs14.pikabu.ru/post_img/big/2023/03/30/10/1680198395110695782.png"
+                    alt="Match 4"
+                  />
+                </div>
+                <div className="b2">
+                  <img
+                    style={{ width: "1300px", height: "600px" }}
+                    src="https://cdn2.red-media.ru/800x466-2023-01-RM-Vyshka-1280h720.jpg"
+                    alt="Match 5"
+                  />
+                </div>
+              </Slider>
+            </div>
           </div>
+          <FooterSport />
         </div>
       </div>
-      <FooterSport />
     </div>
   );
 };
