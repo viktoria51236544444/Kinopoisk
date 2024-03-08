@@ -42,7 +42,7 @@ const ProductContextProvider = ({ children }) => {
   //! categories
   const getCategories = async () => {
     try {
-      const { data } = await axios(`${API2}/categories/`, getConfig());
+      const { data } = await axios(`${API2}/categories/`);
       console.log(data.results);
 
       dispatch({
@@ -56,7 +56,7 @@ const ProductContextProvider = ({ children }) => {
   //! actors
   const getActors = async () => {
     try {
-      const { data } = await axios(`${API2}/actors/`, getConfig());
+      const { data } = await axios(`${API2}/actors/`);
       console.log(data.results);
 
       dispatch({
@@ -70,7 +70,7 @@ const ProductContextProvider = ({ children }) => {
   //! genres
   const getGenres = async () => {
     try {
-      const { data } = await axios(`${API2}/genres/`, getConfig());
+      const { data } = await axios(`${API2}/genres/`);
       console.log(data.results);
 
       dispatch({
@@ -84,8 +84,8 @@ const ProductContextProvider = ({ children }) => {
   // ! GET
   const getProducts = async () => {
     try {
-      const { data } = await axios(`${API2}/movies/`, getConfig());
-
+      const { data } = await axios(`${API2}/movies/`);
+      console.log(data);
       dispatch({
         type: "GET_PRODUCTS",
         payload: data.results,

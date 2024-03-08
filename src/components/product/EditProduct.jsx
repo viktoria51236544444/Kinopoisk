@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import { useParams } from "react-router-dom";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
 const EditProduct = () => {
   const {
     categories,
@@ -13,13 +11,18 @@ const EditProduct = () => {
     editProduct,
     actor,
     genre,
+    getActors,
+    getGenres,
   } = useProduct();
   console.log(oneProduct);
   const { slug } = useParams();
   useEffect(() => {
     getCategories();
     getOneProduct(slug);
+    getActors();
+    getGenres();
   }, []);
+
   useEffect(() => {
     setTitle(oneProduct.title);
     setTagline(oneProduct.tagline);
@@ -61,11 +64,11 @@ const EditProduct = () => {
     newProduct.append("poster", poster);
     newProduct.append("year", year);
     newProduct.append("country", country);
-    newProduct.append("world_premiere", worldPremiere);
+    // newProduct.append("world_premiere", worldPremiere);
     newProduct.append("budget", budget);
     newProduct.append("fees_in_usa", feesInUsa);
     newProduct.append("fees_in_world", feesInWorld);
-    newProduct.append("draft", draft.toString());
+    newProduct.append("draft", draft);
     newProduct.append("category", category);
     newProduct.append("directors", directors);
     newProduct.append("actors", actors);
@@ -116,9 +119,9 @@ const EditProduct = () => {
     setFeesInWorld((prevFeesInWorld) => prevFeesInWorld - 1);
   };
   // ? checkbox draft
-  const handleCheckboxChange = () => {
-    setDraft((prevDraft) => !prevDraft);
-  };
+  // const handleCheckboxChange = () => {
+  //   setDraft((prevDraft) => !prevDraft);
+  // };
 
   return (
     <div>
@@ -170,7 +173,7 @@ const EditProduct = () => {
             flexDirection: "column",
           }}
         >
-          <div style={{ background: "black", padding: "20px", width: "300px" }}>
+          {/* <div style={{ background: "black", padding: "20px", width: "300px" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <button
                 onClick={openDatePicker}
@@ -201,7 +204,7 @@ const EditProduct = () => {
                 inline
               />
             )}
-          </div>
+          </div> */}
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
@@ -247,7 +250,7 @@ const EditProduct = () => {
             <input
               type="checkbox"
               checked={draft}
-              onChange={handleCheckboxChange}
+              onChange={(e) => setDraft(e.target.value)}
             />
             Draft
           </label>

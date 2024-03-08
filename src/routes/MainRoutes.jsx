@@ -15,6 +15,10 @@ import RegistrationForm from "../auth_redux/componentsAuth/registration/Registra
 import PageAdd from "../pages/PageAdd";
 import EditProduct from "../components/product/EditProduct";
 import MainPage from "../pages/MainPage";
+import Sport from "../components/sportComponents/Sport";
+import OnlineCinema from "../components/OnlineCinema/OnlineCinema";
+import MoviesCart from "../components/product/MoviesCart";
+import MoviesList from "../components/product/MoviesList";
 
 const MainRoutes = () => {
   return (
@@ -33,6 +37,10 @@ const MainRoutes = () => {
       <Route path="/add" element={<PageAdd />} />
       <Route path="/edit/:slug" element={<EditProduct />} />
       <Route path="/" element={<MainPage />} />
+      <Route path="/sport" element={<Sport />} />
+      <Route path="/onlineCinema" element={<OnlineCinema />} />
+      <Route path="/moviesCard" element={<MoviesCart />} />
+      <Route path="/moviesList" element={<MoviesList />} />
     </Routes>
   );
 };
