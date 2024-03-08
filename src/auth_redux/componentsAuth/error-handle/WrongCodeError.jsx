@@ -8,7 +8,7 @@ const WrongCodeError = () => {
   if (error) {
     return (
       <div>
-        <p className={styles.code}>Неверный код</p>
+        <p className={styles.code_conf}>Неверный код</p>
       </div>
     );
   }
