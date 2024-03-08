@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* @media screen and (max-width: 1279px) {
+  .contentContainer-watch {
+    padding-left: 40px;
+  }
+} */
+
+.contentContainer-watch {
+  overflow: hidden;
+  padding: 0 30px;
+  /* margin: 0px 10px; */
+  color: #fff;
+  background-color: #000;
+  width: 70vw;
+}
+
+.watch-heading {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.watch-itemContainer {
+  display: flex;
+  min-width: 0;
+  border-bottom: 1px solid transparent;
+  overflow: hidden;
+}
+
+.carouselItem {
+  width: 229px;
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: hsla(0, 0%, 100%, 0.4);
+  overflow: hidden;
+}
+
+.watch-progressBarValue {
+  height: 4px;
+  background-color: #f50;
+  overflow: hidden;
+}
+
+.watch-duration {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.watch-playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  opacity: 0;
+  border: none;
+  border-radius: 1000px;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+  transform: translate(-50%, -50%);
+}
+.watch-filmLink {
+  text-decoration: none;
+  color: white;
+}
+.watch-playButton::before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: "";
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.watch-info {
+  margin-top: 4px;
+  font-size: 13px;
+  color: hsla(0, 0%, 100%, 0.6);
+  overflow: hidden;
+}

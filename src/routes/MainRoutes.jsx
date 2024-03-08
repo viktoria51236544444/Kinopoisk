@@ -10,6 +10,8 @@ import Anime from "../components/kids/Anime";
 import Adventure from "../components/kids/Adventure";
 import Space from "../components/kids/Space";
 import KidsWithoutSubscribe from "../components/kids/KidsWithoutSubscribe";
+import LoginForm from "../auth_redux/componentsAuth/loginForm/LoginForm";
+import RegistrationForm from "../auth_redux/componentsAuth/registration/RegistrationForm";
 
 const MainRoutes = () => {
   return (
@@ -23,6 +25,8 @@ const MainRoutes = () => {
       <Route path="/kidsAdventure" element={<Adventure />} />
       <Route path="/kidsSpace" element={<Space />} />
       <Route path="/kidsSubscribe" element={<KidsWithoutSubscribe />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegistrationForm />} />
     </Routes>
   );
 };

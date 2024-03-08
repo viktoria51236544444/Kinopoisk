@@ -9,10 +9,11 @@ import { FormControl, IconButton, Input, InputAdornment } from "@mui/material";
 // import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const LoginForm = () => {
   const [user, setUser] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -35,7 +36,7 @@ const LoginForm = () => {
     }
 
     if (status === "SUCCESS") {
-      navigate("/logged");
+      navigate("/");
     }
   }, [status]);
   const handleLogin = async (e) => {
@@ -60,7 +61,10 @@ const LoginForm = () => {
           />
 
           <div className={styles.form__maintitle_login}>
-            <p className={styles.form__text_login}>Login</p>
+            <p className={styles.form__text_login}>
+              {" "}
+              Войти c логином и паролем
+            </p>
           </div>
           <form
             sx={{
@@ -73,43 +77,49 @@ const LoginForm = () => {
             action=""
           >
             <input
-              sx={{ fontSize: "15px", fontWeight: "regular", letterSpacing: 1 }}
+              sx={{
+                fontSize: "15px",
+                fontWeight: "regular",
+                letterSpacing: 1,
+              }}
               className={styles.form__input_login}
               type="text"
               placeholder="Введи логин"
               onChange={(e) =>
                 setUser({
                   ...user,
-                  username: e.target.value,
+                  email: e.target.value,
                 })
               }
             />
+            <div className={styles.input_container_login}>
+              <input
+                sx={{
+                  fontSize: "15px",
+                  fontWeight: "regular",
+                  letterSpacing: 1,
+                }}
+                className={styles.form__input_pass_login}
+                type={showPassword ? "text" : "password"}
+                placeholder="Введи пароль"
+                onChange={(e) =>
+                  setUser({
+                    ...user,
+                    password: e.target.value,
+                  })
+                }
+              />
 
-            <input
-              sx={{ fontSize: "15px", fontWeight: "regular", letterSpacing: 1 }}
-              className={styles.form__input_login}
-              type={showPassword ? "text" : "password"}
-              placeholder="Введи пароль"
-              onChange={(e) =>
-                setUser({
-                  ...user,
-                  password: e.target.value,
-                })
-              }
-              // endAdornment={
-              //   <InputAdornment position="start">
-              //     <IconButton
-              //       className={styles.adornment}
-              //       aria-label="toggle password visibility"
-              //       onClick={handleClickShowPassword}
-              //       onMouseDown={handleMouseDownPassword}
-              //       edge="start"
-              //     >
-              //       {showPassword ? <VisibilityOff /> : <Visibility />}
-              //     </IconButton>
-              //   </InputAdornment>
-              // }
-            />
+              <IconButton
+                className={styles.adornment_login}
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </div>
+
             <button onClick={handleLogin} className={styles.form__button_login}>
               Войти
             </button>
