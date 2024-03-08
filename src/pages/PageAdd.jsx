@@ -6,7 +6,7 @@ const PageAdd = () => {
     <div
       style={{
         backgroundImage:
-          "url('https://cs10.pikabu.ru/post_img/big/2020/01/27/1/158007679712145663.jpg')",
+          "url('https://yastatic.net/s3/passport-auth-customs/customs/_/2V4FB5Yu.jpg')",
         margin: 0,
       }}
     >

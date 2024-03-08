@@ -5,6 +5,8 @@ import OscarGamePage from "../pages/OscarGamePage";
 import OscarNomineesPage from "../pages/OscarNomineesPage";
 import LoginForm from "../auth_redux/componentsAuth/loginForm/LoginForm";
 import RegistrationForm from "../auth_redux/componentsAuth/registration/RegistrationForm";
+import PageAdd from "../pages/PageAdd";
+import EditProduct from "../components/product/EditProduct";
 
 const MainRoutes = () => {
   return (
@@ -14,6 +16,8 @@ const MainRoutes = () => {
       <Route path="/oscarNominee" element={<OscarNomineesPage />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegistrationForm />} />
+      <Route path="/add" element={<PageAdd />} />
+      <Route path="/edit/:slug" element={<EditProduct />} />
     </Routes>
   );
 };

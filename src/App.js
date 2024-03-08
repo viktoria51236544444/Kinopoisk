@@ -1,14 +1,13 @@
 import React from "react";
+
+import MainRoutes from "./routes/MainRoutes";
 import PageAdd from "./pages/PageAdd";
-import FocusTicketsSection from "./homepage/FocusTicketsSection";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <MainPage />
+      <PageAdd />
       <MainRoutes />
-      {/* <Sport /> */}
     </div>
   );
 };
