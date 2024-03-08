@@ -1,20 +1,28 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import LoginForm from "../auth_redux/componentsAuth/loginForm/LoginForm";
-import RegistrationForm from "../auth_redux/componentsAuth/registration/RegistrationForm";
-import ConfirmEmailCode2 from "../auth_redux/componentsAuth/confirmEmail/ConfirmEmailCode2";
+import OscarPage from "../pages/OscarPage";
+import OscarGamePage from "../pages/OscarGamePage";
+import OscarNomineesPage from "../pages/OscarNomineesPage";
+import KidsNavbar from "../components/kids/KidsNavbar";
+import KidsPage from "../pages/KidsPage";
+import Dog from "../components/kids/Dog";
+import Anime from "../components/kids/Anime";
+import Adventure from "../components/kids/Adventure";
+import Space from "../components/kids/Space";
+import KidsWithoutSubscribe from "../components/kids/KidsWithoutSubscribe";
 
 const MainRoutes = () => {
-  const PUBLIC_ROUTES = [
-    { id: 1, link: "/login", element: <LoginForm /> },
-    { id: 2, link: "/register", element: <RegistrationForm /> },
-    { id: 3, link: "/confirm-email", element: <ConfirmEmailCode2 /> },
-  ];
   return (
     <Routes>
-      {PUBLIC_ROUTES.map((elem) => (
-        <Route path={elem.link} key={elem.id} element={elem.element} />
-      ))}
+      <Route path="/oscarHome" element={<OscarPage />} />
+      <Route path="/oscarGame" element={<OscarGamePage />} />
+      <Route path="/oscarNominee" element={<OscarNomineesPage />} />
+      <Route path="/kids" element={<KidsPage />} />
+      <Route path="/kidsDog" element={<Dog />} />
+      <Route path="/kidsAnime" element={<Anime />} />
+      <Route path="/kidsAdventure" element={<Adventure />} />
+      <Route path="/kidsSpace" element={<Space />} />
+      <Route path="/kidsSubscribe" element={<KidsWithoutSubscribe />} />
     </Routes>
   );
 };
