@@ -1,5 +1,4 @@
 import React from "react";
-
 import MainRoutes from "./routes/MainRoutes";
 import Sport from "./components/sportComponents/Sport";
 import OscarPage from "./pages/OscarPage";

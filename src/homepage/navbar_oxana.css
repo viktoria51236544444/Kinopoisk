@@ -1,36 +1,141 @@
 .navbar__main {
   background-color: black;
-  height: 30vh;
+  height: 13vh;
+  width: auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .navbar__logo-kinopoisk {
-  height: 20vh;
+  height: 10vh;
   color: white;
   background-color: white;
+  border: none;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .navbar__link-cinema,
 .navbar__link-oscar {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.navbar__playericon,
-.navbar__oscar-icon-white,
+.navbar__link-oscar {
+  position: relative; /* Установка родительского элемента как контекста позиционирования */
+}
+
+.navbar__oscar-icon-white {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  height: 30px;
+  /* transition: opacity 0.3s ease; */
+}
+
 .navbar__oscar-icon-grey {
-  height: 5vh;
-  background-color: black;
+  height: 30px;
+}
+
+.navbar__oscar-icon-white {
+  opacity: 0; /* Скрываем белую картинку по умолчанию */
+}
+
+.navbar__main-link:hover .navbar__link-oscar:hover .navbar__oscar-icon-white {
+  opacity: 1; /* Показываем белую картинку при наведении */
+}
+
+.navbar__link-oscar:hover .navbar__oscar-icon-grey {
+  opacity: 0; /* Скрываем серую картинку при наведении */
 }
 
 .navbar__player-text,
 .navbar__oscar-text {
+  color: gray;
+}
+
+.navbar__main-link:hover .navbar__player-text:hover,
+.navbar__oscar-text:hover {
+  color: white; /* Изменяем цвет текста при наведении */
+}
+
+.navbar__playericon {
+  height: 8vh;
+  background-color: black;
+  fill: gray;
+}
+
+.navbar__main-link:hover .navbar__playericon:hover {
+  fill: white;
   color: white;
+}
+
+/* .navbar__search {
+  display: flex;
+  justify-content: center;
+} */
+.navbar__search-container {
+  position: relative;
+}
+
+.navbar__search-input {
+  border-radius: 6px;
+  padding-right: 50px;
+  background-color: rgb(203, 201, 201);
+  height: 34px;
+}
+
+.navbar__search-filtericon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 40px;
+  width: 20px;
+  height: auto;
+}
+.navbar__search-mgnicon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Можно настроить смещение изображений относительно правого края */
+  width: 20px; /* Ширина изображений */
+  height: auto; /* Автоматический расчет высоты */
+}
+.navbar__userblock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__userblock-usericon {
+  width: 30px;
+  height: auto;
+}
+
+.navbar__dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  border: 2px solid black;
+  border-radius: 2px;
+  background-color: black;
+  width: 200px;
+  height: 10%;
+  z-index: 2;
+}
+
+.dropdown-button {
+  background-color: black;
+  margin: 5px;
+  color: white;
+  border: none;
+  font-size: 15px;
 }

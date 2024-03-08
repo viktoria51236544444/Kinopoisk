@@ -1,28 +1,28 @@
-.default {
+.default_conf {
   display: flex;
   align-items: center;
   padding-top: 2px;
 }
 
-.password {
+.password_conf {
   font-size: 12px;
   padding-left: 14px;
   color: #da2626;
 }
 
-.normal {
+/* .normal {
   color: #a7a1a1;
-}
+} */
 
-.pass {
+.pass_conf {
   color: #0d9f0d;
 }
 
-.error {
+.error_conf {
   color: #da2626;
 }
 
-.code {
+.code_conf {
   color: #da2626;
   font-size: 14px;
   text-align: center;

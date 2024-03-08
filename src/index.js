@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { setupStore } from "./auth_redux/store/store";
 import { Provider } from "react-redux";
-import FavoriteContextProvider from "./context/FavoriteContextProvider";
+import ProductContextProvider from "./context/ProductContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,5 +18,10 @@ root.render(
         <App />
       </FavoriteContextProvider>
     </Provider>
+    <ProductContextProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ProductContextProvider>
   </BrowserRouter>
 );
