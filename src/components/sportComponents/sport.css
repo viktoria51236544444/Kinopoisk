@@ -240,4 +240,42 @@
   font-size: 26px;
   font-weight: 500;
 }
+
+.movie_button2 {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-top: 20px;
+  padding: 14px;
+  width: 40%;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  border-radius: 1000px;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}
+.movie_button1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-top: 20px;
+  padding: 14px;
+  width: 25%;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  border-radius: 1000px;
+  background-color: rgb(14, 13, 13);
+}
+.movie_subtitle-button-icon2 {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
 /* ! OnlineCinema finish nav */
