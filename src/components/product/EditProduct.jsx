@@ -68,7 +68,7 @@ const EditProduct = () => {
     newProduct.append("budget", budget);
     newProduct.append("fees_in_usa", feesInUsa);
     newProduct.append("fees_in_world", feesInWorld);
-    newProduct.append("draft", draft);
+    newProduct.append("draft", false);
     newProduct.append("category", category);
     newProduct.append("directors", directors);
     newProduct.append("actors", actors);
@@ -245,7 +245,7 @@ const EditProduct = () => {
             <button onClick={decrementFeesInWorld}>-</button>
           </div>
         </div>
-        <div>
+        {/* <div>
           <label>
             <input
               type="checkbox"
@@ -254,7 +254,7 @@ const EditProduct = () => {
             />
             Draft
           </label>
-        </div>
+        </div> */}
 
         <select
           onChange={(e) => {
