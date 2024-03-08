@@ -9,33 +9,44 @@ import usericon from "./assets-homepage/usericon.jpeg";
 import "./navbar_oxana.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { updateToken } from "../auth_redux/helpersAuth/functions";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../auth_redux/store/actions";
 
 const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const navigate = useNavigate();
+  const { logoutSuccess } = useSelector(({ userSlice }) => userSlice);
+  const user = useSelector(({ userSlice }) => userSlice.user);
+
+  const dispatch = useDispatch();
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
-  const registerHandler = () => {
-    // Обработчик для кнопки register
-  };
-
-  const loginHandler = () => {
-    // Обработчик для кнопки login
+  const handleLogin = () => {
+    navigate("/login");
   };
 
   const logoutHandler = () => {
-    // Обработчик для кнопки logout
+    dispatch(logoutUser());
   };
+
+  useEffect(() => {
+    if (logoutSuccess === "SUCCESS") {
+      navigate("/");
+    }
+  }, [logoutSuccess]);
 
   // useEffect(() => {
   //   updateToken();
   // }, []);
 
   return (
-    <div className="navbar__main">
+    <div
+      className="navbar__main"
+      onMouseLeave={() => setDropdownVisible(false)}
+    >
       <NavLink className="navbar__main-link" to="/">
         <div className="navbar__logo">
           <img className="navbar__logo-kinopoisk" src={logo} alt="" />
@@ -90,17 +101,41 @@ const Navbar = () => {
         <button className="navbar__userblock-button">Расширить подписку</button>
         <img
           className="navbar__userblock-usericon"
-          onClick={toggleDropdown}
+          onMouseEnter={toggleDropdown}
           src={usericon}
           alt=""
         />
         {dropdownVisible && (
           <div className="navbar__dropdown">
-            <button onClick={registerHandler}>Register</button>
-            <button onClick={loginHandler}>Login</button>
-            <button onClick={logoutHandler}>Logout</button>
+            {!user && (
+              <>
+                <button
+                  className="dropdown-button"
+                  onClick={() => navigate("/register")}
+                >
+                  Регистрация
+                </button>
+                <button className="dropdown-button" onClick={handleLogin}>
+                  Логин
+                </button>
+              </>
+            )}
+            {user && (
+              <button className="dropdown-button" onClick={logoutHandler}>
+                Выйти
+              </button>
+            )}
           </div>
         )}
+
+        <NavLink
+          style={{ textDecoration: "none", color: "white", fontSize: "15px" }}
+          href="#"
+          disabled
+          onMouseEnter={toggleDropdown}
+        >
+          {user ? user : "Гость"}
+        </NavLink>
       </div>
     </div>
   );

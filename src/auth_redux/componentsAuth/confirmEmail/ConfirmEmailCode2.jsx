@@ -32,7 +32,7 @@ const ConfirmEmailCode2 = () => {
         <div className={styles.form}>
           <div className={styles.form__main_title}>
             <p className={styles.form__main_text}>
-              Введи 4-значный код, <br /> высланный на <br /> почту
+              Введи код, <br /> высланный на <br /> почту
             </p>
           </div>
           <div className={styles.form__registraition}>
