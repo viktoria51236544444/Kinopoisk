@@ -1,20 +1,15 @@
 import React from "react";
 
 import MainRoutes from "./routes/MainRoutes";
-import Header from "./homepage/Header";
-import SideBar from "./homepage/SideBar";
 import Sport from "./components/sportComponents/Sport";
-import Navbar from "./homepage/Navbar";
-import MainPage from "./pages/MainPage";
-import MovieHeader from "./components/movies/MovieHeader";
+import OscarPage from "./pages/OscarPage";
+import OscarGamePage from "./pages/OscarGamePage";
+import OnlineCinema from "./components/OnlineCinema/OnlineCinema";
+import OscarNomineesPage from "./pages/OscarNomineesPage";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <MovieHeader />
-      {/* <MainPage /> */}
-
       <MainRoutes />
     </div>
   );

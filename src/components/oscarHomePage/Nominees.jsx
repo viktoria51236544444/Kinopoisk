@@ -14,12 +14,14 @@ const Nominees = () => {
   };
   const bestMovies = [
     {
+      slug: 1,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/60661/f5e8e74421c7f421a82c2741c6e0d6b2ead611c9/orig",
       title: "Анатомия падения",
       subTitle: "Anatomy of a fall",
     },
     {
+      slug: 2,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/120922/042e567b3f191585132721025baca6a9f2cb68c9/orig",
       title: "Убийца цветочной луны",
@@ -28,54 +30,65 @@ const Nominees = () => {
         "Главный фильм 2017 года. Мюзикл как признание в любви к Голливуду. История отношений джазового музыканта (Райан Гослинг) и начинающей актрисы (Эмма Стоун) в декорациях Лос-Анджелеса покорила и кинозалы, и критиков. Победитель в шести номинациях на премию «Оскар», в том числе «Лучшая актриса» и «Лучшая песня к фильму».",
     },
     {
+      slug: 3,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/60661/c271206dfb46a490c3c19a2313a6e1cbc8963087/orig",
       title: "Оппенгеймер",
       subTitle: "Oppenheimer",
     },
     {
+      slug: 4,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/120922/c3e32d0b46b37e66fa231c34ddf13d31d6d7bf90/orig",
       title: "Бедные-несчастные",
       subTitle: "Poor Things",
     },
     {
+      slug: 5,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/60661/667a9e6dd6bc68933e344284c99af04b71c4b09c/orig",
       title: "Зона интересов",
       subTitle: "The Zone Of Interest",
     },
     {
+      slug: 6,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/118781/f131324cee254b8463f1352245f7d55c669413ce/orig",
       title: "Американское чтиво",
       subTitle: "American Fiction",
     },
+
     {
+      slug: 7,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/120922/fb3a798ed239fe9e3a089274a7a89f2f452a85ad/orig",
       title: "Барби",
       subTitle: "Barbie",
     },
+
     {
+      slug: 8,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/118781/d4bec66a89d5c4b655b8914d4134f23a3be12b0c/orig",
       title: "Оставленные",
       subTitle: "The Holdovers",
     },
     {
+      slug: 9,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/994123/d89cd96ee80d50917c898345b80057bb40c1cf91/orig",
       title: "Маэстро",
       subTitle: "Maestro",
     },
     {
+      slugd: 10,
       imageUrl:
         "https://avatars.mds.yandex.net/get-bunker/118781/24acf96ba1d5e750f36af892e7d6c75179db7b5f/orig",
       title: "Прошлые жизни",
       subTitle: "Past Loves",
     },
   ];
+
   const bestActorNominees = [
     {
       name: "Пол Джаматти",

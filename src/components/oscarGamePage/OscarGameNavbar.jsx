@@ -5,7 +5,6 @@ import Vk from "../oscarHomePage/assets/icons8-vk.svg";
 const OscarGameNavbar = () => {
   return (
     <div>
-      {" "}
       <div className="navbarOscar__container dark" id="navbar">
         <div className="navbarOscar__container_logo">
           <img url="" />
@@ -24,7 +23,12 @@ const OscarGameNavbar = () => {
           >
             <p className="two">Игра</p>
           </NavLink>
-          <p className="three">Номинанты</p>
+          <NavLink
+            style={{ textDecoration: "none", color: "white" }}
+            to={"/oscarNominee"}
+          >
+            <p className="three">Номинанты</p>
+          </NavLink>
         </div>
         <div className="navbarOscar__container_socialIcons">
           <div>
