@@ -128,16 +128,19 @@ const EditProduct = () => {
       <div className="input">
         <input
           type="text"
+          value={title}
           placeholder="title"
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
+          value={tagline}
           placeholder="tagline"
           onChange={(e) => setTagline(e.target.value)}
         />
         <input
           type="text"
+          value={description}
           placeholder="description"
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -162,6 +165,7 @@ const EditProduct = () => {
         </div>
         <input
           type="text"
+          value={country}
           placeholder="country"
           onChange={(e) => setCountry(e.target.value)}
         />
