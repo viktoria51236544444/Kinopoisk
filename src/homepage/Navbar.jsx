@@ -17,7 +17,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { logoutSuccess } = useSelector(({ userSlice }) => userSlice);
   const user = useSelector(({ userSlice }) => userSlice.user);
-
+  const [currentUser, setCurrentUser] = useState(null);
   const dispatch = useDispatch();
 
   const toggleDropdown = () => {
@@ -38,6 +38,12 @@ const Navbar = () => {
     }
   }, [logoutSuccess]);
 
+  const email = localStorage.getItem("email");
+
+  useEffect(() => {
+    setCurrentUser(email);
+  }, [email]);
+
   // useEffect(() => {
   //   updateToken();
   // }, []);
@@ -45,7 +51,7 @@ const Navbar = () => {
   return (
     <div
       className="navbar__main"
-      onMouseLeave={() => setDropdownVisible(false)}
+      // onMouseLeave={() => setDropdownVisible(false)}
     >
       <NavLink className="navbar__main-link" to="/">
         <div className="navbar__logo">
@@ -134,7 +140,7 @@ const Navbar = () => {
           disabled
           onMouseEnter={toggleDropdown}
         >
-          {user ? user : "Гость"}
+          {currentUser ? currentUser : "Гость"}
         </NavLink>
       </div>
     </div>

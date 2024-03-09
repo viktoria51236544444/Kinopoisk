@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.footermain__main {
+  /* background-image: url("https://yastatic.net/s3/kinopoisk-frontend/frontend-www/release/_next/static/images/amediateka-promo@2x-e62077c5e51f7292.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
+  background-color: black;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footermain__main_upper {
+  display: flex;
+  justify-content: center;
+}
+.footermain__main_upper_left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.footermain__main_upper_left_text {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #fff;
+}
+
+.footermain__main_upper_left_button {
+  width: 25rem;
+  min-height: 6rem;
+  padding-block-start: 1.8rem;
+  padding-block-end: 1.8rem;
+  padding-inline-start: 2.8rem;
+  padding-inline-end: 2.8rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: 600;
+  font-style: normal;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  border-radius: 5.2rem;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    #ff5c4d,
+    #eb469f 26.56%,
+    #8341ef 75%,
+    #3f68f9
+  );
+}
+
+.footermain__main_upper_right {
+  width: 50%;
+}
+
+.footermain__main_upper_pic {
+  width: 80%;
+}

@@ -71,6 +71,7 @@ export const userSlice = createSlice({
             action.payload?.res?.data?.access
           );
           state.user = action.payload?.userObj.email;
+          localStorage.setItem("email", action.payload?.userObj.email);
           console.log("state.user after login:", state.user);
         }
       })
