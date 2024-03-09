@@ -68,7 +68,7 @@ const EditProduct = () => {
     newProduct.append("budget", budget);
     newProduct.append("fees_in_usa", feesInUsa);
     newProduct.append("fees_in_world", feesInWorld);
-    newProduct.append("draft", draft);
+    newProduct.append("draft", false);
     newProduct.append("category", category);
     newProduct.append("directors", directors);
     newProduct.append("actors", actors);
@@ -128,16 +128,19 @@ const EditProduct = () => {
       <div className="input">
         <input
           type="text"
+          value={title}
           placeholder="title"
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
+          value={tagline}
           placeholder="tagline"
           onChange={(e) => setTagline(e.target.value)}
         />
         <input
           type="text"
+          value={description}
           placeholder="description"
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -162,6 +165,7 @@ const EditProduct = () => {
         </div>
         <input
           type="text"
+          value={country}
           placeholder="country"
           onChange={(e) => setCountry(e.target.value)}
         />
@@ -245,7 +249,7 @@ const EditProduct = () => {
             <button onClick={decrementFeesInWorld}>-</button>
           </div>
         </div>
-        <div>
+        {/* <div>
           <label>
             <input
               type="checkbox"
@@ -254,7 +258,7 @@ const EditProduct = () => {
             />
             Draft
           </label>
-        </div>
+        </div> */}
 
         <select
           onChange={(e) => {
