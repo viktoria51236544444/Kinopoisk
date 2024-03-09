@@ -418,43 +418,249 @@ const OnlineCinema = () => {
               </Slider>
             </div>
             <div className="matches__container">
-              <p class="matches__container-p">Фильмы для вас</p>
+              <p class="matches__container-p">Премьера "Холоп 2"</p>
 
               <Slider {...sliderSettings2}>
                 <div className="b2">
                   <img
                     style={{ width: "1300px", height: "600px" }}
-                    src="https://start.ru/images/unsafe/filters:quality(70)/302765054efc42ab82651975bbf4e02b/images-horizontal_poster_1x"
+                    src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
                     alt="Match 1"
                   />
                 </div>
                 <div className="b2">
                   <img
                     style={{ width: "1300px", height: "600px" }}
-                    src="https://tengrinews.kz/userdata/news/2022/news_460356/thumb_m/photo_387142.jpeg"
+                    src="https://avatars.mds.yandex.net/get-ott/1672343/2a0000018dfac03541d9c11178978f4ee6df/1152x560"
                     alt="Match 2"
                   />
                 </div>
                 <div className="b2">
                   <img
                     style={{ width: "1300px", height: "600px" }}
-                    src="https://images.kinorium.com/movie/poster/1656658/h280_50547197.jpg"
+                    src="https://avatars.mds.yandex.net/get-ott/2419418/2a0000018dfac084262aca636cdf7877d0cc/1152x560"
                     alt="Match 3"
                   />
                 </div>
                 <div className="b2">
                   <img
                     style={{ width: "1300px", height: "600px" }}
-                    src="https://cs14.pikabu.ru/post_img/big/2023/03/30/10/1680198395110695782.png"
+                    src="https://avatars.mds.yandex.net/get-ott/374297/2a0000018dfac0dbaff4e300571fa85671b9/1152x560"
                     alt="Match 4"
                   />
                 </div>
                 <div className="b2">
                   <img
                     style={{ width: "1300px", height: "600px" }}
-                    src="https://cdn2.red-media.ru/800x466-2023-01-RM-Vyshka-1280h720.jpg"
+                    src="https://avatars.mds.yandex.net/get-ott/212840/2a0000018e1c9136e50b87ac84ebb61677a9/1152x560"
                     alt="Match 5"
                   />
+                </div>
+              </Slider>
+            </div>
+            <div className="matches__container">
+              <a href="/your-target-page" class="matches__container-link">
+                <p class="matches__container-p">Фильмы для вас</p>
+              </a>
+
+              <Slider {...sliderSettings}>
+                <div className="b">
+                  <img
+                    src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
+                    alt="Match 1"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Алтыбармакян, Лада
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 5
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://start.ru/images/unsafe/filters:quality(70)/a11dad21844543aaa96f997d5c63ace0/horizontal_poster_1x"
+                    alt="Match 2"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Миронов, Динамо Москва
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 4
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://i.ytimg.com/vi/p2dpWQdmoQ8/maxresdefault.jpg"
+                    alt="Match 3"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Дамир Шарипзянов, Авангард
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 3
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://static.okko.tv/images/v3/22461574?scale=1&quality=80"
+                    alt="Match 4"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Василий Атанасов, Торпедо
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 2
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://tv.rambler.ru/epg/pic/6510981?img-format=auto&img-1-resize=height:195,fit:max&img-2-filter=sharpen"
+                    alt="Match 5"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Николай Голдобин, Спартак
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 1
+                  </p>
+                </div>
+              </Slider>
+            </div>
+            <div className="matches__container">
+              <a href="/your-target-page" class="matches__container-link">
+                <p class="matches__container-p">Что смотреть в выходные</p>
+              </a>
+
+              <Slider {...sliderSettings}>
+                <div className="b">
+                  <img
+                    src="https://i.ytimg.com/vi/wNohFm9A7S4/maxresdefault.jpg"
+                    alt="Match 1"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Алтыбармакян, Лада
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 5
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://images.kinorium.com/movie/poster/1670490/h280_51624355.jpg"
+                    alt="Match 2"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Андрей Миронов, Динамо Москва
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 4
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://avatars.dzeninfra.ru/get-zen_doc/1781567/pub_64d4612993ac551f96f92a35_64d46252fe3a0d69187b76d1/scale_1200"
+                    alt="Match 3"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Дамир Шарипзянов, Авангард
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 3
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://media.alphanews.am/wp-content/uploads/2023/10/11155928/photo_2023-10-11_10-29-43.jpg"
+                    alt="Match 4"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Василий Атанасов, Торпедо
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 2
+                  </p>
+                </div>
+                <div className="b">
+                  <img
+                    src="https://i.ytimg.com/vi/4zor-jRYnFs/maxresdefault.jpg"
+                    alt="Match 5"
+                  />
+                  <p style={{ margin: "0", marginTop: "3%" }}>
+                    Николай Голдобин, Спартак
+                  </p>
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "3%",
+                      fontSize: "13px",
+                      fontWeight: "100",
+                    }}
+                  >
+                    Хоккейный борт, выпуск 1
+                  </p>
                 </div>
               </Slider>
             </div>

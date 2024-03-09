@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CSS from "../sportComponents/sport.css";
 import FooterSport from "./FooterSport";
+import { useTheme } from "../../context/Background";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 
 const Sport = () => {
   const SampleNextArrow = (props) => {
@@ -58,9 +60,15 @@ const Sport = () => {
       },
     ],
   };
-
+  const { theme, toggleTheme } = useTheme();
   return (
-    <div className="sport__container">
+    <div
+      className="sport__container"
+      style={{
+        background: theme === "light" ? "#fff" : "black",
+        color: theme === "light" ? "#000" : "#fff",
+      }}
+    >
       <nav
         className="nav__sport"
         style={{
@@ -107,8 +115,13 @@ const Sport = () => {
           <p>Каналы</p>
           <p>Спорт</p>
         </div>
-        <div>
-          <img src="" alt="" />
+        <div
+          style={{
+            marginTop: "2.5%",
+            marginLeft: "25%",
+          }}
+        >
+          <WbSunnyOutlinedIcon onClick={toggleTheme} />
         </div>
       </nav>
       <div>
