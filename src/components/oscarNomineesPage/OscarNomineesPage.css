@@ -89,3 +89,7 @@
   margin-top: 70px;
 }
 /* ! Oscar Nominees Footer Finish */
+
+.movie-container:hover .img-container {
+  transform: translateY(-10px);
+}

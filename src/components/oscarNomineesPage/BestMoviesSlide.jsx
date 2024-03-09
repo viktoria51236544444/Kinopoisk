@@ -21,11 +21,27 @@ const BestMoviesSlide = ({ movies }) => {
               width: "calc(17% - 10px)",
               position: "relative",
               overflow: "hidden",
+              transition: "transform 0.3s ease", // добавляем анимацию при изменении transform
             }}
+            className="movie-container"
           >
-            <div className="allMovies__container_movies-swiper-img">
-              <div className="img-container" style={{ position: "relative" }}>
-                <img src={movie.imageUrl} alt="" />
+            <div
+              className="allMovies__container_movies-swiper-img"
+              style={{ cursor: "pointer" }}
+            >
+              <div
+                className="img-container"
+                style={{
+                  position: "relative",
+                  transition: "transform 0.3s ease", // добавляем анимацию при изменении transform
+                }}
+              >
+                <img
+                  src={movie.imageUrl}
+                  alt=""
+                  style={{ maxWidth: "100%", display: "block" }}
+                  className="movie-image"
+                />
               </div>
               <p style={{ marginLeft: "-50px" }}>{movie.title}</p>
               <p style={{ marginLeft: "-50px", marginTop: "-13px" }}>
@@ -38,4 +54,5 @@ const BestMoviesSlide = ({ movies }) => {
     </div>
   );
 };
+
 export default BestMoviesSlide;

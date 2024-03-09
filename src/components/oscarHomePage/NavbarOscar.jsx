@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Telegram from "./assets/icons8-телеграмма-app.svg";
 import Vk from "./assets/icons8-vk.svg";
 import "./OscarHomePage.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import Music from "./assets/Oscar_award_music.mp3";
+import { IconButton } from "@mui/material";
+import { Pause, PlayArrow } from "@mui/icons-material";
 const NavbarOscar = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -23,7 +26,18 @@ const NavbarOscar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  const togglePlay = () => {
+    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    if (audio.paused) {
+      audio.play(); // Если аудио на паузе, запускаем воспроизведение
+      setIsPlaying(true); // Обновляем состояние
+    } else {
+      audio.pause(); // Если аудио воспроизводится, ставим на паузу
+      setIsPlaying(false); // Обновляем состояние
+    }
+  };
   return (
     <div className="headerOscar__container">
       <div className="navbarOscar__container dark" id="navbar">
@@ -58,6 +72,17 @@ const NavbarOscar = () => {
           <div>
             <img src={Vk} alt="" />
           </div>
+        </div>
+        <div style={{ marginTop: "-4px", marginLeft: "3px" }}>
+          <IconButton color="primary" onClick={togglePlay}>
+            {isPlaying ? <Pause /> : <PlayArrow />}
+          </IconButton>
+          <audio
+            id="audio"
+            src={Music}
+            autoPlay={isPlaying}
+            onEnded={() => setIsPlaying(false)} // При окончании воспроизведения сбрасываем состояние isPlaying
+          ></audio>
         </div>
       </div>
       <div className="headerOscar__container-2">

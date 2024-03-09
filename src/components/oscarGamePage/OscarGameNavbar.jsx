@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Telegram from "../oscarHomePage/assets/icons8-телеграмма-app.svg";
 import Vk from "../oscarHomePage/assets/icons8-vk.svg";
+import Music from "../oscarHomePage/assets/Game_music.mp3";
+import { IconButton } from "@mui/material";
+import { Pause, PlayArrow } from "@mui/icons-material";
 const OscarGameNavbar = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    if (audio.paused) {
+      audio.play(); // Если аудио на паузе, запускаем воспроизведение
+      setIsPlaying(true); // Обновляем состояние
+    } else {
+      audio.pause(); // Если аудио воспроизводится, ставим на паузу
+      setIsPlaying(false); // Обновляем состояние
+    }
+  };
   return (
     <div>
       <div className="navbarOscar__container dark" id="navbar">
@@ -37,6 +52,17 @@ const OscarGameNavbar = () => {
           <div>
             <img src={Vk} alt="" />
           </div>
+        </div>
+        <div style={{ marginTop: "-4px", marginLeft: "3px" }}>
+          <IconButton color="primary" onClick={togglePlay}>
+            {isPlaying ? <Pause /> : <PlayArrow />}
+          </IconButton>
+          <audio
+            id="audio"
+            src={Music}
+            autoPlay={isPlaying}
+            onEnded={() => setIsPlaying(false)}
+          ></audio>
         </div>
       </div>
     </div>
