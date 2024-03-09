@@ -1,25 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
-import DatePicker from "react-datepicker";
+import { useParams } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
-const AddProduct = () => {
+const EditProduct = () => {
   const {
-    addProducts,
-    getCategories,
     categories,
-    getActors,
+    getCategories,
+    getOneProduct,
+    oneProduct,
+    editProduct,
     actor,
     genre,
+    getActors,
     getGenres,
   } = useProduct();
-  console.log(categories);
+  console.log(oneProduct);
+  const { slug } = useParams();
   useEffect(() => {
     getCategories();
+    getOneProduct(slug);
     getActors();
     getGenres();
   }, []);
 
+  useEffect(() => {
+    setTitle(oneProduct.title);
+    setTagline(oneProduct.tagline);
+    setDescription(oneProduct.description);
+    setPoster(oneProduct.poster);
+    setYear(oneProduct.year);
+    setCountry(oneProduct.country);
+    setWorldPremiere(oneProduct.worldPremiere);
+    setBudget(oneProduct.budget);
+    setFeesInUsa(oneProduct.feesInUsa);
+    setFeesInWorld(oneProduct.feesInWorld);
+    setDraft(oneProduct.draft);
+    setCategory(oneProduct.category);
+    setDirectors(oneProduct.directors);
+    setActors(oneProduct.actors);
+    setGenres(oneProduct.genres);
+  }, []);
   const [title, setTitle] = useState("");
   const [tagline, setTagline] = useState("");
   const [description, setDescription] = useState("");
@@ -48,30 +68,12 @@ const AddProduct = () => {
     newProduct.append("budget", budget);
     newProduct.append("fees_in_usa", feesInUsa);
     newProduct.append("fees_in_world", feesInWorld);
-    newProduct.append("draft", draft.toString());
+    newProduct.append("draft", false);
     newProduct.append("category", category);
     newProduct.append("directors", directors);
     newProduct.append("actors", actors);
     newProduct.append("genres", genres);
-
-    addProducts(newProduct);
-
-    // Resetting form fields after adding product
-    setTitle("");
-    setTagline("");
-    setDescription("");
-    setPoster("");
-    setYear("");
-    setCountry("");
-    setWorldPremiere("");
-    setBudget(0);
-    setFeesInUsa(0);
-    setFeesInWorld(0);
-    setDraft(false);
-    setCategory("");
-    setDirectors("");
-    setActors("");
-    setGenres("");
+    editProduct(slug, newProduct);
   };
   const [showDatePicker, setShowDatePicker] = useState(false);
 
@@ -117,13 +119,12 @@ const AddProduct = () => {
     setFeesInWorld((prevFeesInWorld) => prevFeesInWorld - 1);
   };
   // ? checkbox draft
-  const handleCheckboxChange = () => {
-    setDraft((prevDraft) => !prevDraft);
-  };
+  // const handleCheckboxChange = () => {
+  //   setDraft((prevDraft) => !prevDraft);
+  // };
 
   return (
-    <div style={{ minHeight: "100vh" }}>
-      <h2 className="h2">Add Product</h2>
+    <div>
       <div className="input">
         <input
           type="text"
@@ -154,21 +155,9 @@ const AddProduct = () => {
             onChange={(e) => setYear(e.target.value)}
             style={{ width: "100%", padding: "10px" }}
           />
-          <div style={{ marginLeft: "-10%" }}>
-            <button
-              style={{
-                backgroundColor: "black",
-                color: "#f50",
-                border: "none",
-                borderRadius: "10px",
-              }}
-              onClick={incrementYear}
-            >
-              +
-            </button>
-            <button className="button__increment" onClick={decrementYear}>
-              -
-            </button>
+          <div style={{ marginLeft: "10px" }}>
+            <button onClick={incrementYear}>+</button>
+            <button onClick={decrementYear}>-</button>
           </div>
         </div>
         <input
@@ -183,7 +172,40 @@ const AddProduct = () => {
             display: "flex",
             flexDirection: "column",
           }}
-        ></div>
+        >
+          {/* <div style={{ background: "black", padding: "20px", width: "300px" }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <button
+                onClick={openDatePicker}
+                style={{ padding: "10px", cursor: "pointer" }}
+              >
+                Показать календарь
+              </button>
+              <input
+                type="text"
+                placeholder="год.месяц.день"
+                value={format(worldPremiere, "yyyy.MM.dd")}
+                style={{
+                  marginLeft: "10px",
+                  width: "100%",
+                  padding: "10px",
+                  color: "white",
+                }}
+                readOnly
+              />
+            </div>
+            {showDatePicker && (
+              <DatePicker
+                selected={worldPremiere}
+                onChange={handleDateChange}
+                popperPlacement="bottom-end"
+                showYearDropdown
+                dateFormat="yyyy.MM.dd"
+                inline
+              />
+            )}
+          </div> */}
+        </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -210,39 +232,6 @@ const AddProduct = () => {
             <button onClick={decrementFeesInUSA}>-</button>
           </div>
         </div>
-        {/* <div style={{ background: "black", padding: "20px", width: "300px" }}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <button
-              onClick={openDatePicker}
-              style={{ padding: "10px", cursor: "pointer" }}
-            >
-              Показать календарь
-            </button>
-            <input
-              type="text"
-              placeholder="год.месяц.день"
-              value={format(worldPremiere, "yyyy-MM-dd")}
-              style={{
-                marginLeft: "10px",
-                width: "100%",
-                padding: "10px",
-                color: "white",
-              }}
-              readOnly
-            />
-          </div>
-          {showDatePicker && (
-            <DatePicker
-              selected={worldPremiere}
-              onChange={handleDateChange}
-              popperPlacement="bottom-end"
-              showYearDropdown
-              dateFormat="yyyy-MM-dd"
-              inline
-            />
-          )}
-        </div> */}
-
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
@@ -256,16 +245,16 @@ const AddProduct = () => {
             <button onClick={decrementFeesInWorld}>-</button>
           </div>
         </div>
-        <div>
+        {/* <div>
           <label>
             <input
               type="checkbox"
               checked={draft}
-              onChange={handleCheckboxChange}
+              onChange={(e) => setDraft(e.target.value)}
             />
             Draft
           </label>
-        </div>
+        </div> */}
 
         <select
           onChange={(e) => {
@@ -325,4 +314,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;
