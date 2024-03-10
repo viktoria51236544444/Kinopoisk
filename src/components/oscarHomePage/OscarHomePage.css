@@ -6,6 +6,12 @@
   background-color: #0c354d;
   margin: 0;
 }
+.oscarNomineesPage__container {
+  background-color: #0c354d;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
 /* ! NavbarOscar Start */
 .navbarOscar__container {
   display: flex;
@@ -113,7 +119,6 @@
 .allMovies__container-title-p1 {
   font-family: SangBleu Sunrise;
   font-size: 32px;
-  font-weight: 400;
   text-align: center;
   color: #fff;
 }
@@ -140,13 +145,13 @@
 }
 
 .next {
-  right: -10%;
+  margin-right: -10% !important;
   margin-top: -50px;
   height: 100px;
 }
 .prev {
-  left: -10%;
-  margin-top: -50px;
+  margin-left: -12%;
+  margin-top: -6%;
   height: 200px;
 }
 .allMovies__container-swiper {

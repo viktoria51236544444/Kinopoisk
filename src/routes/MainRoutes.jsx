@@ -46,6 +46,7 @@ const MainRoutes = () => {
       <Route path="/onlineCinema" element={<OnlineCinema />} />
       <Route path="/moviesCard" element={<MoviesCart />} />
       <Route path="/moviesList" element={<MoviesList />} />
+      <Route path="/gameCondition" element={<OscarGameCondition />} />
       <Route path="/favorite" element={<Favorite />} />
       <Route path="/addReviews" element={<AddReviews />} />
       <Route path="/rewiesList" element={<ReviesList />} />
