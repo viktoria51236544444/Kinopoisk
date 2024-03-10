@@ -55,8 +55,6 @@ const AddProduct = () => {
     newProduct.append("genres", genres);
 
     addProducts(newProduct);
-
-    // Resetting form fields after adding product
     setTitle("");
     setTagline("");
     setDescription("");

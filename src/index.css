@@ -5,8 +5,8 @@ body {
 }
 
 .pagination__button_active {
-  background-color: #fa4248;
-  color: white;
+  background-color: #fa4248 !important;
+  color: white !important;
 }
 
 .pagination {

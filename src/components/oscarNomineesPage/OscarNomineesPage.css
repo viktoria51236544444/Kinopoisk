@@ -1,0 +1,95 @@
+/* ! Oscar Nominees Navbar Start */
+.navbarOscar__container {
+  display: flex;
+  transition: background-color 0.3s ease;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10;
+  height: 78px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.navbarOscar__container.dark {
+  background-color: #0c354d;
+}
+.navbarOscar__container_logo {
+  margin-left: 170px;
+  border: none;
+  width: 154px;
+  height: 22px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTQuMjgzIDExLjIxN0M1NC4yODMgNS4zODkgNTYuOTMxLjYxIDYyLjI1NS42MWM1LjMyMyAwIDcuOTcxIDQuNzc4IDcuOTcxIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MSAxMC42MDUtNS4zMjQuMDA0LTcuOTcyLTQuNzc0LTcuOTcyLTEwLjYwNVptNy45NzIgNy41NzljMS44NyAwIDIuOTY1LTMuMzUyIDIuOTY1LTcuNTc2cy0xLjA5NS03LjU3NS0yLjk2NS03LjU3NWMtMS44NyAwLTIuOTY2IDMuMzUxLTIuOTY2IDcuNTc1LjAwNCA0LjIyNCAxLjA5NiA3LjU3NiAyLjk2NiA3LjU3NlpNLjAwMyAxLjAyaDQuMDN2Ni4yNjVsNC4yMDQtNi4yNjVoNC44OTRsLTcuMTEgNy4zNDNMMTkuMDAzIDEuMDJ2NC42NjJMNy4zNDcgMTAuMTEybDExLjY1NS0xLjEwNnY0LjQyOUw3LjM0OCAxMi4zM2wxMS42NTUgNC40Mjh2NC42NjJsLTEyLjk4LTcuMzQyIDcuMTEgNy4zNDJIOC4yMzJMNC4wMyAxNS4xNTV2Ni4yNjVIMFYxLjAyMWguMDAzWm0yMS44NzUgMGg0Ljc0N2wtLjcxOCAxMy4xOTggNS44OTktMTMuMTk4aDMuODg2djIwLjM5NmgtNC43NDhsLjcxOS0xMy4xOTgtNS45IDEzLjE5OGgtMy44ODZWMS4wMlptMjEuNDQgMEgzOC41N3YyMC4zOTZoNC43NDh2LTkuMzI0aDQuMDN2OS4zMjRoNC43NDhWMS4wMmgtNC43NDhWOC44OWgtNC4wM1YxLjAyWm00Mi43NjcgMEg3Mi40MTd2MjAuMzk2aDQuNzQ4VjQuMjI0aDQuMTcydjE3LjE5M2g0Ljc0OFYxLjAyWm0yLjE4OCAxMC4xOTZDODguMjczIDUuMzg5IDkwLjkyLjYxIDk2LjI0NC42MWM1LjMyNCAwIDcuOTcyIDQuNzc4IDcuOTcyIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MiAxMC42MDUtNS4zMjMgMC03Ljk3MS00Ljc3NC03Ljk3MS0xMC42MDVabTcuOTc1IDcuNTc5YzEuODcgMCAyLjk2NS0zLjM1MiAyLjk2NS03LjU3NnMtMS4wOTUtNy41NzUtMi45NjUtNy41NzVjLTEuODcgMC0yLjk2NiAzLjM1MS0yLjk2NiA3LjU3NXMxLjA5MiA3LjU3NiAyLjk2NiA3LjU3NlpNMTExLjE1NCAxLjAyaC00Ljc0OHYyMC4zOTZoMy44ODdsNS44OTktMTMuMTk4LS43MTkgMTMuMTk4aDQuNzQ4VjEuMDJoLTMuODg2bC01Ljg5OSAxMy4xOTguNzE4LTEzLjE5OFptMjEuNjk5IDEzLjE5OCA0LjUxOC42OTktLjE0My43Yy0uNzc4IDMuNzg5LTMuMTM2IDYuMjA0LTcuMDIyIDYuMjA0LTUuMzI0IDAtNy44MDEtNC43NzgtNy44MDEtMTAuNjA1IDAtNS44MjggMi40NzctMTAuNjA2IDcuODAxLTEwLjYwNiAzLjc0MyAwIDYuMTI5IDIuNDIgNi45NjYgNS45NzJsLjE0My42MTEtNC42MzIgMS4wNDljLS4zNDYtMi44MjUtMS4xOC00LjYwNS0yLjQ3Ny00LjYwNS0xLjg3IDAtMi43OTEgMy4zNTEtMi43OTEgNy41NzVzLjkyMSA3LjU3NiAyLjc5MSA3LjU3NmMxLjQxMi4wMDcgMi4zMDItMS44OSAyLjY0Ny00LjU3Wk0xNDQuMDc2IDEuMDJoLTQuNzQ1djIwLjM5Nmg0Ljc0OHYtOS4xOGwzLjU5NyA5LjE4SDE1M2wtNS43NTctMTAuNTE4IDUuNjE0LTkuODc4aC00Ljg5NWwtMy44ODYgOS4xNzlWMS4wMjFaIiBmaWxsPSIjZmZmIi8+PC9zdmc+)
+    no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.navbarOscar__container_logo-title {
+  font-size: 35px;
+  margin-top: -40px;
+}
+.navbarOscar_container_nav-title {
+  display: flex;
+  gap: 30px;
+  margin-left: 200px;
+  margin-top: -15px;
+}
+.navbarOscar_container_nav-title .one:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar_container_nav-title .two:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar_container_nav-title .three:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar__container_socialIcons {
+  display: flex;
+  margin-left: 200px;
+  gap: 20px;
+}
+.navbarOscar__container_socialIcons img {
+  width: 30px;
+}
+.navbarOscar__container_socialIcons img:hover {
+  width: 33px;
+  transition: all 0.5s ease-out;
+}
+/* ! Oscar Nominees Navbar Finish */
+
+/* ! Oscar Nominees Footer Start */
+
+.footerOscar__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+  min-height: 30vh;
+  background-color: #0c354d;
+}
+.footerOscar__container p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footerOscar__container_socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.footerOscar__container_socialIcons img {
+  width: 30px;
+}
+.footerOscar__container-content {
+  margin-top: 70px;
+}
+/* ! Oscar Nominees Footer Finish */
+
+.movie-container:hover .img-container {
+  transform: translateY(-10px);
+}

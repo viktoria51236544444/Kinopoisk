@@ -7,7 +7,7 @@ import NomineesOscarFooter from "../components/oscarNomineesPage/NomineesOscarFo
 
 const OscarNomineesPage = () => {
   return (
-    <div>
+    <div className="oscarNomineesPage__container">
       <NomineesOscarNavbar />
       <NomineesOscar />
       <NomineesOscarFooter />

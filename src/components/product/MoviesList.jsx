@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import MoviesCart from "./MoviesCart";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const MoviesList = () => {
   const { products, getProducts, pages } = useProduct();
@@ -31,11 +31,6 @@ const MoviesList = () => {
     setCurrentPage(pageNumber);
   };
 
-  useEffect(() => {
-    getProducts();
-  }, []);
-  console.log(products);
-
   return (
     <div>
       {products.map((elem) => (
@@ -53,8 +48,8 @@ const MoviesList = () => {
           <button
             onClick={() => handlePageChange(elem)}
             key={elem}
-            className={`pagination__button ${
-              currentPage === elem ? "active" : ""
+            className={`pagination__button && ${
+              currentPage === elem ? "pagination__button_active" : ""
             }`}
           >
             {elem}

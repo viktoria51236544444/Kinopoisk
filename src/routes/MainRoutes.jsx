@@ -20,6 +20,10 @@ import OnlineCinema from "../components/OnlineCinema/OnlineCinema";
 import MoviesCart from "../components/product/MoviesCart";
 import MoviesList from "../components/product/MoviesList";
 import Favorite from "../components/MoviesAndSeries/Favorite";
+import AddReviews from "../components/MoviesAndSeries/AddReviews";
+import ReviewsCard from "../components/MoviesAndSeries/ReviewsCard";
+import ReviesList from "../components/MoviesAndSeries/ReviesList";
+import EditReviews from "../components/MoviesAndSeries/EditReviews";
 
 const MainRoutes = () => {
   return (
@@ -42,7 +46,11 @@ const MainRoutes = () => {
       <Route path="/onlineCinema" element={<OnlineCinema />} />
       <Route path="/moviesCard" element={<MoviesCart />} />
       <Route path="/moviesList" element={<MoviesList />} />
+      {/* <Route path="/gameCondition" element={<OscarGameCondition />} /> */}
       <Route path="/favorite" element={<Favorite />} />
+      <Route path="/addReviews" element={<AddReviews />} />
+      <Route path="/rewiesList" element={<ReviesList />} />
+      <Route path="/editReviews/:id" element={<EditReviews />} />
     </Routes>
   );
 };
