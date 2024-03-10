@@ -26,7 +26,11 @@ const OscarGame = () => {
           принимаются до 01:30 11 марта (Мск). Чем больше лауреатов вы угадаете,
           тем выше шансы выиграть. 100 победителей получат призы от Кинопоиска.
         </p>
-        <NavLink to={"/gameCondition"} style={{ textDecoration: "none" }}>
+        <NavLink
+          to={"/gameCondition"}
+          target="_blank"
+          style={{ textDecoration: "none" }}
+        >
           <p
             style={{
               fontSize: "16px",

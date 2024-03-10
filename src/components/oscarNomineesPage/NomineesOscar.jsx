@@ -318,26 +318,52 @@ const NomineesOscar = () => {
     },
   ];
   //! Slider Finish
+
+  // ! Nominees List Start
   const bestMoviesList = [
     {
       nameRus: "Анатомия падения",
       nameEng: "Anatomy of a Fall",
     },
     {
-      nameRus: "Анатомия падения",
-      nameEng: "Anatomy of a Fall",
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
     },
     {
       nameRus: "Анатомия падения",
       nameEng: "Anatomy of a Fall",
     },
     {
-      nameRus: "Анатомия падения",
-      nameEng: "Anatomy of a Fall",
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
     },
     {
-      nameRus: "Анатомия падения",
-      nameEng: "Anatomy of a Fall",
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+    {
+      nameRus: "Зона интересов",
+      nameEng: "The Zone of Interest",
+    },
+    {
+      nameRus: "Американское чтиво",
+      nameEng: "American Fiction",
+    },
+    {
+      nameRus: "Барби",
+      nameEng: "Barbie",
+    },
+    {
+      nameRus: "Оставленные",
+      nameEng: "The Holdovers",
+    },
+    {
+      nameRus: "Маэстро",
+      nameEng: "Maestro",
+    },
+    {
+      nameRus: "Прошлые жизни",
+      nameEng: "Past Lives",
     },
   ];
   const bestActorNomineesList = [
@@ -457,48 +483,269 @@ const NomineesOscar = () => {
 
   const bestSceneriesList = [
     {
-      name: "Анатомия падения",
-      movie: "Anatomy of a Fall",
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
     },
     {
-      name: "Оставленные",
-      movie: "The Holdovers",
+      nameRus: "Оставленные",
+      nameEng: "The Holdovers",
     },
     {
-      name: "Маэстро",
-      movie: "Maestro",
+      nameRus: "Маэстро",
+      nameEng: "Maestro",
     },
     {
-      name: "Май Декабрь",
-      movie: "May December",
+      nameRus: "Май Декабрь",
+      nameEng: "May December",
     },
     {
-      name: "Прошлые жизни",
-      movie: "Past Lives",
+      nameRus: "Прошлые жизни",
+      nameEng: "Past Lives",
     },
   ];
   const bestAdaptiveSceneriesList = [
     {
-      name: "Американское чтиво",
-      movie: "American Fiction",
+      nameRus: "Американское чтиво",
+      nameEng: "American Fiction",
     },
     {
-      name: "Зона интересов",
-      movie: "The Zone of Interest",
+      nameRus: "Зона интересов",
+      nameEng: "The Zone of Interest",
     },
     {
-      name: "Оппенгеймер",
-      movie: "Openheimer",
+      nameRus: "Оппенгеймер",
+      nameEng: "Openheimer",
     },
     {
-      name: "Барби",
-      movie: "Barbie",
+      nameRus: "Барби",
+      nameEng: "Barbie",
     },
     {
-      name: "Бедные-несчастные",
-      movie: "Poor Things",
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
     },
   ];
+  const bestWorkOfProductionArtist = [
+    {
+      nameRus: "Барби",
+      nameEng: "Barbie",
+    },
+    {
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Openheimer",
+    },
+    {
+      nameRus: "Наполеон",
+      nameEng: "Napoleon",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  const bestCameraWork = [
+    {
+      nameRus: "Граф",
+      nameEng: "The Count",
+    },
+    {
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
+    },
+    {
+      nameRus: "Маэстро",
+      nameEng: "Maestro",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  const bestAnimateMovies = [
+    {
+      nameRus: "Мальчик и птица",
+      nameEng: "The Boy and the Heron",
+    },
+    {
+      nameRus: "Элементарно",
+      nameEng: "Elemental",
+    },
+    {
+      nameRus: "Нимона",
+      nameEng: "Nimona",
+    },
+    {
+      nameRus: "Мечты робота",
+      nameEng: "Robot Dreams",
+    },
+    {
+      nameRus: "Человек-паук: Паутина вселенных",
+      nameEng: "Spider-Man: Across the Spider-Verse",
+    },
+  ];
+  const bestWorkInForeignLanguage = [
+    {
+      nameRus: "Идеальные дни",
+      nameEng: "Perfect Days",
+    },
+    {
+      nameRus: "Зона интересов",
+      nameEng: "The Zone of Interest",
+    },
+    {
+      nameRus: "Я – капитан",
+      nameEng: "Me Captain",
+    },
+    {
+      nameRus: "Общество снега",
+      nameEng: "Society of the Snow",
+    },
+    {
+      nameRus: "Учительская",
+      nameEng: "The Teachers' Lounge",
+    },
+  ];
+  const bestVisualEffects = [
+    {
+      nameRus: "Создатель",
+      nameEng: "The Creator",
+    },
+    {
+      nameRus: "Годзилла: Минус один",
+      nameEng: "Godzilla: Minus One",
+    },
+    {
+      nameRus: "Миссия невыполнима: Смертельная ...",
+      nameEng: "Mission: Impossible - Dead Reckoning Part One",
+    },
+    {
+      nameRus: "Стражи Галактики. Часть 3",
+      nameEng: "Guardians of the Galaxy Vol. 3",
+    },
+    {
+      nameRus: "Наполеон",
+      nameEng: "Napoleon",
+    },
+  ];
+  const bestCostumes = [
+    {
+      nameRus: "Барби",
+      nameEng: "Barbie",
+    },
+    {
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
+    },
+    {
+      nameRus: "Наполеон",
+      nameEng: "Napoleon",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  const bestInstallation = [
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+    {
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
+    },
+    {
+      nameRus: "Оставленные",
+      nameEng: "The Holdovers",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  const bestSongs = [
+    {
+      name: "The Fire Inside",
+      movie: "Обжигающе горячий",
+    },
+    {
+      name: "I’m Just Ken",
+      movie: "Барби",
+    },
+    {
+      name: "It Never Went Away",
+      movie: "Американская симфония",
+    },
+    {
+      name: "Wahzhazhe (A Song for My People)",
+      movie: "Убийцы цветочной луны",
+    },
+    {
+      name: "What Was I Made for",
+      movie: "Барби",
+    },
+  ];
+  const bestSoundtrack = [
+    {
+      nameRus: "Американское чтиво",
+      nameEng: "American Fiction",
+    },
+    {
+      nameRus: "Индиана Джонс и колесо судьбы",
+      nameEng: "Indiana Jones and the Dial of Destiny",
+    },
+    {
+      nameRus: "Убийцы цветочной луны",
+      nameEng: "Killers of the Flower Moon",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  const bestMakeUp = [
+    {
+      nameRus: "Голда. Судный день",
+      nameEng: "Golda",
+    },
+    {
+      nameRus: "Маэстро",
+      nameEng: "Maestro",
+    },
+    {
+      nameRus: "Оппенгеймер",
+      nameEng: "Oppenheimer",
+    },
+    {
+      nameRus: "Общество снега",
+      nameEng: "Society of the Snow",
+    },
+    {
+      nameRus: "Бедные-несчастные",
+      nameEng: "Poor Things",
+    },
+  ];
+  // ! Nominees List Finish
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h2 style={{ color: "white" }}>Номинанты</h2>
@@ -678,6 +925,850 @@ const NomineesOscar = () => {
                 {actress.movie}
               </p>
               {index !== bestActressNomineesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* Лучший режиссер*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучший режиссер
+          </h3>
+          {bestDirectorNomineesList.map((directorList, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {directorList.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {directorList.movie}
+              </p>
+              {index !== bestMoviesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучшая мужская роль второго плана */}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшая мужская роль <br /> второго плана
+          </h3>
+          {bestActorNomineesInSecondPlanList.map((actor2, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {actor2.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {actor2.movie}
+              </p>
+              {index !== bestActorNomineesInSecondPlanList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучший женская роль второго плана*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшая женская роль <br /> второго плана
+          </h3>
+          {bestActressNomineesInSecondPlanList.map((actress2, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {actress2.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {actress2.movie}
+              </p>
+              {index !== bestActressNomineesInSecondPlanList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* Лучший сценарий*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучший сценарий
+          </h3>
+          {bestSceneriesList.map((sceneries, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {sceneries.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {sceneries.nameEng}
+              </p>
+              {index !== bestSceneriesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучший адаптированный сценарий*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшией адапти-
+            <br /> рованный сценарий
+          </h3>
+          {bestAdaptiveSceneriesList.map((adaptive, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {adaptive.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {adaptive.nameEng}
+              </p>
+              {index !== bestAdaptiveSceneriesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучшая работа художника-постановщика*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШАЯ РАБОТА ХУДОЖ-
+            <br />
+            НИКА- ПОСТАНОВЩИКА
+          </h3>
+          {bestWorkOfProductionArtist.map((artist, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {artist.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {artist.nameEng}
+              </p>
+              {index !== bestWorkOfProductionArtist.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* ЛУЧШАЯ ОПЕРАТОРСКАЯ РАБОТА*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШАЯ ОПЕРАТОРСКАЯ <br /> РАБОТА
+          </h3>
+          {bestCameraWork.map((cameraWork, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {cameraWork.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {cameraWork.nameEng}
+              </p>
+              {index !== bestCameraWork.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/*ЛУЧШИЙ АНИМАЦИОННЫЙ ФИЛЬМ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЙ АНИМАЦИОННЫЙ <br /> ФИЛЬМ
+          </h3>
+          {bestAnimateMovies.map((animation, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {animation.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {animation.nameEng}
+              </p>
+              {index !== bestAnimateMovies.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* ЛУЧШИЙ ФИЛЬМ НА ИНОСТРАННОМ ЯЗЫКЕ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЙ ФИЛЬМ НА <br />
+            ИНОСТРАННОМ ЯЗЫКЕ
+          </h3>
+          {bestWorkInForeignLanguage.map((foreign, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {foreign.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {foreign.nameEng}
+              </p>
+              {index !== bestWorkInForeignLanguage.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* ЛУЧШИЕ ВИЗУАЛЬНЫЕ ЭФФЕКТЫ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЕ ВИЗУАЛЬНЫЕ <br /> ЭФФЕКТЫ
+          </h3>
+          {bestVisualEffects.map((efffect, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {efffect.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {efffect.nameEng}
+              </p>
+              {index !== bestCameraWork.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/*ЛУЧШИЕ КОСТЮМЫ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЕ КОСТЮМЫ
+          </h3>
+          {bestCostumes.map((costume, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {costume.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {costume.nameEng}
+              </p>
+              {index !== bestAnimateMovies.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* ЛУЧШИЙ МОНТАЖ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЙ МОНТАЖ
+          </h3>
+          {bestInstallation.map((installation, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {installation.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {installation.nameEng}
+              </p>
+              {index !== bestInstallation.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* ЛУЧШАЯ ПЕСНЯ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШАЯ ПЕСНЯ
+          </h3>
+          {bestSongs.map((song, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {song.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {song.movie}
+              </p>
+              {index !== bestSongs.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/*ЛУЧШИЙ САУНДТРЕК*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЙ САУНДТРЕК
+          </h3>
+          {bestSoundtrack.map((soundtrack, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {soundtrack.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {soundtrack.nameEng}
+              </p>
+              {index !== bestSoundtrack.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* ЛУЧШИЙ ГРИМ И ПРИЧЕСКИ*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            ЛУЧШИЙ ГРИМ И ПРИЧЕСКИ
+          </h3>
+          {bestMakeUp.map((makeUp, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {makeUp.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {makeUp.nameEng}
+              </p>
+              {index !== bestMakeUp.length - 1 && (
                 <hr style={{ border: "0.1px solid #D2B48C" }} />
               )}
             </div>
