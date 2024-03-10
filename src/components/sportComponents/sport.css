@@ -147,7 +147,15 @@
   width: 13.5%;
   height: 10%;
 }
-
+.b6 {
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease,
+    opacity 0.3s ease;
+}
+.b6:hover {
+  transform: scale(1.1);
+  width: 13.5%;
+  height: 10%;
+}
 /* ! navbat start */
 .burger-button {
   background: none;
