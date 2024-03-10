@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import ProductContextProvider from "./context/ProductContextProvider";
 import { ThemeProvider } from "./context/Background";
 import FavoriteContextProvider from "./context/FavoriteContextProvider";
+import ReviewsContextProvider from "./context/ReviewsContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,9 +19,11 @@ root.render(
     <ThemeProvider>
       <ProductContextProvider>
         <FavoriteContextProvider>
-          <Provider store={store}>
-            <App />
-          </Provider>
+          <ReviewsContextProvider>
+            <Provider store={store}>
+              <App />
+            </Provider>
+          </ReviewsContextProvider>
         </FavoriteContextProvider>
       </ProductContextProvider>
     </ThemeProvider>
