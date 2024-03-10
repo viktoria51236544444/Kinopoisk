@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 const AddProduct = () => {
   const {
     addProducts,

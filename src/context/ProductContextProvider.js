@@ -84,7 +84,7 @@ const ProductContextProvider = ({ children }) => {
   // ! GET
   const getProducts = async () => {
     try {
-      const { data } = await axios(`${API2}/movies/`);
+      const { data } = await axios(`${API2}/movies/${window.location.search}`);
       console.log(data);
       dispatch({
         type: "GET_PRODUCTS",
@@ -94,7 +94,7 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-  getProducts();
+  // getProducts();
   // ! CREATE
   const addProducts = async (newProduct) => {
     await axios.post(`${API2}/movies/`, newProduct, getConfig());
@@ -143,6 +143,7 @@ const ProductContextProvider = ({ children }) => {
     genre: state.genre,
     getGenres,
     editProduct,
+    pages: state.pages,
   };
 
   return (
