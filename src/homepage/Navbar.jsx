@@ -113,7 +113,7 @@ const Navbar = () => {
         />
         {dropdownVisible && (
           <div className="navbar__dropdown">
-            {!user && (
+            {!currentUser && (
               <>
                 <button
                   className="dropdown-button"
@@ -126,7 +126,7 @@ const Navbar = () => {
                 </button>
               </>
             )}
-            {user && (
+            {currentUser && (
               <button className="dropdown-button" onClick={logoutHandler}>
                 Выйти
               </button>

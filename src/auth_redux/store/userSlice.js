@@ -46,6 +46,8 @@ export const userSlice = createSlice({
         } else {
           state.loading = false;
           state.registrationStatus = "SUCCESS";
+          const res = action.payload;
+          console.log("action payload after register", res);
         }
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -63,7 +65,7 @@ export const userSlice = createSlice({
           state.status = "ERROR";
         } else {
           state.status = "SUCCESS";
-          console.log("action.payload", action.payload);
+          // console.log("action.payload", action.payload);
           state.refreshToken = action.payload?.res?.data?.refresh;
           localStorage.setItem("refresh", action.payload?.res?.data?.refresh);
           localStorage.setItem(

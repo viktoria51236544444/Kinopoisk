@@ -6,9 +6,9 @@ import Footer from "./homepage/Footer";
 const App = () => {
   return (
     <div>
-      {/* <Navbar />
-      <MainRoutes /> */}
-      <Footer />
+      <Navbar />
+      <MainRoutes />
+      {/* <Footer /> */}
     </div>
   );
 };
