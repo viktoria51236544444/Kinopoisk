@@ -24,6 +24,7 @@ import AddReviews from "../components/MoviesAndSeries/AddReviews";
 import ReviewsCard from "../components/MoviesAndSeries/ReviewsCard";
 import ReviesList from "../components/MoviesAndSeries/ReviesList";
 import EditReviews from "../components/MoviesAndSeries/EditReviews";
+import OscarGameCondition from "../components/oscarGamePage/OscarGameCondition";
 
 const MainRoutes = () => {
   return (

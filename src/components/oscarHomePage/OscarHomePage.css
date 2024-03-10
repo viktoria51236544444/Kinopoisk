@@ -144,11 +144,11 @@
   justify-content: center;
 }
 
-.next {
-  margin-right: -10% !important;
-  margin-top: -50px;
+/* .next { */
+/* margin-right: -10% !important; */
+/* margin-top: -50px;
   height: 100px;
-}
+} */
 .prev {
   margin-left: -12%;
   margin-top: -6%;
