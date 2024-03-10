@@ -19,6 +19,7 @@ import Sport from "../components/sportComponents/Sport";
 import OnlineCinema from "../components/OnlineCinema/OnlineCinema";
 import MoviesCart from "../components/product/MoviesCart";
 import MoviesList from "../components/product/MoviesList";
+import Favorite from "../components/MoviesAndSeries/Favorite";
 
 const MainRoutes = () => {
   return (
@@ -41,6 +42,7 @@ const MainRoutes = () => {
       <Route path="/onlineCinema" element={<OnlineCinema />} />
       <Route path="/moviesCard" element={<MoviesCart />} />
       <Route path="/moviesList" element={<MoviesList />} />
+      <Route path="/favorite" element={<Favorite />} />
     </Routes>
   );
 };

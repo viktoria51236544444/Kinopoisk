@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useFavorite } from "../../context/FavoriteContextProvider";
 import { useProduct } from "../../context/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
 const MoviesCart = ({ elem }) => {
   const { deleteProduct } = useProduct();
+  const { favorite, addFavorite, removeFavorite } = useFavorite();
   const navigate = useNavigate();
+
+  const isFavorite = favorite.some(
+    (favoriteItem) => favoriteItem.slug === elem.slug
+  );
+
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      removeFavorite(elem);
+    } else {
+      addFavorite(elem);
+    }
+  };
+
   // ! like
   const [liked, setLiked] = useState(false);
   // Используем useEffect чтобы при перезагрузки стрвницы он оставался
@@ -34,6 +48,9 @@ const MoviesCart = ({ elem }) => {
         <p>{elem.category}</p>
         <button onClick={() => deleteProduct(elem.slug)}>delete</button>
         <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
+        <button onClick={handleFavoriteToggle}>
+          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+        </button>
         <div
           style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
           onClick={toggleLike}

@@ -128,7 +128,6 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-  //? like
 
   const values = {
     getProducts,
