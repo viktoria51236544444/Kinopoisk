@@ -79,6 +79,7 @@ export const logoutUser = createAsyncThunk("logout/", async () => {
 
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh");
+    localStorage.removeItem("email");
 
     return res;
   } catch (err) {
