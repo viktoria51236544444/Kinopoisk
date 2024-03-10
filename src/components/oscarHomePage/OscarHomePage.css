@@ -179,9 +179,9 @@
   left: 200px;
   top: 50%;
   transform: translateY(-50%);
-  width: 900px;
+  width: 800px;
   max-width: calc(100% - 200px);
-  height: 500px;
+  height: 400px;
   z-index: 999;
   overflow: hidden;
   padding: 20px;
@@ -269,4 +269,20 @@ iframe {
 }
 .footerOscar__container-content {
   margin-top: 70px;
+}
+.watch_button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 15px;
+  border-radius: 1000px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
 }
