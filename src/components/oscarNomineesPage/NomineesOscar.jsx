@@ -7,6 +7,9 @@ import BestActressNomineesSlide from "./BestActressNomineesSlide";
 import BestDirectorNomineesSlide from "./BestDirectorNomineesSlide";
 import BestActorNomineesInSecondPlanSlide from "./BestActorNomineesInSecondPlanSlide";
 import BestActorsNomineeSlide from "./BestActorsNomineeSlide";
+import BestActressNomineesInSecondPlan from "./BestActressNomineesInSecondPlan";
+import BestSceneries from "./BestSceneries";
+import BestAdaptiveSceneries from "./BestAdaptiveSceneries";
 
 const NomineesOscar = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,6 +18,7 @@ const NomineesOscar = () => {
     setCurrentSlide(index);
   };
 
+  //! Slider Start
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -217,6 +221,284 @@ const NomineesOscar = () => {
       movie: "Бедные-несчастные",
     },
   ];
+  const bestActressNomineesInSecondPlan = [
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/118781/14cf47faf2fe552696103b5854409a59a669eeab/orig",
+      name: "Джоди Фостер",
+      movie: "Дайана Найэд",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/118781/5428d168b9a05b1b3295c82452fc8c4ad13b416a/orig",
+      name: "Давайн Джой Рэндольф",
+      movie: "Оставленные",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/60661/16cb746904999e4b0a25132b5a777ed24f122c00/orig",
+      name: "Америка Феррера",
+      movie: "Барби",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/998550/b65ab57c64cd04265a952c276fe3081328d5f68a/orig",
+      name: "Даниэль Брукс",
+      movie: "Цвет пурпурный",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/994123/4bbf7f0fa03854446c652e8663d510fcfe920f04/orig",
+      name: "Эмили Блант",
+      movie: "Оппенгеймер",
+    },
+  ];
+  const bestSceneries = [
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/998550/51b502749ba7b8a0ab236497e24e56a13d320004/orig",
+      name: "Анатомия падения",
+      movie: "Anatomy of a Fall",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/120922/61bc34b45cbdda0bd541a83dba2af2b62e90ca39/orig",
+      name: "Оставленные",
+      movie: "The Holdovers",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/61205/e2ec361e026d1abf90693ea3c4976b93c984661c/orig",
+      name: "Маэстро",
+      movie: "Maestro",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/61205/68c52ef901f70e26b8592bd537de7bc13031e3ab/orig",
+      name: "Май Декабрь",
+      movie: "May December",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/118781/4171c484828f5d683dd2aee668fdc49c255cb68a/orig",
+      name: "Прошлые жизни",
+      movie: "Past Lives",
+    },
+  ];
+  const bestAdaptiveSceneries = [
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/118781/acf7d6978838604f3930a68ecd8ad42a7c7e7dc7/orig",
+      name: "Американское чтиво",
+      movie: "American Fiction",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/120922/d7cd84f78cce3de5f3f58b786c70c28be989b526/orig",
+      name: "Зона интересов",
+      movie: "The Zone of Interest",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/118781/072ddcaad7b44787ca93645e9e14063d20bc1958/orig",
+      name: "Оппенгеймер",
+      movie: "Openheimer",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/60661/9eb2366accbded2e8dfc6f334504f7c65a2d7e1c/orig",
+      name: "Барби",
+      movie: "Barbie",
+    },
+    {
+      image:
+        "https://avatars.mds.yandex.net/get-bunker/120922/a30bfe8d4eabb403ef5ff29bbb43619460fc14f2/orig",
+      name: "Бедные-несчастные",
+      movie: "Poor Things",
+    },
+  ];
+  //! Slider Finish
+  const bestMoviesList = [
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+    {
+      nameRus: "Анатомия падения",
+      nameEng: "Anatomy of a Fall",
+    },
+  ];
+  const bestActorNomineesList = [
+    {
+      name: "Пол Джаматти",
+      movie: "Оставленные",
+    },
+    {
+      name: "Джеффри Райт",
+      movie: "Американское чтиво",
+    },
+    {
+      name: "Брэдли Купер",
+      movie: "Маэстро",
+    },
+    {
+      name: "Колман Доминго",
+      movie: "Растин",
+    },
+    {
+      name: "Киллиан Мерфи",
+      movie: "Оппенгеймер",
+    },
+  ];
+
+  const bestActressNomineesList = [
+    {
+      name: "Аннетт Бенинг",
+      movie: "Дайана Найэд",
+    },
+    {
+      name: "Лили Гладстоун",
+      movie: "Убийцы цветочной луны",
+    },
+    {
+      name: "Сандра Хюллер",
+      movie: "Анатомия падения",
+    },
+    {
+      name: "Кэри Маллиган",
+      movie: "Маэстро",
+    },
+    {
+      name: "Эмма Стоун",
+      movie: "Бедные-несчастные",
+    },
+  ];
+
+  const bestDirectorNomineesList = [
+    {
+      name: "Жюстин Трие",
+      movie: "Анатомия падения",
+    },
+    {
+      name: "Мартин Скорсезе",
+      movie: "Убийцы цветочной луны",
+    },
+    {
+      name: "Кристофер Нолан",
+      movie: "Оппенгеймер",
+    },
+    {
+      name: "Йоргос Лантимос",
+      movie: "Бедные-несчастные",
+    },
+    {
+      name: "Джонатан Глейзер",
+      movie: "Зона интересов",
+    },
+  ];
+
+  const bestActorNomineesInSecondPlanList = [
+    {
+      name: "Стерлинг К.Браун",
+      movie: "Американское чтиво",
+    },
+    {
+      name: "Роберт Де Ниро",
+      movie: "Убийцы цветочной луны",
+    },
+    {
+      name: "Роберт Дауни мл.",
+      movie: "Оппенгеймер",
+    },
+    {
+      name: "Райан Гослинг",
+      movie: "Барби",
+    },
+    {
+      name: "Марк Руффало",
+      movie: "Бедные-несчастные",
+    },
+  ];
+
+  const bestActressNomineesInSecondPlanList = [
+    {
+      name: "Джоди Фостер",
+      movie: "Дайана Найэд",
+    },
+    {
+      name: "Давайн Джой Рэндольф",
+      movie: "Оставленные",
+    },
+    {
+      name: "Америка Феррера",
+      movie: "Барби",
+    },
+    {
+      name: "Даниэль Брукс",
+      movie: "Цвет пурпурный",
+    },
+    {
+      name: "Эмили Блант",
+      movie: "Оппенгеймер",
+    },
+  ];
+
+  const bestSceneriesList = [
+    {
+      name: "Анатомия падения",
+      movie: "Anatomy of a Fall",
+    },
+    {
+      name: "Оставленные",
+      movie: "The Holdovers",
+    },
+    {
+      name: "Маэстро",
+      movie: "Maestro",
+    },
+    {
+      name: "Май Декабрь",
+      movie: "May December",
+    },
+    {
+      name: "Прошлые жизни",
+      movie: "Past Lives",
+    },
+  ];
+  const bestAdaptiveSceneriesList = [
+    {
+      name: "Американское чтиво",
+      movie: "American Fiction",
+    },
+    {
+      name: "Зона интересов",
+      movie: "The Zone of Interest",
+    },
+    {
+      name: "Оппенгеймер",
+      movie: "Openheimer",
+    },
+    {
+      name: "Барби",
+      movie: "Barbie",
+    },
+    {
+      name: "Бедные-несчастные",
+      movie: "Poor Things",
+    },
+  ];
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h2 style={{ color: "white" }}>Номинанты</h2>
@@ -228,7 +510,180 @@ const NomineesOscar = () => {
         <BestActorNomineesInSecondPlanSlide
           nominees={bestActorNomineesInSecondPlan}
         />
+        <BestActressNomineesInSecondPlan
+          nominees={bestActressNomineesInSecondPlan}
+        />
+        <BestSceneries nominees={bestSceneries} />
+        <BestAdaptiveSceneries nominees={bestAdaptiveSceneries} />
       </Slider>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "50px",
+        }}
+      >
+        {/* Лучшие фильмы */}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшие фильмы
+          </h3>
+          {bestMoviesList.map((movies, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {movies.nameRus}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {movies.nameEng}
+              </p>
+              {index !== bestMoviesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучшая мужская роль */}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшая мужская роль
+          </h3>
+          {bestActorNomineesList.map((actor, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {actor.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {actor.movie}
+              </p>
+              {index !== bestActorNomineesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Лучший женская роль*/}
+        <div style={{ textAlign: "left" }}>
+          <h3
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.47",
+              color: "#b7a261",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            Лучшая женская роль
+          </h3>
+          {bestActressNomineesList.map((actress, index) => (
+            <div key={index}>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  fontSize: "15px",
+                  lineHeight: 1.2,
+                  color: "#FFF",
+                  fontWeight: 600,
+                  transition: "color 0.3s",
+                }}
+                className="actor-name"
+              >
+                {actress.name}
+              </p>
+              <p
+                style={{
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  display: "block",
+                  marginTop: "4px",
+                  pointerEvents: "none",
+                  fontSize: "13px",
+                  lineHeight: 1.15,
+                  color: "rgba(255, 255, 255, 0.7)",
+                  marginTop: "-10px",
+                }}
+              >
+                {actress.movie}
+              </p>
+              {index !== bestActressNomineesList.length - 1 && (
+                <hr style={{ border: "0.1px solid #D2B48C" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

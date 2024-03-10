@@ -9,13 +9,13 @@ const OscarGameNavbar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    const audio = document.getElementById("audio");
     if (audio.paused) {
-      audio.play(); // Если аудио на паузе, запускаем воспроизведение
-      setIsPlaying(true); // Обновляем состояние
+      audio.play();
+      setIsPlaying(true);
     } else {
-      audio.pause(); // Если аудио воспроизводится, ставим на паузу
-      setIsPlaying(false); // Обновляем состояние
+      audio.pause();
+      setIsPlaying(false);
     }
   };
   return (
@@ -53,7 +53,7 @@ const OscarGameNavbar = () => {
             <img src={Vk} alt="" />
           </div>
         </div>
-        <div style={{ marginTop: "-4px", marginLeft: "3px" }}>
+        <div style={{ marginTop: "-4px", marginLeft: "10px" }}>
           <IconButton color="primary" onClick={togglePlay}>
             {isPlaying ? <Pause /> : <PlayArrow />}
           </IconButton>

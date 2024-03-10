@@ -54,7 +54,7 @@ const NomineesOscarNavbar = () => {
             <img src={Vk} alt="" />
           </div>
         </div>
-        <div style={{ marginTop: "-4px", marginLeft: "3px" }}>
+        <div style={{ marginTop: "-4px", marginLeft: "10px" }}>
           <IconButton color="primary" onClick={togglePlay}>
             {isPlaying ? <Pause /> : <PlayArrow />}
           </IconButton>

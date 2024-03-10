@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BestDirectorNomineesSlide = ({ nominees }) => {
+const BestActressNomineesInSecondPlan = ({ nominees }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -36,27 +36,27 @@ const BestDirectorNomineesSlide = ({ nominees }) => {
           color: "#b7a261",
           textTransform: "uppercase",
           fontWeight: 600,
-          marginLeft: "-63%",
+          marginLeft: "-50%",
         }}
       >
-        Лучший режиссер
+        Лучшая женская роль второго плана
       </h3>
       <div style={nomineeSlideStyles}>
-        {nominees.map((director, index) => (
+        {nominees.map((actress2, index) => (
           <div
+            key={index}
             style={{
               display: "flex",
               flexDirection: "column",
               width: "15%",
             }}
-            key={index}
           >
             <img
               style={{
                 ...grayscaleImageStyle,
                 ...(hoveredIndex === index && coloredImageStyle),
               }}
-              src={director.image}
+              src={actress2.image}
               alt=""
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -65,7 +65,7 @@ const BestDirectorNomineesSlide = ({ nominees }) => {
               className="actor-name"
               style={{ color: "white", fontSize: "16px" }}
             >
-              {director.name}
+              {actress2.name}
             </p>
             <p
               className="actor-movie"
@@ -75,7 +75,7 @@ const BestDirectorNomineesSlide = ({ nominees }) => {
                 marginTop: "-10px",
               }}
             >
-              {director.movie}
+              {actress2.movie}
             </p>
           </div>
         ))}
@@ -83,4 +83,5 @@ const BestDirectorNomineesSlide = ({ nominees }) => {
     </div>
   );
 };
-export default BestDirectorNomineesSlide;
+
+export default BestActressNomineesInSecondPlan;

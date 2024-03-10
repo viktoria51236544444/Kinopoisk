@@ -145,7 +145,7 @@
 }
 
 .next {
-  margin-left: 98%;
+  margin-right: -10% !important;
   margin-top: -50px;
   height: 100px;
 }
