@@ -3,3 +3,36 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.pagination__button_active {
+  background-color: #fa4248;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.pagination__button {
+  transform: scale(1) rotate(19deg) translateX(0px) translateY(0px) skewX(-8deg)
+    skewY(-20deg);
+  padding: 0.3em 0.6em;
+  background-color: #edebeb;
+
+  color: #8b969c;
+}
+
+.pagination__button:hover {
+  background-color: #fa4248;
+  border: 1px solid #fff;
+}
+
+.pagination__button-back:hover {
+  color: #fa4248;
+  background-color: #edebeb;
+}

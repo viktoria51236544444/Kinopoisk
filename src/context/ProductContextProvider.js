@@ -143,6 +143,7 @@ const ProductContextProvider = ({ children }) => {
     genre: state.genre,
     getGenres,
     editProduct,
+    pages: state.pages,
   };
 
   return (
