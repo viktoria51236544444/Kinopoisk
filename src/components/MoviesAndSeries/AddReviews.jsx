@@ -6,22 +6,31 @@ import { useParams } from "react-router-dom";
 const AddReviews = () => {
   const { getReviews, addReviews } = useReviews();
   const { id } = useParams();
+  const { products, getProducts } = useProduct();
 
   useEffect(() => {
     getReviews();
+    getProducts();
   }, []);
+
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [movie, setMovie] = useState("");
 
   const handleClick = () => {
-    const newReviews = new FormData();
-    newReviews.append("email", email);
-    newReviews.append("name", name);
-    newReviews.append("text", text);
-    newReviews.append("movie", movie);
-    addReviews(newReviews);
+    const newReview = {
+      email: email,
+      name: name,
+      text: text,
+      movie: movie,
+    };
+    addReviews(newReview);
+  };
+
+  const handleFilmChange = (event) => {
+    const selectedValue = event.target.value;
+    setMovie(selectedValue);
   };
 
   return (
@@ -41,7 +50,18 @@ const AddReviews = () => {
         placeholder="text"
         onChange={(e) => setText(e.target.value)}
       />
-      <input type="text" onChange={(e) => setMovie(e.target.value)} />
+
+      <div>
+        <label htmlFor="filmSelect">Выберите фильм:</label>
+        <select id="filmSelect" onChange={handleFilmChange} value={movie}>
+          <option value="">Выберите фильм</option>
+          {products.map((elem) => (
+            <option value={elem.slug} key={elem.slug}>
+              {elem.slug}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <button onClick={handleClick}>add</button>
     </div>

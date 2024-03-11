@@ -173,7 +173,6 @@ const OnlineCinema = () => {
             <p>Главное</p>
             <p>Мое</p>
             <p>Каналы</p>
-            <p>Спорт</p>
           </div>
           <div>
             <img src="" alt="" />
