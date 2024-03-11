@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./kids.scss";
 import logo from "./assets/Kinopoisk_colored_logo_(2021-present).svg.png";
 import SearchIcon from "@mui/icons-material/Search";
@@ -19,15 +19,31 @@ import lovsy from "./assets/lovsy.webp";
 import volna from "./assets/volna.webp";
 import clouds from "./assets/clouds.webp";
 import tokio from "./assets/tokio.webp";
-
+import { IconButton } from "@mui/material";
+import { Pause, PlayArrow } from "@mui/icons-material";
+import Music from "./assets/naruto.mp3";
 const Anime = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
   return (
     <div className="kids">
       <div>
         <div className="kids_navbar">
-          <div className="navbar_logo">
-            <img src={logo} width={200} alt="" />
-          </div>
+          <NavLink to={"/kids"}>
+            <div className="navbar_logo">
+              <img src={logo} width={200} alt="" />
+            </div>
+          </NavLink>
           <div className="kidsNav_menu">
             <ul className="kids_munu">
               <li>
@@ -50,6 +66,17 @@ const Anime = () => {
             </div>
             <div className="log">
               <span>Выйти из раздела </span>
+            </div>
+            <div style={{ marginTop: "15px", marginLeft: "10px" }}>
+              <IconButton color="secondary" onClick={togglePlay}>
+                {isPlaying ? <Pause /> : <PlayArrow />}
+              </IconButton>
+              <audio
+                id="audio"
+                src={Music}
+                autoPlay={isPlaying}
+                onEnded={() => setIsPlaying(false)}
+              ></audio>
             </div>
           </div>
         </div>
