@@ -41,10 +41,26 @@
   background-size: contain;
   background-position: center;
 }
+
+@media screen and (max-width: 1080px) {
+  .navbarOscar__container_logo {
+    margin-left: 30px;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 915px) {
+  .navbarOscar__container_logo {
+    margin-left: 10px;
+    width: 100%;
+    height: auto;
+  }
+}
 .navbarOscar__container_logo-title {
   font-size: 35px;
   margin-top: -40px;
 }
+
 .navbarOscar_container_nav-title {
   display: flex;
   gap: 30px;
@@ -75,6 +91,7 @@
   width: 33px;
   transition: all 0.5s ease-out;
 }
+
 /* ! NabvarOscar Finish */
 
 /* ! HeaderOscar Start */
