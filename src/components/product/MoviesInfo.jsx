@@ -6,6 +6,7 @@ const MoviesInfo = () => {
   useEffect(() => {
     getProducts();
   }, []);
+  console.log(products);
 
   return (
     <div className="movies-container">
@@ -17,8 +18,8 @@ const MoviesInfo = () => {
           <p>{elem.country}</p>
           <p>{elem.worldPremiere}</p>
           <p>{elem.budget}</p>
-          <p>{elem.feesInUsa}</p>
-          <p>{elem.feesInWorld}</p>
+          <p>{elem.fees_in_usa}</p>
+          <p>{elem.fees_in_world}</p>
           <p>{elem.category}</p>
           <p>{elem.directors}</p>
           <p>{elem.actors}</p>

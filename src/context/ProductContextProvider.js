@@ -91,7 +91,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
   // ! edit categories
-  const editCategory = async (newCategory) => {
+  const editCategory = async (slug, newCategory) => {
     try {
       await axios.patch(
         `${API2}/categories/${slug}/`,
@@ -146,7 +146,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
   // ! edit actors
-  const editActors = async (newActor) => {
+  const editActors = async (slug, newActor) => {
     try {
       await axios.patch(`${API2}/categories/${slug}/`, newActor, getConfig());
     } catch (error) {
@@ -196,7 +196,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
   // ! edit genres
-  const editGenres = async (newGenre) => {
+  const editGenres = async (slug, newGenre) => {
     try {
       await axios.patch(`${API2}/genres/${slug}/`, newGenre, getConfig());
     } catch (error) {

@@ -12,6 +12,9 @@ const AddProduct = () => {
     actor,
     genre,
     getGenres,
+    addCategories,
+    addActors,
+    addGenres,
   } = useProduct();
 
   console.log(categories);
@@ -72,6 +75,31 @@ const AddProduct = () => {
     setActors("");
     setGenres("");
   };
+  // ! caregories add
+  const [name, setNAme] = useState("");
+  const handleClickcategory = () => {
+    const newCategory = new FormData();
+    newCategory.append("name", name);
+    addCategories(newCategory);
+  };
+  // ! caregories actors
+  const [actor2, setActors2] = useState("");
+  const [description2, setDescription2] = useState("");
+  const [age, setAge] = useState(0);
+  const handleClickActors = () => {
+    const newActor = new FormData();
+    newActor.append("name", actor2);
+    newActor.append("age", age);
+    newActor.append("description", description2);
+    addActors(newActor);
+  };
+  // ! genres add
+  const [name2, setNAme2] = useState("");
+  const handleClickGenres = () => {
+    const newGenre = new FormData();
+    newGenre.append("name", name2);
+    addGenres(newGenre);
+  };
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleDateChange = (date) => {
@@ -119,6 +147,32 @@ const AddProduct = () => {
   const handleCheckboxChange = () => {
     setDraft((prevDraft) => !prevDraft);
   };
+  const [activeForm, setActiveForm] = useState(null);
+  const buttonStyle = {
+    padding: "10px",
+    background: "#000",
+    border: "none",
+    borderRadius: "5px",
+    color: "#fff",
+    cursor: "pointer",
+  };
+
+  const formStyle = {
+    marginRight: "20px",
+    padding: "20px",
+    background: "#333",
+    borderRadius: "5px",
+  };
+
+  const addButtonStyle = {
+    padding: "10px",
+    background: "#000",
+    border: "none",
+    borderRadius: "5px",
+    color: "#fff",
+    cursor: "pointer",
+    marginTop: "10px",
+  };
 
   return (
     <div
@@ -130,6 +184,65 @@ const AddProduct = () => {
       }}
     >
       <div
+        style={{
+          display: "inline-block",
+          marginTop: "-15%",
+          color: "white",
+          marginLeft: "-20%",
+        }}
+      >
+        <div style={{ marginBottom: "20px" }}>
+          <button onClick={() => setActiveForm("category")} style={buttonStyle}>
+            Добавить категорию
+          </button>
+          {activeForm === "category" && (
+            <div style={formStyle}>
+              <h2>Добавление категории</h2>
+              <input type="text" onChange={(e) => setNAme(e.target.value)} />
+              <button onClick={handleClickcategory} style={addButtonStyle}>
+                Add
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div style={{ marginBottom: "20px" }}>
+          <button onClick={() => setActiveForm("actor")} style={buttonStyle}>
+            Добавить актера
+          </button>
+          {activeForm === "actor" && (
+            <div style={formStyle}>
+              <h2>Добавление актера</h2>
+              <input type="text" onChange={(e) => setActors2(e.target.value)} />
+              <input type="text" onChange={(e) => setAge(e.target.value)} />
+              <input
+                type="text"
+                onChange={(e) => setDescription2(e.target.value)}
+              />
+              <button onClick={handleClickActors} style={addButtonStyle}>
+                Add
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div style={{ marginBottom: "20px" }}>
+          <button onClick={() => setActiveForm("genre")} style={buttonStyle}>
+            Добавить жанр
+          </button>
+          {activeForm === "genre" && (
+            <div style={formStyle}>
+              <h2>Добавление жанра</h2>
+              <input type="text" onChange={(e) => setNAme2(e.target.value)} />
+              <button onClick={handleClickGenres} style={addButtonStyle}>
+                Add
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div
         className="input"
         style={{
           display: "flex",
@@ -137,9 +250,9 @@ const AddProduct = () => {
           maxWidth: "400px",
           width: "100%",
           padding: "20px",
-          background: "linear-gradient(45deg, #000000 60%, #ff8c00)", // more black to orange gradient background
-          borderRadius: "10px", // rounded corners
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // subtle box shadow
+          background: "linear-gradient(45deg, #000000 60%, #ff8c00)",
+          borderRadius: "10px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         <input
