@@ -7,6 +7,11 @@ import Music from "./assets/Oscar_award_music.mp3";
 import { IconButton } from "@mui/material";
 import { Pause, PlayArrow } from "@mui/icons-material";
 const NavbarOscar = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
@@ -29,21 +34,23 @@ const NavbarOscar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    const audio = document.getElementById("audio");
     if (audio.paused) {
-      audio.play(); // Если аудио на паузе, запускаем воспроизведение
-      setIsPlaying(true); // Обновляем состояние
+      audio.play();
+      setIsPlaying(true);
     } else {
-      audio.pause(); // Если аудио воспроизводится, ставим на паузу
-      setIsPlaying(false); // Обновляем состояние
+      audio.pause();
+      setIsPlaying(false);
     }
   };
   return (
     <div className="headerOscar__container">
       <div className="navbarOscar__container dark" id="navbar">
-        <div className="navbarOscar__container_logo">
-          <img url="" />
-        </div>
+        <NavLink to={"/"}>
+          <div className="navbarOscar__container_logo">
+            <img url="" />
+          </div>
+        </NavLink>
         <div className="navbarOscar_container_nav-title">
           <NavLink
             style={{ textDecoration: "none", color: "white" }}
@@ -65,6 +72,7 @@ const NavbarOscar = () => {
             <p className="three">Номинанты</p>
           </NavLink>
         </div>
+
         <div className="navbarOscar__container_socialIcons">
           <div>
             <a
