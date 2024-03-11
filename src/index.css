@@ -31,8 +31,7 @@ body {
   background-color: #fa4248;
   border: 1px solid #fff;
 }
-
-.pagination__button-back:hover {
+npm sy .pagination__button-back:hover {
   color: #fa4248;
   background-color: #edebeb;
 }
