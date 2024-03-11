@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Telegram from "./assets/icons8-телеграмма-app.svg";
 import Vk from "./assets/icons8-vk.svg";
 import "./OscarHomePage.css";
 import { NavLink, useNavigate } from "react-router-dom";
 const NavbarOscar = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +56,7 @@ const NavbarOscar = () => {
             <p className="three">Номинанты</p>
           </NavLink>
         </div>
+
         <div className="navbarOscar__container_socialIcons">
           <div>
             <img src={Telegram} alt="" />
