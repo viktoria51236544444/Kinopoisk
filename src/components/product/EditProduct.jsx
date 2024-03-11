@@ -39,7 +39,7 @@ const EditProduct = () => {
     setDirectors(oneProduct.directors);
     setActors(oneProduct.actors);
     setGenres(oneProduct.genres);
-  }, []);
+  }, [oneProduct]);
   const [title, setTitle] = useState("");
   const [tagline, setTagline] = useState("");
   const [description, setDescription] = useState("");
