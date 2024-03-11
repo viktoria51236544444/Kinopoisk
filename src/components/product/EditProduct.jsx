@@ -124,26 +124,70 @@ const EditProduct = () => {
   // };
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage:
+          "url('https://yastatic.net/s3/passport-auth-customs/customs/_/2V4FB5Yu.jpg')",
+        margin: 0,
+        marginTop: "-1.5%",
+      }}
+    >
       <div className="input">
-        <input
-          type="text"
-          value={title}
-          placeholder="title"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          value={tagline}
-          placeholder="tagline"
-          onChange={(e) => setTagline(e.target.value)}
-        />
-        <input
-          type="text"
-          value={description}
-          placeholder="description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <div>
+          <input
+            type="text"
+            value={title}
+            placeholder="title"
+            onChange={(e) => setTitle(e.target.value)}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              border: "1px solid #555",
+              borderRadius: "5px",
+              backgroundColor: "#333",
+              color: "white",
+              boxSizing: "border-box",
+              display: "block",
+              width: "100%",
+            }}
+          />
+          <input
+            type="text"
+            value={tagline}
+            placeholder="tagline"
+            onChange={(e) => setTagline(e.target.value)}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              border: "1px solid #555",
+              borderRadius: "5px",
+              backgroundColor: "#333",
+              color: "white",
+              boxSizing: "border-box",
+              display: "block",
+              width: "100%",
+            }}
+          />
+          <textarea
+            value={description}
+            placeholder="description"
+            onChange={(e) => setDescription(e.target.value)}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              border: "1px solid #555",
+              borderRadius: "5px",
+              backgroundColor: "#333",
+              color: "white",
+              resize: "none",
+              boxSizing: "border-box",
+              display: "block",
+              width: "100%",
+              minHeight: "100px",
+            }}
+          ></textarea>
+        </div>
+
         <input
           type="file"
           placeholder="url"
