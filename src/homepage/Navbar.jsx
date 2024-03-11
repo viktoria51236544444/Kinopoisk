@@ -7,7 +7,7 @@ import bookmark from "./assets-homepage/bookmark.svg";
 import usericon from "./assets-homepage/usericon.jpeg";
 
 import "./navbar_oxana.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 import { updateToken } from "../auth_redux/helpersAuth/functions";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../auth_redux/store/actions";
@@ -74,7 +74,7 @@ const Navbar = () => {
         <NavLink
           className="navbar__main-link"
           style={{ textDecoration: "none" }}
-          to="/"
+          to={"/oscarHome"}
         >
           <div className="navbar__link-oscar">
             <img
@@ -87,6 +87,7 @@ const Navbar = () => {
               src="https://avatars.mds.yandex.net/get-bunker/60661/f1e8b5500c4808d22ef28d0102e8ac158155c247/orig"
               alt=""
             />
+
             <p className="navbar__oscar-text">Оскар-2024</p>
           </div>
         </NavLink>
