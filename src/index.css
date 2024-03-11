@@ -31,8 +31,102 @@ body {
   background-color: #fa4248;
   border: 1px solid #fff;
 }
-
-.pagination__button-back:hover {
+npm sy .pagination__button-back:hover {
   color: #fa4248;
   background-color: #edebeb;
+}
+
+.input {
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 600px;
+  margin-left: 30%;
+}
+
+.input input,
+.input select,
+.input button,
+.input label {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.input input[type="file"] {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.input input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.input select {
+  width: 100%;
+}
+
+.input button {
+  cursor: pointer;
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.input button:hover {
+  background-color: wheat;
+  color: #333;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  font-family: Andika;
+}
+
+.movie-card {
+  display: flex;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.movie-image img {
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+  height: 400px;
+  margin-top: 10%;
+}
+
+.movie-details {
+  width: 400px;
+  margin-left: 3%;
+}
+
+.movie-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.movie-info {
+  margin-bottom: 10px;
+}
+
+.movie-actors {
+  margin-top: 20%;
+  margin-left: 15%;
 }

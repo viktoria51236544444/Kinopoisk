@@ -7,6 +7,11 @@ import Music from "./assets/Oscar_award_music.mp3";
 import { IconButton } from "@mui/material";
 import { Pause, PlayArrow } from "@mui/icons-material";
 const NavbarOscar = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
@@ -29,21 +34,23 @@ const NavbarOscar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    const audio = document.getElementById("audio"); // Получаем ссылку на аудио элемент
+    const audio = document.getElementById("audio");
     if (audio.paused) {
-      audio.play(); // Если аудио на паузе, запускаем воспроизведение
-      setIsPlaying(true); // Обновляем состояние
+      audio.play();
+      setIsPlaying(true);
     } else {
-      audio.pause(); // Если аудио воспроизводится, ставим на паузу
-      setIsPlaying(false); // Обновляем состояние
+      audio.pause();
+      setIsPlaying(false);
     }
   };
   return (
     <div className="headerOscar__container">
       <div className="navbarOscar__container dark" id="navbar">
-        <div className="navbarOscar__container_logo">
-          <img url="" />
-        </div>
+        <NavLink to={"/"}>
+          <div className="navbarOscar__container_logo">
+            <img url="" />
+          </div>
+        </NavLink>
         <div className="navbarOscar_container_nav-title">
           <NavLink
             style={{ textDecoration: "none", color: "white" }}
@@ -65,12 +72,23 @@ const NavbarOscar = () => {
             <p className="three">Номинанты</p>
           </NavLink>
         </div>
+
         <div className="navbarOscar__container_socialIcons">
           <div>
-            <img src={Telegram} alt="" />
+            <a
+              href="https://t.me/share/url?url=https%3A%2F%2Fwww.kinopoisk.ru%2Fspecial%2Foscar%2Fnominees%2F&text=%D0%9D%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D1%82%D1%8B%20%D0%9E%D1%81%D0%BA%D0%B0%D1%80%D0%B0%202024&utm_source=share2"
+              target="_blank"
+            >
+              <img src={Telegram} alt="" />
+            </a>
           </div>
           <div>
-            <img src={Vk} alt="" />
+            <a
+              href="https://oauth.vk.com/authorize?client_id=-1&redirect_uri=https%3A%2F%2Fvk.com%2Fshare.php%3Furl%3Dhttps%253A%252F%252Fwww.kinopoisk.ru%252Fspecial%252Foscar%252Fnominees%252F%26title%3D%25D0%259D%25D0%25BE%25D0%25BC%25D0%25B8%25D0%25BD%25D0%25B0%25D0%25BD%25D1%2582%25D1%258B%2520%25D0%259E%25D1%2581%25D0%25BA%25D0%25B0%25D1%2580%25D0%25B0%25202024%26utm_source%3Dshare2&display=widget"
+              target="_blank"
+            >
+              <img src={Vk} alt="" />{" "}
+            </a>
           </div>
         </div>
         <div style={{ marginTop: "-4px", marginLeft: "10px" }}>

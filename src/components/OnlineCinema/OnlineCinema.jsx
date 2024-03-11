@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "../sportComponents/sport.css";
 import { IconButton } from "@mui/material";
-import { BookmarkAddOutlined, PlayArrow } from "@mui/icons-material";
+import { BookmarkAddOutlined, Pause, PlayArrow } from "@mui/icons-material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FooterSport from "../sportComponents/FooterSport";
-
+import Music from "./assets/hungryGame.mp3";
 const OnlineCinema = () => {
   const SampleNextArrow = (props) => {
     const { onClick } = props;
@@ -91,6 +91,49 @@ const OnlineCinema = () => {
       },
     ],
   };
+  const sliderSettings3 = {
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    swipe: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
   return (
     <div>
       <div>
@@ -142,10 +185,20 @@ const OnlineCinema = () => {
             <p>Главное</p>
             <p>Мое</p>
             <p>Каналы</p>
-            <p>Спорт</p>
           </div>
           <div>
             <img src="" alt="" />
+          </div>
+          <div style={{ marginTop: "22px", marginLeft: "30px" }}>
+            <IconButton color="secondary" onClick={togglePlay}>
+              {isPlaying ? <Pause /> : <PlayArrow />}
+            </IconButton>
+            <audio
+              id="audio"
+              src={Music}
+              autoPlay={isPlaying}
+              onEnded={() => setIsPlaying(false)}
+            ></audio>
           </div>
         </nav>
         <div className="nav__description-container">
@@ -206,17 +259,22 @@ const OnlineCinema = () => {
           >
             <div className="matches__container">
               <a href="/your-target-page" class="matches__container-link">
-                <p class="matches__container-p">
+                <p style={{ marginTop: "3%" }} class="matches__container-p">
                   Сериалы на основе ваших интересов
                 </p>
               </a>
 
               <Slider {...sliderSettings}>
                 <div className="b">
-                  <img
-                    src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
-                    alt="Match 1"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4b802cce4a893fd5ace657d04afae7e8?episode=1&playingContentId=427958f66c155d61ad9279e8eca03c79&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://fankino.ru/wp-content/uploads/2024/02/Screenshot-4-e1706806689591.png"
+                      alt="Match 1"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Алтыбармакян, Лада
                   </p>
@@ -232,10 +290,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://allreleases.ru/wp-content/uploads/2016x1134-19.jpg"
-                    alt="Match 2"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/d2576156b8b74beaae9bad93d06c1258?episode=1&playingContentId=45f34e7ab3b34285829bd789a5fc5614&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659a902f00a7d2583260413b_659a9087eb35721ecb7596cc/scale_1200"
+                      alt="Match 2"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Миронов, Динамо Москва
                   </p>
@@ -251,10 +314,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
-                    alt="Match 3"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4d928bfb40b34c009a547414584d3ac7?episode=1&playingContentId=830b1d58d12141d79d69c0f4f9d0314e&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://ubsnet.ru/img/editor/780-6857be135259041e974418f0eb27a3f6.jpeg"
+                      alt="Match 3"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Дамир Шарипзянов, Авангард
                   </p>
@@ -270,10 +338,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
-                    alt="Match 4"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4a645f2ab54a6f4b8be169cfbaf3488b?episode=1&playingContentId=40e48f08d33ef343abee76e3056f75b8&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://i.ytimg.com/vi/_V0fEBJ_e2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-ldgkRaYxsbFo4yKAEi_WAzvtog"
+                      alt="Match 4"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Василий Атанасов, Торпедо
                   </p>
@@ -289,10 +362,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
-                    alt="Match 5"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/461be081d90c0510b7b27711a6d9381d?episode=11&playingContentId=46df1450d27aff8c80a12241e5a051ae&season=3&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://i.pinimg.com/originals/27/a4/fb/27a4fb17eb66e64d848979c10f01a05d.png"
+                      alt="Match 5"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Николай Голдобин, Спартак
                   </p>
@@ -314,17 +392,22 @@ const OnlineCinema = () => {
             style={{ backgroundColor: "black" }}
             className="container__slider"
           >
-            <div className="matches__container">
+            <div className="matches__container" style={{ marginTop: "-7%" }}>
               <a href="/your-target-page" class="matches__container-link">
                 <p class="matches__container-p">Фильмы для вас</p>
               </a>
 
               <Slider {...sliderSettings}>
                 <div className="b">
-                  <img
-                    src="https://start.ru/images/unsafe/filters:quality(70)/302765054efc42ab82651975bbf4e02b/images-horizontal_poster_1x"
-                    alt="Match 1"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/41ba7241cc896c48b61b39bb2f552f04?playingContentId=41ba7241cc896c48b61b39bb2f552f04&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://start.ru/images/unsafe/filters:quality(70)/302765054efc42ab82651975bbf4e02b/images-horizontal_poster_1x"
+                      alt="Match 1"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Алтыбармакян, Лада
                   </p>
@@ -340,10 +423,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://tengrinews.kz/userdata/news/2022/news_460356/thumb_m/photo_387142.jpeg"
-                    alt="Match 2"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/883eb9c0d386436eb8ce47cdbcdfb8a1?playingContentId=883eb9c0d386436eb8ce47cdbcdfb8a1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://tengrinews.kz/userdata/news/2022/news_460356/thumb_m/photo_387142.jpeg"
+                      alt="Match 2"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Миронов, Динамо Москва
                   </p>
@@ -359,10 +447,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://images.kinorium.com/movie/poster/1656658/h280_50547197.jpg"
-                    alt="Match 3"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/436bd5d28aa8fdfca558e95fb58993fe?playingContentId=436bd5d28aa8fdfca558e95fb58993fe&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://images.kinorium.com/movie/poster/1656658/h280_50547197.jpg"
+                      alt="Match 3"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Дамир Шарипзянов, Авангард
                   </p>
@@ -378,10 +471,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://cs14.pikabu.ru/post_img/big/2023/03/30/10/1680198395110695782.png"
-                    alt="Match 4"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/411a4de4ea461ddf943dec0dfd29afc1?playingContentId=411a4de4ea461ddf943dec0dfd29afc1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://cs14.pikabu.ru/post_img/big/2023/03/30/10/1680198395110695782.png"
+                      alt="Match 4"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Василий Атанасов, Торпедо
                   </p>
@@ -397,10 +495,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://cdn2.red-media.ru/800x466-2023-01-RM-Vyshka-1280h720.jpg"
-                    alt="Match 5"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/48447f2cb2e1e9a9b98f283b7d7010a2?playingContentId=48447f2cb2e1e9a9b98f283b7d7010a2&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://cdn2.red-media.ru/800x466-2023-01-RM-Vyshka-1280h720.jpg"
+                      alt="Match 5"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Николай Голдобин, Спартак
                   </p>
@@ -417,16 +520,21 @@ const OnlineCinema = () => {
                 </div>
               </Slider>
             </div>
-            <div className="matches__container">
+            <div className="matches__container" style={{ marginTop: "-3%" }}>
               <p class="matches__container-p">Премьера "Холоп 2"</p>
 
               <Slider {...sliderSettings2}>
                 <div className="b2">
-                  <img
-                    style={{ width: "1300px", height: "600px" }}
-                    src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
-                    alt="Match 1"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/008e0d83a7cd423a8cba5f0f082891ee?playingContentId=008e0d83a7cd423a8cba5f0f082891ee&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "1300px", height: "600px" }}
+                      src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
+                      alt="Match 1"
+                    />
+                  </a>
                 </div>
                 <div className="b2">
                   <img
@@ -465,10 +573,15 @@ const OnlineCinema = () => {
 
               <Slider {...sliderSettings}>
                 <div className="b">
-                  <img
-                    src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
-                    alt="Match 1"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/008e0d83a7cd423a8cba5f0f082891ee?playingContentId=008e0d83a7cd423a8cba5f0f082891ee&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://api.start.ru/images/unsafe/filters:quality(70)/c4e3d760d48c4351bb363ea97e307ddd/horizontal_poster_15x"
+                      alt="Match 1"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Алтыбармакян, Лада
                   </p>
@@ -484,10 +597,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://start.ru/images/unsafe/filters:quality(70)/a11dad21844543aaa96f997d5c63ace0/horizontal_poster_1x"
-                    alt="Match 2"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/cc1d0d60705b4936bc83d19a2f4b358a?playingContentId=cc1d0d60705b4936bc83d19a2f4b358a&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://start.ru/images/unsafe/filters:quality(70)/a11dad21844543aaa96f997d5c63ace0/horizontal_poster_1x"
+                      alt="Match 2"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Миронов, Динамо Москва
                   </p>
@@ -503,10 +621,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://i.ytimg.com/vi/p2dpWQdmoQ8/maxresdefault.jpg"
-                    alt="Match 3"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/77fa39050854401c995a6dadf26a7554?episode=1&playingContentId=8f8d85772c2c44f39e879e5abf1066ae&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://i.ytimg.com/vi/p2dpWQdmoQ8/maxresdefault.jpg"
+                      alt="Match 3"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Дамир Шарипзянов, Авангард
                   </p>
@@ -522,10 +645,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://static.okko.tv/images/v3/22461574?scale=1&quality=80"
-                    alt="Match 4"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/3e699420dcaa456bafd2b8d1e98a2a09?playingContentId=3e699420dcaa456bafd2b8d1e98a2a09&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://static.okko.tv/images/v3/22461574?scale=1&quality=80"
+                      alt="Match 4"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Василий Атанасов, Торпедо
                   </p>
@@ -541,10 +669,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://tv.rambler.ru/epg/pic/6510981?img-format=auto&img-1-resize=height:195,fit:max&img-2-filter=sharpen"
-                    alt="Match 5"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/b50bd0d8d6c14245b33afb4d05f1e8d3?episode=1&playingContentId=5e651fb8726348f695afe7cf80226a5a&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://tv.rambler.ru/epg/pic/6510981?img-format=auto&img-1-resize=height:195,fit:max&img-2-filter=sharpen"
+                      alt="Match 5"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Николай Голдобин, Спартак
                   </p>
@@ -561,17 +694,23 @@ const OnlineCinema = () => {
                 </div>
               </Slider>
             </div>
-            <div className="matches__container">
+            <div className="matches__container" style={{ marginTop: "-3%" }}>
               <a href="/your-target-page" class="matches__container-link">
                 <p class="matches__container-p">Что смотреть в выходные</p>
               </a>
 
               <Slider {...sliderSettings}>
                 <div className="b">
-                  <img
-                    src="https://i.ytimg.com/vi/wNohFm9A7S4/maxresdefault.jpg"
-                    alt="Match 1"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/46020c592c198b0c95b955a396fb7b25?playingContentId=46020c592c198b0c95b955a396fb7b25&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://i.ytimg.com/vi/wNohFm9A7S4/maxresdefault.jpg"
+                      alt="Match 1"
+                    />
+                  </a>
+
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Алтыбармакян, Лада
                   </p>
@@ -587,10 +726,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://images.kinorium.com/movie/poster/1670490/h280_51624355.jpg"
-                    alt="Match 2"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/47649cf90de74aca8da7eb5b17fc8a8a?playingContentId=47649cf90de74aca8da7eb5b17fc8a8a&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://images.kinorium.com/movie/poster/1670490/h280_51624355.jpg"
+                      alt="Match 2"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Андрей Миронов, Динамо Москва
                   </p>
@@ -606,10 +750,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://avatars.dzeninfra.ru/get-zen_doc/1781567/pub_64d4612993ac551f96f92a35_64d46252fe3a0d69187b76d1/scale_1200"
-                    alt="Match 3"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/49bd056ba7bf9ca5a4baa96d16d60563?episode=1&playingContentId=4e29cd50a1c04793af351b655d2e8dd1&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://avatars.dzeninfra.ru/get-zen_doc/1781567/pub_64d4612993ac551f96f92a35_64d46252fe3a0d69187b76d1/scale_1200"
+                      alt="Match 3"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Дамир Шарипзянов, Авангард
                   </p>
@@ -625,10 +774,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://media.alphanews.am/wp-content/uploads/2023/10/11155928/photo_2023-10-11_10-29-43.jpg"
-                    alt="Match 4"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/1b774c0023b744ea898dbcb28806cb43?playingContentId=1b774c0023b744ea898dbcb28806cb43&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://media.alphanews.am/wp-content/uploads/2023/10/11155928/photo_2023-10-11_10-29-43.jpg"
+                      alt="Match 4"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Василий Атанасов, Торпедо
                   </p>
@@ -644,10 +798,15 @@ const OnlineCinema = () => {
                   </p>
                 </div>
                 <div className="b">
-                  <img
-                    src="https://i.ytimg.com/vi/4zor-jRYnFs/maxresdefault.jpg"
-                    alt="Match 5"
-                  />
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4829059b29ca1a6a9983efefdfd0d144?playingContentId=4829059b29ca1a6a9983efefdfd0d144&watch="
+                    target="blank"
+                  >
+                    <img
+                      src="https://i.ytimg.com/vi/4zor-jRYnFs/maxresdefault.jpg"
+                      alt="Match 5"
+                    />
+                  </a>
                   <p style={{ margin: "0", marginTop: "3%" }}>
                     Николай Голдобин, Спартак
                   </p>
@@ -661,6 +820,101 @@ const OnlineCinema = () => {
                   >
                     Хоккейный борт, выпуск 1
                   </p>
+                </div>
+              </Slider>
+            </div>
+            <div className="matches__container" style={{ marginTop: "-3%" }}>
+              <a href="/your-target-page" class="matches__container-link">
+                <p class="matches__container-p">
+                  Снято специально для Кинопоиска
+                </p>
+              </a>
+
+              <Slider {...sliderSettings3}>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/355fa1f85dd44ba59a6646669d4bf45e?episode=1&playingContentId=e99d260929754388927771be589203fe&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/374297/2a0000018dcc81f377321faf26a3147f1736/375x562"
+                      alt="Match 1"
+                    />
+                  </a>
+                </div>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4f3c027cbce13606b74124a9d5b140c7?episode=1&playingContentId=4532da7a4cdbe9cbae74ff8e1c2f7f78&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/224348/2a00000187b868222003fd2e9c88daf7db2b/375x562"
+                      alt="Match 2"
+                    />
+                  </a>
+                </div>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/25ecf58c27bc47b6b5b6ee4b190dc36f?episode=1&playingContentId=e27a9df971be4e65ac2641de2059a3cd&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/1648503/2a0000018e123ed86000b0029957fafba2cd/375x562"
+                      alt="Match 4"
+                    />
+                  </a>
+                </div>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/5eaba7e14cb84d529463075d0ffa0a50?episode=1&playingContentId=2b7cef37bf364a779f598f56e7368ba9&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/1672343/2a000001892531e0c04437fd8fde07fe91e7/375x562"
+                      alt="Match 5"
+                    />
+                  </a>
+                </div>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/4b63db58ab27e92b90a457e533b00007?episode=1&playingContentId=4315082489d87677b21f7c83593fcb73&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/1648503/2a0000018e172569449a0c75e8c9eb06787e/375x562"
+                      alt="Match 3"
+                    />
+                  </a>
+                </div>
+
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/c069f386d3e9461f9fa585ed2ec8dbea?episode=1&playingContentId=fcb26227f29a4503b4dcb78e2d5623fd&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/1534341/2a000001855a3dd592a2078dcf8e3cefe249/375x562"
+                      alt="Match 5"
+                    />
+                  </a>
+                </div>
+                <div className="b6">
+                  <a
+                    href="https://hd.kinopoisk.ru/film/b0f31a689fe94006bfa910bb76921f24?episode=1&playingContentId=76913ff309154a5eb9801cc12d75d6e2&season=1&watch="
+                    target="blank"
+                  >
+                    <img
+                      style={{ width: "350px" }}
+                      src="https://avatars.mds.yandex.net/get-ott/2439731/2a0000018cbcf9375872c557855074d3421e/375x562"
+                      alt="Match 3"
+                    />
+                  </a>
                 </div>
               </Slider>
             </div>

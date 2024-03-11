@@ -41,10 +41,26 @@
   background-size: contain;
   background-position: center;
 }
+
+@media screen and (max-width: 1080px) {
+  .navbarOscar__container_logo {
+    margin-left: 30px;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 915px) {
+  .navbarOscar__container_logo {
+    margin-left: 10px;
+    width: 100%;
+    height: auto;
+  }
+}
 .navbarOscar__container_logo-title {
   font-size: 35px;
   margin-top: -40px;
 }
+
 .navbarOscar_container_nav-title {
   display: flex;
   gap: 30px;
@@ -75,6 +91,7 @@
   width: 33px;
   transition: all 0.5s ease-out;
 }
+
 /* ! NabvarOscar Finish */
 
 /* ! HeaderOscar Start */
@@ -144,12 +161,12 @@
   justify-content: center;
 }
 
-.next {
-  margin-right: -10% !important;
+.next2 {
+  margin-left: 100% !important;
   margin-top: -50px;
   height: 100px;
 }
-.prev {
+.prev2 {
   margin-left: -12%;
   margin-top: -6%;
   height: 200px;
@@ -179,9 +196,9 @@
   left: 200px;
   top: 50%;
   transform: translateY(-50%);
-  width: 900px;
+  width: 800px;
   max-width: calc(100% - 200px);
-  height: 500px;
+  height: 400px;
   z-index: 999;
   overflow: hidden;
   padding: 20px;
@@ -269,4 +286,20 @@ iframe {
 }
 .footerOscar__container-content {
   margin-top: 70px;
+}
+.watch_button2 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 15px;
+  border-radius: 1000px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
 }

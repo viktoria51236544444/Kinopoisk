@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CSS from "../sportComponents/sport.css";
+import "../sportComponents/sport.css";
 import FooterSport from "./FooterSport";
 import { useTheme } from "../../context/Background";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
-
+import Music from "./assets/sport.mp3";
+import { IconButton } from "@mui/material";
+import { Pause, PlayArrow } from "@mui/icons-material";
 const Sport = () => {
   const SampleNextArrow = (props) => {
     const { onClick } = props;
@@ -21,6 +23,7 @@ const Sport = () => {
     const { onClick } = props;
     return (
       <div className="arrow prev">
+        я
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR4nO3ZTUvDUBSE4eO/K11oaREJuLB/u2AruLozOblr05ZIP6BSg1vPCfNA9hneTe6Nmch01bZdOvDh5NZLmVlGHfnqwKEjh9Pj5LtlH9Fdhmws/Qigd2BuWTjw4sD+bsTBgcay0IgoVCIKlYhCJaJQiShcnx1BuEoE4RMp8Tx2KGpLWVkWwzA8OInUI34M4d2Qr458tGwcaBw4TmJMLeVtZExfyYVlUzUmqKoyQVWVCaqqTFAqE5XKRKUyUU2tzHrscOaZfob+OYbcWUa/xgCfltX5DoDE9VLj6b/fR8RuvgERCx6zV6ROewAAAABJRU5ErkJggg=="
           onClick={onClick}
@@ -61,6 +64,18 @@ const Sport = () => {
     ],
   };
   const { theme, toggleTheme } = useTheme();
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
   return (
     <div
       className="sport__container"
@@ -113,7 +128,6 @@ const Sport = () => {
           <p>Главное</p>
           <p>Мое</p>
           <p>Каналы</p>
-          <p>Спорт</p>
         </div>
         <div
           style={{
@@ -122,6 +136,17 @@ const Sport = () => {
           }}
         >
           <WbSunnyOutlinedIcon onClick={toggleTheme} />
+        </div>
+        <div style={{ marginTop: "-4px", marginLeft: "10px" }}>
+          <IconButton color="primary" onClick={togglePlay}>
+            {isPlaying ? <Pause /> : <PlayArrow />}
+          </IconButton>
+          <audio
+            id="audio"
+            src={Music}
+            autoPlay={isPlaying}
+            onEnded={() => setIsPlaying(false)}
+          ></audio>
         </div>
       </nav>
       <div>
