@@ -7,6 +7,11 @@ import Music from "./assets/Oscar_award_music.mp3";
 import { IconButton } from "@mui/material";
 import { Pause, PlayArrow } from "@mui/icons-material";
 const NavbarOscar = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
@@ -65,6 +70,7 @@ const NavbarOscar = () => {
             <p className="three">Номинанты</p>
           </NavLink>
         </div>
+
         <div className="navbarOscar__container_socialIcons">
           <div>
             <a
