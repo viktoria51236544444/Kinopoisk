@@ -174,6 +174,7 @@ const Nominees = () => {
         Лучшие фильмы
       </p>
       <div
+        className="movie"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -229,6 +230,7 @@ const Nominees = () => {
       </div>
 
       <div
+        className="best"
         style={{
           display: "flex",
           justifyContent: "space-around",

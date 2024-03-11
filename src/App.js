@@ -6,7 +6,7 @@ import Footer from "./homepage/Footer";
 const App = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <MainRoutes />
       {/* <Footer /> */}
     </div>
