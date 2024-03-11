@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
 import { API2 } from "../helpers/const";
 import { logDOM } from "@testing-library/react";
+import { useNavigate } from "react-router-dom";
 const productContext = createContext();
 export const useProduct = () => useContext(productContext);
 const INIT_STATE = {
@@ -28,6 +29,7 @@ const reducer = (state = INIT_STATE, action) => {
 };
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const navigate = useNavigate();
   //! config
   const getConfig = () => {
     const access = localStorage.getItem("access_token");
@@ -43,7 +45,7 @@ const ProductContextProvider = ({ children }) => {
   const getCategories = async () => {
     try {
       const { data } = await axios(`${API2}/categories/`);
-      console.log(data.results);
+      // console.log(data.results);
 
       dispatch({
         type: "GET_CATEGORIES",
@@ -129,6 +131,19 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  //! FILTER
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+    if (value === "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    console.log(search);
+    const url = `${window.location.pathname}?${search}`;
+    navigate(url);
+  };
+
   const values = {
     getProducts,
     addProducts,
@@ -144,6 +159,7 @@ const ProductContextProvider = ({ children }) => {
     getGenres,
     editProduct,
     pages: state.pages,
+    fetchByParams,
   };
 
   return (

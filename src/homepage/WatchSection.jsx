@@ -8,7 +8,7 @@ const WatchSection = () => {
       <div className="contentContainer-watch">
         <h2 className="watch-heading">Продолжить просмотр</h2>
         <div className="watch-itemContainer">
-          <div class="carouselItem">
+          <div className="carouselItem">
             <img
               className="image-watch"
               src="//avatars.mds.yandex.net/get-ott/1531675/2a00000179f1e7f236020b1a4e7d3faf4bb0/448x292"
@@ -17,14 +17,14 @@ const WatchSection = () => {
               height="118"
               alt="Мастер и Маргарита"
             />
-            <div class="watch-progressBar">
+            <div className="watch-progressBar">
               <div
                 className="watch-progressBarValue"
                 style={{ width: "46%" }}
               ></div>
             </div>
-            <div class="watch-duration">47 мин</div>
-            <div class="watch-playButton"></div>
+            <div className="watch-duration">47 мин</div>
+            <div className="watch-playButton"></div>
 
             <NavLink
               className="watch-filmLink"
@@ -39,7 +39,6 @@ const WatchSection = () => {
 
         <div>
           <h2 className="watch-heading">Смотрят сейчас</h2>
-          
         </div>
       </div>
     </div>
