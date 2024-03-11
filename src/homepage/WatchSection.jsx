@@ -39,7 +39,6 @@ const WatchSection = () => {
 
         <div>
           <h2 className="watch-heading">Смотрят сейчас</h2>
-          
         </div>
       </div>
     </div>

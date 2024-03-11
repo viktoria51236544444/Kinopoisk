@@ -21,7 +21,7 @@ const AllMovies = () => {
   const SampleNextArrow = (props) => {
     const { onClick } = props;
     return (
-      <div className="arrow next" onClick={onClick}>
+      <div className="arrow next2" onClick={onClick}>
         <img src="https://img.icons8.com/carbon-copy/100/FFFFFF/chevron-right.png" />
       </div>
     );
@@ -30,7 +30,7 @@ const AllMovies = () => {
   const SamplePrevArrow = (props) => {
     const { onClick } = props;
     return (
-      <div className="arrow prev" onClick={onClick}>
+      <div className="arrow prev2" onClick={onClick}>
         <img src="https://img.icons8.com/carbon-copy/100/FFFFFF/back.png" />
       </div>
     );

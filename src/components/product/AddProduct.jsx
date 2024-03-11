@@ -12,7 +12,11 @@ const AddProduct = () => {
     actor,
     genre,
     getGenres,
+    addCategories,
+    addActors,
+    addGenres,
   } = useProduct();
+
   console.log(categories);
   useEffect(() => {
     getCategories();
@@ -71,6 +75,31 @@ const AddProduct = () => {
     setActors("");
     setGenres("");
   };
+  // ! caregories add
+  const [name, setNAme] = useState("");
+  const handleClickcategory = () => {
+    const newCategory = new FormData();
+    newCategory.append("name", name);
+    addCategories(newCategory);
+  };
+  // ! caregories actors
+  const [actor2, setActors2] = useState("");
+  const [description2, setDescription2] = useState("");
+  const [age, setAge] = useState(0);
+  const handleClickActors = () => {
+    const newActor = new FormData();
+    newActor.append("name", actor2);
+    newActor.append("age", age);
+    newActor.append("description", description2);
+    addActors(newActor);
+  };
+  // ! genres add
+  const [name2, setNAme2] = useState("");
+  const handleClickGenres = () => {
+    const newGenre = new FormData();
+    newGenre.append("name", name2);
+    addGenres(newGenre);
+  };
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleDateChange = (date) => {
@@ -118,11 +147,216 @@ const AddProduct = () => {
   const handleCheckboxChange = () => {
     setDraft((prevDraft) => !prevDraft);
   };
+  const [activeForm, setActiveForm] = useState(null);
 
   return (
-    <div style={{ minHeight: "100vh" }}>
-      <h2 className="h2">Add Product</h2>
-      <div className="input">
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          display: "inline-block",
+          marginTop: "-15%",
+          color: "white",
+          marginLeft: "-30%",
+        }}
+      >
+        <div style={{ marginBottom: "20px" }}>
+          <button
+            onClick={() => setActiveForm("category")}
+            style={{
+              cursor: "pointer",
+              backgroundColor: "#800000",
+              color: "white",
+              border: "none",
+              padding: "10px 15px",
+              borderRadius: "5px",
+            }}
+          >
+            Добавить категорию
+          </button>
+          {activeForm === "category" && (
+            <div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Категория"
+                  onChange={(e) => setNAme(e.target.value)}
+                  style={{
+                    marginTop: "5px",
+                    padding: "10px",
+                    border: "1px solid #555",
+                    borderRadius: "5px",
+                    backgroundColor: "#333",
+                    color: "white",
+                  }}
+                />
+              </div>
+              <button
+                onClick={handleClickcategory}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "#800000",
+                  color: "white",
+                  border: "none",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
+                  marginTop: "5px",
+                }}
+              >
+                Добавить
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div style={{ marginBottom: "20px" }}>
+          <button
+            onClick={() => setActiveForm("actor")}
+            style={{
+              cursor: "pointer",
+              backgroundColor: "#800000",
+              color: "white",
+              border: "none",
+              padding: "10px 15px",
+              borderRadius: "5px",
+            }}
+          >
+            Добавить актера
+          </button>
+          {activeForm === "actor" && (
+            <div>
+              <div style={{ display: "inline-block" }}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Имя"
+                    onChange={(e) => setActors2(e.target.value)}
+                    style={{
+                      marginTop: "5px",
+                      padding: "10px",
+                      border: "1px solid #555",
+                      borderRadius: "5px",
+                      backgroundColor: "#333",
+                      color: "white",
+                    }}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Возраст"
+                    onChange={(e) => setAge(e.target.value)}
+                    style={{
+                      marginTop: "5px",
+                      padding: "10px",
+                      border: "1px solid #555",
+                      borderRadius: "5px",
+                      backgroundColor: "#333",
+                      color: "white",
+                    }}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Описание"
+                    onChange={(e) => setDescription2(e.target.value)}
+                    style={{
+                      marginTop: "5px",
+                      padding: "10px",
+                      border: "1px solid #555",
+                      borderRadius: "5px",
+                      backgroundColor: "#333",
+                      color: "white",
+                    }}
+                  />
+                </div>
+              </div>
+              <button
+                onClick={handleClickActors}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "#800000",
+                  color: "white",
+                  border: "none",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
+                  marginTop: "5px",
+                }}
+              >
+                Добавить
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div style={{ marginBottom: "20px" }}>
+          <button
+            onClick={() => setActiveForm("genre")}
+            style={{
+              cursor: "pointer",
+              backgroundColor: "#800000",
+              color: "white",
+              border: "none",
+              padding: "10px 15px",
+              borderRadius: "5px",
+            }}
+          >
+            Добавить жанр
+          </button>
+          {activeForm === "genre" && (
+            <div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Жанр"
+                  onChange={(e) => setNAme2(e.target.value)}
+                  style={{
+                    marginTop: "5px",
+                    padding: "10px",
+                    border: "1px solid #555",
+                    borderRadius: "5px",
+                    backgroundColor: "#333",
+                    color: "white",
+                  }}
+                />
+              </div>
+              <button
+                onClick={handleClickGenres}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "#800000",
+                  color: "white",
+                  border: "none",
+                  padding: "10px 15px",
+                  borderRadius: "5px",
+                  marginTop: "5px",
+                }}
+              >
+                Добавить
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div
+        className="input"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          marginLeft: "-40%",
+          maxWidth: "400px",
+          width: "100%",
+          padding: "20px",
+        }}
+      >
         <input
           type="text"
           placeholder="title"
@@ -144,29 +378,16 @@ const AddProduct = () => {
           onChange={(e) => setPoster(e.target.files[0])}
           accept="poster/"
         />
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", marginBottom: "10px" }}>
           <input
             type="text"
             placeholder="YYYY-MM-DD"
             value={year}
             onChange={(e) => setYear(e.target.value)}
-            style={{ width: "100%", padding: "10px" }}
           />
-          <div style={{ marginLeft: "-10%" }}>
-            <button
-              style={{
-                backgroundColor: "black",
-                color: "#f50",
-                border: "none",
-                borderRadius: "10px",
-              }}
-              onClick={incrementYear}
-            >
-              +
-            </button>
-            <button className="button__increment" onClick={decrementYear}>
-              -
-            </button>
+          <div style={{ display: "flex" }}>
+            <button onClick={incrementYear}>+</button>
+            <button onClick={decrementYear}>-</button>
           </div>
         </div>
         <input
@@ -174,102 +395,54 @@ const AddProduct = () => {
           placeholder="country"
           onChange={(e) => setCountry(e.target.value)}
         />
-        <div
-          style={{
-            background: "black",
-            padding: "20px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        ></div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ marginBottom: "10px" }}></div>
+        <div style={{ display: "flex", marginBottom: "10px" }}>
           <input
             type="text"
             placeholder="Budget"
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
-            style={{ width: "100%", padding: "10px" }}
           />
-          <div style={{ marginLeft: "10px" }}>
+          <div style={{ marginLeft: "10px", display: "flex" }}>
             <button onClick={incrementBudget}>+</button>
             <button onClick={decrementBudget}>-</button>
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", marginBottom: "10px" }}>
           <input
             type="text"
             placeholder="Fees In USA"
             value={feesInUsa}
             onChange={(e) => setFeesInUsa(e.target.value)}
-            style={{ width: "100%", padding: "10px" }}
           />
-          <div style={{ marginLeft: "10px" }}>
+          <div style={{ marginLeft: "10px", display: "flex" }}>
             <button onClick={incrementFeesInUSA}>+</button>
             <button onClick={decrementFeesInUSA}>-</button>
           </div>
         </div>
-        {/* <div style={{ background: "black", padding: "20px", width: "300px" }}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <button
-              onClick={openDatePicker}
-              style={{ padding: "10px", cursor: "pointer" }}
-            >
-              Показать календарь
-            </button>
-            <input
-              type="text"
-              placeholder="год.месяц.день"
-              value={format(worldPremiere, "yyyy-MM-dd")}
-              style={{
-                marginLeft: "10px",
-                width: "100%",
-                padding: "10px",
-                color: "white",
-              }}
-              readOnly
-            />
-          </div>
-          {showDatePicker && (
-            <DatePicker
-              selected={worldPremiere}
-              onChange={handleDateChange}
-              popperPlacement="bottom-end"
-              showYearDropdown
-              dateFormat="yyyy-MM-dd"
-              inline
-            />
-          )}
-        </div> */}
-
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", marginBottom: "10px" }}>
           <input
             type="text"
             placeholder="Fees In World"
             value={feesInWorld}
             onChange={(e) => setFeesInWorld(e.target.value)}
-            style={{ width: "100%", padding: "10px" }}
           />
-          <div style={{ marginLeft: "10px" }}>
+          <div style={{ display: "flex" }}>
             <button onClick={incrementFeesInWorld}>+</button>
             <button onClick={decrementFeesInWorld}>-</button>
           </div>
         </div>
-        <div>
+        <div style={{ marginBottom: "10px" }}>
           <label>
             <input
               type="checkbox"
-              checked={draft}
+              checked={false}
               onChange={handleCheckboxChange}
             />
-            Draft
+            Черновик
           </label>
         </div>
-
-        <select
-          onChange={(e) => {
-            setDirectors(e.target.value);
-          }}
-        >
+        <select onChange={(e) => setDirectors(e.target.value)}>
           <option>Режиссеры</option>
           {actor.map((elem) => (
             <option value={elem.slug} key={elem.slug}>
@@ -277,11 +450,7 @@ const AddProduct = () => {
             </option>
           ))}
         </select>
-        <select
-          onChange={(e) => {
-            setCategory(e.target.value);
-          }}
-        >
+        <select onChange={(e) => setCategory(e.target.value)}>
           <option>Категория</option>
           {categories.map((elem) => (
             <option value={elem.slug} key={elem.slug}>
@@ -289,12 +458,7 @@ const AddProduct = () => {
             </option>
           ))}
         </select>
-
-        <select
-          onChange={(e) => {
-            setActors(e.target.value);
-          }}
-        >
+        <select onChange={(e) => setActors(e.target.value)}>
           <option>Актеры</option>
           {actor.map((elem) => (
             <option value={elem.slug} key={elem.slug}>
@@ -302,11 +466,7 @@ const AddProduct = () => {
             </option>
           ))}
         </select>
-        <select
-          onChange={(e) => {
-            setGenres(e.target.value);
-          }}
-        >
+        <select onChange={(e) => setGenres(e.target.value)}>
           <option>Жанры</option>
           {genre.map((elem) => (
             <option value={elem.slug} key={elem.slug}>
@@ -314,9 +474,8 @@ const AddProduct = () => {
             </option>
           ))}
         </select>
-
         <button className="button" onClick={handleClick}>
-          add
+          Добавить
         </button>
       </div>
     </div>

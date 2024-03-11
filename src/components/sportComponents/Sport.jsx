@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CSS from "../sportComponents/sport.css";
+import "../sportComponents/sport.css";
 import FooterSport from "./FooterSport";
 import { useTheme } from "../../context/Background";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
-import Music from "../oscarHomePage/assets/Game_music.mp3";
+import Music from "./assets/sport.mp3";
 import { IconButton } from "@mui/material";
 import { Pause, PlayArrow } from "@mui/icons-material";
 const Sport = () => {
@@ -128,7 +128,6 @@ const Sport = () => {
           <p>Главное</p>
           <p>Мое</p>
           <p>Каналы</p>
-          <p>Спорт</p>
         </div>
         <div
           style={{

@@ -168,12 +168,12 @@
   justify-content: center;
 }
 
-/* .next { */
-/* margin-right: -10% !important; */
-/* margin-top: -50px;
+.next2 {
+  margin-left: 100% !important;
+  margin-top: -50px;
   height: 100px;
-} */
-.prev {
+}
+.prev2 {
   margin-left: -12%;
   margin-top: -6%;
   height: 200px;
@@ -294,7 +294,7 @@ iframe {
 .footerOscar__container-content {
   margin-top: 70px;
 }
-.watch_button {
+.watch_button2 {
   display: flex;
   align-items: center;
   text-align: center;

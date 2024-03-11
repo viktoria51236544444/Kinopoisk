@@ -1,33 +1,46 @@
 import React from "react";
-import CSS from "../sportComponents/sport.css";
+import "../sportComponents/sport.css";
 const FooterSport = () => {
   return (
     <div style={{ backgroundColor: "black", marginTop: "7%" }}>
       <hr />
       <footer className="footer__sport">
         <div className="container__footer-icons">
-          <img
-            src="https://img.icons8.com/glyph-neue/64/4D4D4D/vk-com.png"
-            alt="vk-com"
-          />
-          <img
-            style={{ width: "23px", height: "23px", marginTop: "2%" }}
-            src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/4D4D4D/external-send-new-mail-button-email-bold-tal-revivo.png"
-            alt="external-send-new-mail-button-email-bold-tal-revivo"
-          />
-          <img
-            src="https://img.icons8.com/glyph-neue/64/4D4D4D/youtube-play.png"
-            alt="youtube-play"
-          />
-          <img
-            style={{ width: "25px", height: "25px", marginTop: "1.8%" }}
-            src="https://img.icons8.com/ios-filled/50/4D4D4D/yandex-zen.png"
-            alt="yandex-zen"
-          />
-          <img
-            src="https://img.icons8.com/glyph-neue/64/4D4D4D/tiktok.png"
-            alt="tiktok"
-          />
+          <a href="https://vk.com/kinopoisk" target="_blank">
+            <img
+              src="https://img.icons8.com/glyph-neue/64/4D4D4D/vk-com.png"
+              alt="vk-com"
+            />
+          </a>
+          <a href="https://t.me/plus_yndx" target="_blank">
+            <img
+              style={{ width: "23px", height: "23px", marginTop: "2%" }}
+              src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/4D4D4D/external-send-new-mail-button-email-bold-tal-revivo.png"
+              alt="external-send-new-mail-button-email-bold-tal-revivo"
+            />
+          </a>
+          <a href="https://www.youtube.com/@kinopoisk-extra" target="_blank">
+            <img
+              src="https://img.icons8.com/glyph-neue/64/4D4D4D/youtube-play.png"
+              alt="youtube-play"
+            />
+          </a>
+          <a
+            href="https://dzen.ru/kinopoisk.ru?utm_referrer=hd.kinopoisk.ru"
+            target="_blank"
+          >
+            <img
+              style={{ width: "25px", height: "25px", marginTop: "1.8%" }}
+              src="https://img.icons8.com/ios-filled/50/4D4D4D/yandex-zen.png"
+              alt="yandex-zen"
+            />
+          </a>
+          <a href="https://www.tiktok.com/@kinopoisk" target="_blank">
+            <img
+              src="https://img.icons8.com/glyph-neue/64/4D4D4D/tiktok.png"
+              alt="tiktok"
+            />
+          </a>
         </div>
         <div className="container__footer-sport">
           <p>Мы всегда готовы вам помочь.</p>
@@ -61,7 +74,7 @@ const FooterSport = () => {
             </p>
             <p>Соглашение Правила рекомендаций Справка</p>
           </div>
-          <div>
+          {/* <div>
             <p
               style={{
                 margin: "0",
@@ -74,7 +87,7 @@ const FooterSport = () => {
             >
               Проект компании Яндекс
             </p>
-          </div>
+          </div> */}
         </div>
       </footer>
     </div>

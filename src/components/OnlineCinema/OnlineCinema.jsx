@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "../sportComponents/sport.css";
 import { IconButton } from "@mui/material";
-import { BookmarkAddOutlined, PlayArrow } from "@mui/icons-material";
+import { BookmarkAddOutlined, Pause, PlayArrow } from "@mui/icons-material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FooterSport from "../sportComponents/FooterSport";
-
+import Music from "./assets/hungryGame.mp3";
 const OnlineCinema = () => {
   const SampleNextArrow = (props) => {
     const { onClick } = props;
@@ -122,6 +122,18 @@ const OnlineCinema = () => {
       },
     ],
   };
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
   return (
     <div>
       <div>
@@ -173,10 +185,20 @@ const OnlineCinema = () => {
             <p>Главное</p>
             <p>Мое</p>
             <p>Каналы</p>
-            <p>Спорт</p>
           </div>
           <div>
             <img src="" alt="" />
+          </div>
+          <div style={{ marginTop: "22px", marginLeft: "30px" }}>
+            <IconButton color="secondary" onClick={togglePlay}>
+              {isPlaying ? <Pause /> : <PlayArrow />}
+            </IconButton>
+            <audio
+              id="audio"
+              src={Music}
+              autoPlay={isPlaying}
+              onEnded={() => setIsPlaying(false)}
+            ></audio>
           </div>
         </nav>
         <div className="nav__description-container">

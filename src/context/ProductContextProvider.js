@@ -8,6 +8,9 @@ const INIT_STATE = {
   products: [],
   oneProduct: [],
   categories: [],
+  oneCategory: [],
+  oneActor: [],
+  oneGenre: [],
   actor: [],
   genre: [],
   pages: 10,
@@ -24,6 +27,12 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, actor: action.payload };
     case "GET_GENRES":
       return { ...state, genre: action.payload };
+    case "GET_ONE_CATEGORY":
+      return { ...state, oneCategory: action.payload };
+    case "GET_ONE_ACTOR":
+      return { ...state, oneActor: action.payload };
+    case "GET_ONE_GENRE":
+      return { ...state, oneGenre: action.payload };
   }
 };
 const ProductContextProvider = ({ children }) => {
@@ -38,8 +47,8 @@ const ProductContextProvider = ({ children }) => {
     };
     return config;
   };
-
-  //! categories
+  // ! =========================CATEGORIES===================================
+  //! get categories
   const getCategories = async () => {
     try {
       const { data } = await axios(`${API2}/categories/`);
@@ -53,7 +62,49 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-  //! actors
+
+  // ! create categories
+  const addCategories = async (newCategory) => {
+    await axios.post(`${API2}/categories/`, newCategory, getConfig());
+  };
+
+  // ! delete categories
+  const deleteCategory = async (slug) => {
+    try {
+      await axios.delete(`${API2}/categories/${slug}/`, getConfig());
+      getCategories();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! get One Category
+  const getOneCategory = async (slug) => {
+    try {
+      const { data } = await axios(`${API2}/categories/${slug}/`);
+
+      dispatch({
+        type: "GET_ONE_CATEGORY",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! edit categories
+  const editCategory = async (slug, newCategory) => {
+    try {
+      await axios.patch(
+        `${API2}/categories/${slug}/`,
+        newCategory,
+        getConfig()
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ! =========================ACTORS===================================
+  //!  get actors
   const getActors = async () => {
     try {
       const { data } = await axios(`${API2}/actors/`);
@@ -67,7 +118,43 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-  //! genres
+  // ! create actors
+  const addActors = async (newActor) => {
+    await axios.post(`${API2}/actors/`, newActor, getConfig());
+  };
+
+  // ! delete actors
+  const deleteActors = async (slug) => {
+    try {
+      await axios.delete(`${API2}/actors/${slug}/`, getConfig());
+      getActors();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! get One Actor
+  const getOneActor = async (slug) => {
+    try {
+      const { data } = await axios(`${API2}/actors/${slug}/`);
+
+      dispatch({
+        type: "GET_ONE_ACTOR",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! edit actors
+  const editActors = async (slug, newActor) => {
+    try {
+      await axios.patch(`${API2}/categories/${slug}/`, newActor, getConfig());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! =========================GENRES===================================
+  //! get genres
   const getGenres = async () => {
     try {
       const { data } = await axios(`${API2}/genres/`);
@@ -81,6 +168,42 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
+  // ! create genres
+  const addGenres = async (newGenre) => {
+    await axios.post(`${API2}/genres/`, newGenre, getConfig());
+  };
+
+  // ! delete genres
+  const deleteGenres = async (slug) => {
+    try {
+      await axios.delete(`${API2}/genres/${slug}/`, getConfig());
+      getGenres();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! get One Genre
+  const getOneGenre = async (slug) => {
+    try {
+      const { data } = await axios(`${API2}/genres/${slug}/`);
+
+      dispatch({
+        type: "GET_ONE_GENRE",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! edit genres
+  const editGenres = async (slug, newGenre) => {
+    try {
+      await axios.patch(`${API2}/genres/${slug}/`, newGenre, getConfig());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // ! =========================PRODUCTS===================================
   // ! GET
   const getProducts = async () => {
     try {
@@ -94,7 +217,6 @@ const ProductContextProvider = ({ children }) => {
       console.log(error);
     }
   };
-  // getProducts();
   // ! CREATE
   const addProducts = async (newProduct) => {
     await axios.post(`${API2}/movies/`, newProduct, getConfig());
@@ -144,6 +266,21 @@ const ProductContextProvider = ({ children }) => {
     getGenres,
     editProduct,
     pages: state.pages,
+    addCategories,
+    deleteCategory,
+    oneCategory: state.oneCategory,
+    getOneCategory,
+    editCategory,
+    addActors,
+    oneActor: state.oneActor,
+    deleteActors,
+    getOneActor,
+    editActors,
+    addGenres,
+    oneGenre: state.oneGenre,
+    deleteGenres,
+    getOneGenre,
+    editGenres,
   };
 
   return (

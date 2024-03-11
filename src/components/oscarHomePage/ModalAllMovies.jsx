@@ -111,8 +111,8 @@ const ModalAllMovies = ({ movie, closeModal }) => {
               ></iframe>
             </div>
           ) : (
-            <div className="watch_button" style={{ marginLeft: "330px" }}>
-              <button className="watch_button" onClick={handleWatchClick}>
+            <div className="watch_button2" style={{ marginLeft: "330px" }}>
+              <button className="watch_button2" onClick={handleWatchClick}>
                 <PlayArrowIcon />
                 Смотреть
               </button>
