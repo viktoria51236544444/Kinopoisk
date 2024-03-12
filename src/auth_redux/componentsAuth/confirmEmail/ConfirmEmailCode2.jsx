@@ -10,7 +10,7 @@ const ConfirmEmailCode2 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { emailConfirmStatus, confirmCode } = useSelector(
+  const { emailConfirmStatus, confirmCode, user } = useSelector(
     ({ userSlice }) => userSlice
   );
 
@@ -23,7 +23,7 @@ const ConfirmEmailCode2 = () => {
   }, [emailConfirmStatus]);
 
   const handleSubmit = () => {
-    dispatch(checkUserEmail(confirmCode));
+    dispatch(checkUserEmail(user, confirmCode));
   };
 
   return (
@@ -32,12 +32,13 @@ const ConfirmEmailCode2 = () => {
         <div className={styles.form}>
           <div className={styles.form__main_title}>
             <p className={styles.form__main_text}>
-              Введи код, <br /> высланный на <br /> почту
+              Введи код, <br /> высланный на <br /> почту{" "}
+              {user ? `(${user})` : ""}
             </p>
           </div>
           <div className={styles.form__registraition}>
-            <CodeConfirm num={4} />
-            <WrongCodeError />
+            <CodeConfirm num={10} />
+            {/* <WrongCodeError /> */}
             <button
               type="submit"
               onClick={handleSubmit}
@@ -45,9 +46,6 @@ const ConfirmEmailCode2 = () => {
             >
               Подтвердить
             </button>
-          </div>
-          <div className={styles.form__bottom_text}>
-            <p>Выслать код повторно</p>
           </div>
         </div>
       </div>
