@@ -8,7 +8,6 @@ import FilmPage from "./pages/FilmPage";
 const App = () => {
   return (
     <div>
-      {/* <FilmPage /> */}
       <MainRoutes />
     </div>
   );
