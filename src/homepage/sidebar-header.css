@@ -56,10 +56,10 @@
   overflow: hidden;
 }
 @media screen and (max-width: 1439px) {
-  .header_trailer {
-    height: 100vh;
+  /* .header_trailer {
+    height: 60vh;
     width: 80%;
-  }
+  } */
   .contentContainer-watch {
     display: none;
   }
@@ -79,7 +79,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 85%;
+  width: 70%;
   height: 100%;
   background: linear-gradient(
     90deg,

@@ -4,12 +4,11 @@ import { PlayArrow } from "@mui/icons-material";
 
 import FooterSport from "../sportComponents/FooterSport";
 import Navbar from "../../homepage/Navbar";
-import { IconButton } from "@mui/material";
-import { BookmarkAddOutlined, Pause } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useReviews } from "../../context/ReviewsContextProvider";
+import AddReviews from "../MoviesAndSeries/AddReviews";
 
 const MoviesInfo = () => {
   const { products, getProducts } = useProduct();
@@ -23,7 +22,7 @@ const MoviesInfo = () => {
 
   useEffect(() => {
     getReviews();
-  }, [getReviews]);
+  }, []);
 
   useEffect(() => {
     const filteredReviews = reviews.filter(
@@ -171,44 +170,97 @@ const MoviesInfo = () => {
             </div>
           </div>
         </div>
-        {movieReviews.length > 0 ? (
-          <div className="reviews-container">
-            <h2
-              style={{
-                color: "white",
-                borderBottom: "1px solid white",
-                paddingBottom: "10px",
-              }}
+        <div style={{ marginTop: "7%" }}>
+          <AddReviews />
+          {movieReviews.length > 0 ? (
+            <div
+              className="reviews-container"
+              style={{ width: "60%", margin: "auto" }}
             >
-              Отзывы к фильму
-            </h2>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {movieReviews.map((review) => (
-                <li key={review.id} style={{ marginBottom: "20px" }}>
-                  <p
+              <h2
+                style={{
+                  color: "white",
+                  borderBottom: "1px solid white",
+                  paddingBottom: "10px",
+                }}
+              >
+                Отзывы к фильму
+              </h2>
+              <ul style={{ listStyle: "none", padding: 0 }}>
+                {movieReviews.map((review) => (
+                  <li
+                    key={review.id}
                     style={{
-                      color: "white",
-                      fontWeight: "bold",
-                      marginBottom: "5px",
+                      marginBottom: "20px",
+                      backgroundColor: "#FFE4E1",
+                      padding: "20px",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    {review.name}
-                  </p>
-                  <p style={{ color: "white", margin: 0 }}>{review.text}</p>
-                  <button onClick={() => deleteReviews(review.id)}>
-                    Удалить
-                  </button>
-                  <button onClick={() => navigate(`/editReviews/${review.id}`)}>
-                    edit
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <p style={{ color: "white" }}>Комментарии отсутствуют</p>
-        )}
-
+                    <p style={{ fontSize: "15px", color: "black" }}>
+                      {review.email}
+                    </p>
+                    <p
+                      style={{
+                        color: "black",
+                        fontWeight: "bold",
+                        marginBottom: "15px",
+                        fontSize: "25px",
+                        marginTop: "-1%",
+                      }}
+                    >
+                      {review.name}
+                    </p>
+                    <p style={{ color: "black", margin: 0, fontSize: "17px" }}>
+                      {review.text}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginTop: "1%",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <button
+                        className="revies__button"
+                        style={{
+                          marginRight: "10px",
+                          backgroundColor: "#9370DB",
+                          color: "white",
+                          border: "none",
+                          padding: "5px 10px",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => deleteReviews(review.id)}
+                      >
+                        Удалить
+                      </button>
+                      <button
+                        className="revies__button"
+                        style={{
+                          backgroundColor: "#9370DB",
+                          color: "white",
+                          border: "none",
+                          padding: "5px 10px",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => navigate(`/editReviews/${review.id}`)}
+                      >
+                        Редактировать
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p style={{ color: "white" }}>Комментарии отсутствуют</p>
+          )}
+        </div>
         <FooterSport />
       </div>
     </div>
