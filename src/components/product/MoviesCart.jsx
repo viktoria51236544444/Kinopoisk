@@ -4,11 +4,17 @@ import { useProduct } from "../../context/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Rating from "./Rating";
+import AverageRating from "./AverageRating";
 const MoviesCart = ({ elem }) => {
   console.log(elem.ratings);
   const { deleteProduct } = useProduct();
   const { favorite, addFavorite, removeFavorite } = useFavorite();
   const navigate = useNavigate();
+
+  const [isRatingVisible, setIsRatingVisible] = useState(false);
+  const handleRatingButtonClick = () => {
+    setIsRatingVisible(true);
+  };
 
   const isFavorite = favorite.some(
     (favoriteItem) => favoriteItem.slug === elem.slug
@@ -49,7 +55,12 @@ const MoviesCart = ({ elem }) => {
         <h2>{elem.title}</h2>
         <p>{elem.category}</p>
         <p>{elem.slug}</p>
-        <Rating id={elem.ratings} slug={elem.slug} />
+        <AverageRating slug={elem.slug} />
+        {isRatingVisible ? (
+          <Rating slug={elem.slug} />
+        ) : (
+          <button onClick={handleRatingButtonClick}>Оценить фильм</button>
+        )}
         <button onClick={() => deleteProduct(elem.slug)}>delete</button>
         <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
         <button onClick={handleFavoriteToggle}>

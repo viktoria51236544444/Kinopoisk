@@ -19,15 +19,15 @@ root.render(
   <BrowserRouter>
     <ThemeProvider>
       <ProductContextProvider>
-        <FavoriteContextProvider>
-          <ReviewsContextProvider>
-            <RatingContextPovider>
+        <RatingContextPovider>
+          <FavoriteContextProvider>
+            <ReviewsContextProvider>
               <Provider store={store}>
                 <App />
               </Provider>
-            </RatingContextPovider>
-          </ReviewsContextProvider>
-        </FavoriteContextProvider>
+            </ReviewsContextProvider>
+          </FavoriteContextProvider>
+        </RatingContextPovider>
       </ProductContextProvider>
     </ThemeProvider>
   </BrowserRouter>

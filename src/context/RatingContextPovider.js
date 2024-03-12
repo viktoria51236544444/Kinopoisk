@@ -7,21 +7,18 @@ export const useRating = () => useContext(ratingContext);
 
 const INIT_STATE = {
   ratings: [],
-  // onerating: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_RATINGS":
-      return { ...state, ratings: action.pyload };
-    case "GET_ONERATING":
-      return { ...state, onerating: action.payload };
+      return { ...state, ratings: action.payload };
   }
 };
 
 const RatingContextPovider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   //! CONFIG
   const getConfig = () => {
@@ -38,7 +35,7 @@ const RatingContextPovider = ({ children }) => {
   const getRating = async () => {
     try {
       const { data } = await axios(`${API2}/ratings/`);
-      console.log(data.results);
+      // console.log(data.results);
 
       dispatch({
         type: "GET_RATINGS",
@@ -49,23 +46,6 @@ const RatingContextPovider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   getRating();
-  // }, []);
-
-  // //! GET ONE RATING
-  // const getOneRating = async (id) => {
-  //   try {
-  //     const { data } = await axios(`${API2}/ratings/${id}/`);
-  //     dispatch({
-  //       type: "GET_ONERATING",
-  //       payload: data,
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   // ! CREATE
   const addRating = async (newRating) => {
     await axios.post(`${API2}/ratings/`, newRating, getConfig());
@@ -74,8 +54,6 @@ const RatingContextPovider = ({ children }) => {
   const values = {
     getRating,
     addRating,
-    // getOneRating,
-    onerating: state.onerating,
     ratings: state.ratings,
   };
 

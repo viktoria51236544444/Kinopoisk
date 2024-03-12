@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useRating } from "../../context/RatingContextPovider";
 import ReactStars from "react-rating-stars-component";
 
-const Rating = ({ slug }) => {
+const AverageRating = ({ slug }) => {
   const { getRating, addRating, ratings } = useRating();
   const [averageRating, setAverageRating] = useState(0);
   const [newRating, setNewRating] = useState(0);
 
   useEffect(() => {
     getRating();
-  }, []);
+  }, [averageRating]);
 
   useEffect(() => {
     if (ratings.length > 0) {
@@ -20,30 +20,30 @@ const Rating = ({ slug }) => {
       );
       const avgRating =
         Math.round((totalStars / filteredRatings.length) * 2) / 2;
-
       setAverageRating(avgRating);
     }
   }, [ratings, slug]);
 
   const email = localStorage.getItem("email");
 
-  const handleNewRatingChanged = (newRating) => {
-    setNewRating(newRating);
-    const newRatingData = {
-      user: email,
-      star: newRating,
-      movie: slug,
-    };
-    addRating(newRatingData);
-  };
+  // const handleRatingSubmit = () => {
+  //   const newRatingData = {
+  //     user: email,
+  //     star: newRating,
+  //     movie: slug,
+  //   };
+  //   addRating(newRatingData);
+  // };
 
   return (
     <div>
       <div>
+        <p>Average Rating: {averageRating}</p>
         <ReactStars
-          value={newRating}
-          onChange={handleNewRatingChanged}
+          value={averageRating}
+          edit={false} // Disable editing for average rating
           activeColor="#ffd700"
+          isHalf={true}
           count={5}
           emptyIcon={<i className="far fa-star"></i>}
           halfIcon={<i className="fa fa-star-half-alt"></i>}
@@ -55,4 +55,4 @@ const Rating = ({ slug }) => {
   );
 };
 
-export default Rating;
+export default AverageRating;
