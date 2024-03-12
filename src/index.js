@@ -9,6 +9,7 @@ import ProductContextProvider from "./context/ProductContextProvider";
 import { ThemeProvider } from "./context/Background";
 import FavoriteContextProvider from "./context/FavoriteContextProvider";
 import ReviewsContextProvider from "./context/ReviewsContextProvider";
+import RatingContextPovider from "./context/RatingContextPovider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,13 +19,15 @@ root.render(
   <BrowserRouter>
     <ThemeProvider>
       <ProductContextProvider>
-        <FavoriteContextProvider>
-          <ReviewsContextProvider>
-            <Provider store={store}>
-              <App />
-            </Provider>
-          </ReviewsContextProvider>
-        </FavoriteContextProvider>
+        <RatingContextPovider>
+          <FavoriteContextProvider>
+            <ReviewsContextProvider>
+              <Provider store={store}>
+                <App />
+              </Provider>
+            </ReviewsContextProvider>
+          </FavoriteContextProvider>
+        </RatingContextPovider>
       </ProductContextProvider>
     </ThemeProvider>
   </BrowserRouter>

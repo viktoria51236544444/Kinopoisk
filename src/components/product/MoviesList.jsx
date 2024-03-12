@@ -48,7 +48,7 @@ const MoviesList = () => {
           <button
             onClick={() => handlePageChange(elem)}
             key={elem}
-            className={`pagination__button && ${
+            className={`pagination__button ${
               currentPage === elem ? "pagination__button_active" : ""
             }`}
           >
