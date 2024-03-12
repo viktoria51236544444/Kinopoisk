@@ -189,6 +189,9 @@
   background-color: #6c6b6b;
   transition: transform 0.3s ease;
 }
+.mainHover:hover {
+  transform: scale(1.1);
+}
 .nav__sport {
   font-family: Roboto;
 }

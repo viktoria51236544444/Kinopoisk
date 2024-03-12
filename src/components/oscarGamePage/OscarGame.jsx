@@ -1,7 +1,8 @@
 import React from "react";
 import "./OscarGamePage.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const OscarGame = () => {
+  const navigate = useNavigate();
   return (
     <div style={{ marginTop: "-150px" }}>
       <div className="headerOscar__container-title">
@@ -13,7 +14,9 @@ const OscarGame = () => {
       <div className="headerOscar__container-title2">
         <p>Угадай победителей «Оскара-2024»</p>
       </div>
-      <button className="gameAccount">Войти в аккаунт</button>
+      <button className="gameAccount" onClick={() => navigate("/game")}>
+        Играть
+      </button>
       <div className="title-p">
         <p>
           Используйте ваш аккаунт на Кинопоиске, чтобы авторизоваться и принять
