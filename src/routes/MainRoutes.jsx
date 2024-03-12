@@ -27,6 +27,7 @@ import OscarGameCondition from "../components/oscarGamePage/OscarGameCondition";
 import MainPage from "../pages/MainPage";
 import NomineesGame from "../components/oscarGamePage/NomineesGame";
 import MoviesInfo from "../components/product/MoviesInfo";
+import ConfirmEmailCode2 from "../auth_redux/componentsAuth/confirmEmail/ConfirmEmailCode2";
 
 const MainRoutes = () => {
   return (
@@ -42,6 +43,7 @@ const MainRoutes = () => {
       <Route path="/kidsSubscribe" element={<KidsWithoutSubscribe />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegistrationForm />} />
+      <Route path="/confirm-email" element={<ConfirmEmailCode2 />} />
       <Route path="/add" element={<PageAdd />} />
       <Route path="/edit/:slug" element={<EditProduct />} />
       <Route path="/" element={<MainPage />} />
