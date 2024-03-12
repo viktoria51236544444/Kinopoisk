@@ -82,11 +82,21 @@ const MoviesCart = ({ elem }) => {
       localStorage.removeItem(`likeStatus-${elem.slug}`);
     }
   };
-  // ! fihish like
+  // ! finish like
+
+  const handleCardClick = () => {
+    navigate(`/movies/${elem.slug}`);
+  };
 
   return (
     <div>
       <div style={{ display: "inline-block" }}>
+        <img
+          onClick={handleCardClick}
+          style={{ width: "200px", height: "200px" }}
+          src={elem.poster}
+          alt=""
+        />
         <h2>{elem.title}</h2>
         <p>{elem.category}</p>
         <p>{elem.slug}</p>

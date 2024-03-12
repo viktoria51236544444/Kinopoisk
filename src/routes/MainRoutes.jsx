@@ -59,7 +59,7 @@ const MainRoutes = () => {
       <Route path="/rewiesList" element={<ReviesList />} />
       <Route path="/editReviews/:id" element={<EditReviews />} />
       <Route path="/game" element={<NomineesGame />} />
-      <Route path="/info" element={<MoviesInfo />} />
+      <Route path="/movies/:slug" element={<MoviesInfo />} />
       <Route path="/chanelKids" element={<Chanel />} />
     </Routes>
   );
