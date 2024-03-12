@@ -1,0 +1,305 @@
+.oscarPage__container {
+  background-color: #0c354d;
+  margin: 0;
+}
+.oscarGamePage__container {
+  background-color: #0c354d;
+  margin: 0;
+}
+.oscarNomineesPage__container {
+  background-color: #0c354d;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+/* ! NavbarOscar Start */
+.navbarOscar__container {
+  display: flex;
+  transition: background-color 0.3s ease;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 24px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10;
+  height: 78px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.navbarOscar__container.dark {
+  background-color: #0c354d;
+}
+.navbarOscar__container_logo {
+  margin-left: 170px;
+  border: none;
+  width: 154px;
+  height: 22px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTQuMjgzIDExLjIxN0M1NC4yODMgNS4zODkgNTYuOTMxLjYxIDYyLjI1NS42MWM1LjMyMyAwIDcuOTcxIDQuNzc4IDcuOTcxIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MSAxMC42MDUtNS4zMjQuMDA0LTcuOTcyLTQuNzc0LTcuOTcyLTEwLjYwNVptNy45NzIgNy41NzljMS44NyAwIDIuOTY1LTMuMzUyIDIuOTY1LTcuNTc2cy0xLjA5NS03LjU3NS0yLjk2NS03LjU3NWMtMS44NyAwLTIuOTY2IDMuMzUxLTIuOTY2IDcuNTc1LjAwNCA0LjIyNCAxLjA5NiA3LjU3NiAyLjk2NiA3LjU3NlpNLjAwMyAxLjAyaDQuMDN2Ni4yNjVsNC4yMDQtNi4yNjVoNC44OTRsLTcuMTEgNy4zNDNMMTkuMDAzIDEuMDJ2NC42NjJMNy4zNDcgMTAuMTEybDExLjY1NS0xLjEwNnY0LjQyOUw3LjM0OCAxMi4zM2wxMS42NTUgNC40Mjh2NC42NjJsLTEyLjk4LTcuMzQyIDcuMTEgNy4zNDJIOC4yMzJMNC4wMyAxNS4xNTV2Ni4yNjVIMFYxLjAyMWguMDAzWm0yMS44NzUgMGg0Ljc0N2wtLjcxOCAxMy4xOTggNS44OTktMTMuMTk4aDMuODg2djIwLjM5NmgtNC43NDhsLjcxOS0xMy4xOTgtNS45IDEzLjE5OGgtMy44ODZWMS4wMlptMjEuNDQgMEgzOC41N3YyMC4zOTZoNC43NDh2LTkuMzI0aDQuMDN2OS4zMjRoNC43NDhWMS4wMmgtNC43NDhWOC44OWgtNC4wM1YxLjAyWm00Mi43NjcgMEg3Mi40MTd2MjAuMzk2aDQuNzQ4VjQuMjI0aDQuMTcydjE3LjE5M2g0Ljc0OFYxLjAyWm0yLjE4OCAxMC4xOTZDODguMjczIDUuMzg5IDkwLjkyLjYxIDk2LjI0NC42MWM1LjMyNCAwIDcuOTcyIDQuNzc4IDcuOTcyIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MiAxMC42MDUtNS4zMjMgMC03Ljk3MS00Ljc3NC03Ljk3MS0xMC42MDVabTcuOTc1IDcuNTc5YzEuODcgMCAyLjk2NS0zLjM1MiAyLjk2NS03LjU3NnMtMS4wOTUtNy41NzUtMi45NjUtNy41NzVjLTEuODcgMC0yLjk2NiAzLjM1MS0yLjk2NiA3LjU3NXMxLjA5MiA3LjU3NiAyLjk2NiA3LjU3NlpNMTExLjE1NCAxLjAyaC00Ljc0OHYyMC4zOTZoMy44ODdsNS44OTktMTMuMTk4LS43MTkgMTMuMTk4aDQuNzQ4VjEuMDJoLTMuODg2bC01Ljg5OSAxMy4xOTguNzE4LTEzLjE5OFptMjEuNjk5IDEzLjE5OCA0LjUxOC42OTktLjE0My43Yy0uNzc4IDMuNzg5LTMuMTM2IDYuMjA0LTcuMDIyIDYuMjA0LTUuMzI0IDAtNy44MDEtNC43NzgtNy44MDEtMTAuNjA1IDAtNS44MjggMi40NzctMTAuNjA2IDcuODAxLTEwLjYwNiAzLjc0MyAwIDYuMTI5IDIuNDIgNi45NjYgNS45NzJsLjE0My42MTEtNC42MzIgMS4wNDljLS4zNDYtMi44MjUtMS4xOC00LjYwNS0yLjQ3Ny00LjYwNS0xLjg3IDAtMi43OTEgMy4zNTEtMi43OTEgNy41NzVzLjkyMSA3LjU3NiAyLjc5MSA3LjU3NmMxLjQxMi4wMDcgMi4zMDItMS44OSAyLjY0Ny00LjU3Wk0xNDQuMDc2IDEuMDJoLTQuNzQ1djIwLjM5Nmg0Ljc0OHYtOS4xOGwzLjU5NyA5LjE4SDE1M2wtNS43NTctMTAuNTE4IDUuNjE0LTkuODc4aC00Ljg5NWwtMy44ODYgOS4xNzlWMS4wMjFaIiBmaWxsPSIjZmZmIi8+PC9zdmc+)
+    no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media screen and (max-width: 1080px) {
+  .navbarOscar__container_logo {
+    margin-left: 30px;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 915px) {
+  .navbarOscar__container_logo {
+    margin-left: 10px;
+    width: 100%;
+    height: auto;
+  }
+}
+.navbarOscar__container_logo-title {
+  font-size: 35px;
+  margin-top: -40px;
+}
+
+.navbarOscar_container_nav-title {
+  display: flex;
+  gap: 30px;
+  margin-left: 200px;
+  margin-top: -15px;
+}
+.navbarOscar_container_nav-title .one:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar_container_nav-title .two:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar_container_nav-title .three:hover {
+  text-decoration: underline 2px solid#C5A05A;
+  color: #c5a05a;
+}
+.navbarOscar__container_socialIcons {
+  display: flex;
+  margin-left: 200px;
+  gap: 20px;
+}
+.navbarOscar__container_socialIcons img {
+  width: 30px;
+}
+.navbarOscar__container_socialIcons img:hover {
+  width: 33px;
+  transition: all 0.5s ease-out;
+}
+
+/* ! NabvarOscar Finish */
+
+/* ! HeaderOscar Start */
+.headerOscar__container {
+  background-image: url("https://yastatic.net/s3/kinopoisk-frontend/oscar-www/release/692.0/dist/images/a81c3237dd7bdb7142bd.jpg");
+  background-size: cover;
+  min-height: 120vh;
+  min-width: 100%;
+}
+
+.headerOscar__container-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+.headerOscar__container-title2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: SangBleu Sunrise;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+}
+.headerOscar__container-playBtn button {
+  background-color: #c5a05a;
+  color: #fff;
+  margin-left: 40%;
+  width: 20%;
+  height: 50px;
+  border: none;
+}
+/* ! HeaderOscar finish */
+
+/* ! All Movies Start */
+.allMovies__container {
+  background-color: #002134;
+  min-height: 88vh;
+  margin-top: -50px;
+}
+
+.allMovies__container-title-p1 {
+  font-family: SangBleu Sunrise;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+}
+.allMovies__container-title-p2 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+  opacity: 0.6;
+}
+.arrow {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next2 {
+  margin-left: 100% !important;
+  margin-top: -50px;
+  height: 100px;
+}
+.prev2 {
+  margin-left: -12%;
+  margin-top: -6%;
+  height: 200px;
+}
+.allMovies__container-swiper {
+  width: 70%;
+  margin-left: 17%;
+  gap: -100px;
+  margin-top: 50px;
+}
+.allMovies__container_movies-swiper {
+  margin-right: 50px;
+}
+.allMovies__container_movies-swiper-img img {
+  width: 200px;
+  margin-left: -20px;
+}
+.allMovies__container_movies-swiper-img p {
+  font-size: 13px;
+  line-height: 1.2;
+  color: white;
+  margin-top: 4px;
+}
+
+.modal {
+  position: fixed;
+  left: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 800px;
+  max-width: calc(100% - 200px);
+  height: 400px;
+  z-index: 999;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 10px;
+}
+.close {
+  color: #131212;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+iframe {
+  width: 500px;
+  height: 400px;
+  border: none;
+  margin-left: 200px;
+}
+.allMovies__container_movies-swiper-img {
+  text-align: center;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.play-icon img {
+  width: 50px;
+}
+.actor-name:hover {
+  color: #b7a261 !important;
+}
+/* ! All Movies Finish */
+.game {
+  border-radius: 5px;
+  cursor: pointer;
+}
+.game:hover {
+  transform: scaleY(1.05);
+}
+/* ! Oscar Facts Start */
+.oscarFacts__container {
+  background-color: #002134;
+  min-height: 88vh;
+  margin-top: 50px;
+}
+
+/* ! Footer Oscar Start */
+.footerOscar__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+  min-height: 30vh;
+}
+.footerOscar__container p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footerOscar__container_socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.footerOscar__container_socialIcons img {
+  width: 30px;
+}
+.footerOscar__container-content {
+  margin-top: 70px;
+}
+.watch_button2 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  width: 120px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 15px;
+  border-radius: 1000px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}

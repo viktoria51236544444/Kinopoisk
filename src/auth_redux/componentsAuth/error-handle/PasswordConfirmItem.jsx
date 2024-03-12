@@ -6,7 +6,7 @@ const PasswordConfirmItem = ({ values }) => {
     values.password !== values.password_confirm &&
     values.password_confirm.length > 1
   ) {
-    return <p className={styles.password}>Пароли не совпадают</p>;
+    return <p className={styles.password_conf}>Пароли не совпадают</p>;
   }
 
   return null;

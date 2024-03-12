@@ -1,13 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Josefin+Sans:wght@500&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Bubbles&family=Rubik+Doodle+Shadow&family=Rubik+Glitch&family=Sevillana&family=Single+Day&display=swap");
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pagination__button_active {
+  background-color: #fa4248 !important;
+  color: white !important;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.pagination__button {
+  transform: scale(1) rotate(19deg) translateX(0px) translateY(0px) skewX(-8deg)
+    skewY(-20deg);
+  padding: 0.3em 0.6em;
+  background-color: #edebeb;
+
+  color: #8b969c;
+}
+
+.pagination__button:hover {
+  background-color: #fa4248;
+  border: 1px solid #fff;
+}
+npm sy .pagination__button-back:hover {
+  color: #fa4248;
+  background-color: #edebeb;
+}
+
+.input {
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 600px;
+  margin-left: 30%;
+}
+
+.input input,
+.input select,
+.input button,
+.input label {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.input input[type="file"] {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.input input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.input select {
+  width: 100%;
+}
+
+.input button {
+  cursor: pointer;
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.input button:hover {
+  background-color: wheat;
+  color: #333;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  font-family: Andika;
+}
+
+.movie-card {
+  display: flex;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.movie-image img {
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+  height: 400px;
+  margin-top: 10%;
+}
+
+.movie-details {
+  width: 400px;
+  margin-left: 3%;
+}
+
+.movie-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.movie-info {
+  margin-bottom: 10px;
+}
+
+.movie-actors {
+  margin-top: 20%;
+  margin-left: 15%;
 }

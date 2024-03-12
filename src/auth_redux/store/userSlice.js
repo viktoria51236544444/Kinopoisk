@@ -28,6 +28,10 @@ export const userSlice = createSlice({
     confirmUserCode: (state, action) => {
       state.confirmCode = action.payload;
     },
+    setUser: (state, action) => {
+      // Добавляем новый редьюсер для установки пользователя
+      state.user = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -42,6 +46,10 @@ export const userSlice = createSlice({
         } else {
           state.loading = false;
           state.registrationStatus = "SUCCESS";
+          const res = action.payload;
+          console.log("action payload after register", res);
+          state.user = action.payload?.userObj.email;
+          localStorage.setItem("email", action.payload?.userObj.email);
         }
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -59,16 +67,16 @@ export const userSlice = createSlice({
           state.status = "ERROR";
         } else {
           state.status = "SUCCESS";
-          console.log("action.payload", action.payload);
+          // console.log("action.payload", action.payload);
           state.refreshToken = action.payload?.res?.data?.refresh;
-          localStorage.setItem(
-            "refresh_token",
-            action.payload?.res?.data?.refresh,
-          );
+          localStorage.setItem("refresh", action.payload?.res?.data?.refresh);
           localStorage.setItem(
             "access_token",
-            action.payload?.res?.data?.access,
+            action.payload?.res?.data?.access
           );
+          state.user = action.payload?.userObj.email;
+          localStorage.setItem("email", action.payload?.userObj.email);
+          console.log("state.user after login:", state.user);
         }
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -102,14 +110,17 @@ export const userSlice = createSlice({
         state.loading = true;
       })
       .addCase(logoutUser.fulfilled, (state, action) => {
+        state.user = null;
         console.log(
           "payload from logout user",
           action.payload,
-          action.payload?.status,
+          action.payload?.status
         );
-        if (action.payload?.status === 200) {
+        if (action.payload?.status === 200 || action.payload?.status === 204) {
           state.logoutSuccess = "SUCCESS";
+          console.log(state.logoutSuccess);
           state.status = null; // сбрасываем стаус авторизации на null так как пользователь вышел из приложения
+          state.user = null;
         }
         state.loading = false;
         state.emailConfirmStatus = null; //  сбарсываем в редаксе это поле, оно нам больше не нужно

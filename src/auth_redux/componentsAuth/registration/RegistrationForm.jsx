@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./Registration.module.css";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { Field, useFormik } from "formik";
+import { ErrorMessage, Field, useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../store/actions";
 import { Formik, Form } from "formik";
@@ -87,9 +87,14 @@ const RegistrationForm = () => {
                 onBlur={formik.handleBlur}
                 error={formik.touched.email && Boolean(formik.errors.email)}
               />
-              <div>
+              <ErrorMessage
+                name="email"
+                component="div"
+                className={styles.error_reg}
+              />
+              <div className={styles.inputContainer_reg}>
                 <Field
-                  className={styles.form__input_reg}
+                  className={`${styles.form__input_reg} ${styles.second_class_input}`}
                   name="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
@@ -103,23 +108,27 @@ const RegistrationForm = () => {
                 />
 
                 <IconButton
-                  className={styles.adornment}
+                  className={styles.adornment_reg}
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </div>
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={styles.error_reg}
+              />
 
               <ErrorHandle
                 values={formik.values}
                 touched={formik.touched.password}
               />
-              <div>
+              <div className={styles.inputContainer_reg}>
                 <Field
-                  style={{ borderRadius: "12px" }}
                   name="password_confirm"
                   value={formik.values.password_confirm}
                   onChange={formik.handleChange}
@@ -131,19 +140,25 @@ const RegistrationForm = () => {
                   }
                   id="password_confirm"
                   type={showPassword ? "text" : "password"}
+                  className={`${styles.form__input_reg} ${styles.second_class_input}`}
                 />
 
                 <IconButton
-                  className={styles.adornment}
+                  className={styles.adornment_reg}
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </div>
               <PasswordConfirmItem values={formik.values} />
+              <ErrorMessage
+                name="password"
+                component="div"
+                className={styles.error_reg}
+              />
 
               <button
                 style={{
@@ -157,7 +172,7 @@ const RegistrationForm = () => {
                 onClick={() => handleSubmit(formik.values)}
                 type="submit"
                 disabled={isSubmitting}
-                className={styles.form__button}
+                className={styles.form__button_reg}
                 variant="contained"
               >
                 Далее
