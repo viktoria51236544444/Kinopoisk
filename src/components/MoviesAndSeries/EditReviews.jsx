@@ -26,11 +26,12 @@ const EditReviews = () => {
   const [movie, setMovie] = useState("");
 
   const handleSave = async () => {
-    const newEditReview = new FormData();
-    newEditReview.append("email", email);
-    newEditReview.append("name", name);
-    newEditReview.append("text", text);
-    newEditReview.append("movie", movie);
+    const newEditReview = {
+      email: email,
+      name: name,
+      text: text,
+      movie: movie,
+    };
 
     await editReviews(id, newEditReview);
 
