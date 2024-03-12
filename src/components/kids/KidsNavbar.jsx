@@ -106,7 +106,7 @@ const KidsNavbar = () => {
                 <a href="/">Моё</a>
               </li>
               <li>
-                <a href="/">Каналы</a>
+                <a href="/chanelKids">Каналы</a>
               </li>
             </ul>
           </div>
@@ -114,9 +114,13 @@ const KidsNavbar = () => {
             <div className="ageRestriction">
               <span>12+</span>
             </div>
+
             <div className="log">
-              <span>Выйти из раздела </span>
+              <NavLink style={{ textDecoration: "none" }} to={"/"}>
+                <span>Выйти из раздела </span>
+              </NavLink>
             </div>
+
             <div style={{ marginTop: "15px", marginLeft: "10px" }}>
               <IconButton color="secondary" onClick={togglePlay}>
                 {isPlaying ? <Pause /> : <PlayArrow />}

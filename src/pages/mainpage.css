@@ -49,7 +49,7 @@
 }
 
 .sidebar-container {
-  width: 300px; /* Ширина вашей боковой панели */
+  width: 100%; /* Ширина вашей боковой панели */
 }
 
 .mainpage-content {
