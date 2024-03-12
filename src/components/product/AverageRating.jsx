@@ -94,7 +94,7 @@
 //   }, [ratings]);
 
 //   return (
-//     <div>
+//     <div >
 //       {averageRatings.map((item) => (
 //         <div key={item.slug}>
 //           <p>

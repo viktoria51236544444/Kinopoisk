@@ -90,52 +90,90 @@ const MoviesCart = ({ elem }) => {
 
   return (
     <div>
-      <div style={{ display: "inline-block" }}>
-        <img
-          onClick={handleCardClick}
-          style={{ width: "200px", height: "200px" }}
-          src={elem.poster}
-          alt=""
-        />
-        <h2>{elem.title}</h2>
-        <p>{elem.category}</p>
-        <p>{elem.slug}</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          border: "1px solid gray",
+          height: "500px",
+          width: "320px",
+          justifyContent: "flex-end",
+          backgroundColor: "white",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {averageRatings
+            .filter((item) => item.slug === elem.slug)
+            .map((filteredItem) => (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+                key={filteredItem.slug}
+              >
+                <p>Средний рейтинг :{filteredItem.averageRating}</p>
+                <ReactStars
+                  value={filteredItem.averageRating}
+                  activeColor="#ffd700"
+                  isHalf={true}
+                  count={10}
+                  emptyIcon={<i className="far fa-star"></i>}
+                  halfIcon={<i className="fa fa-star-half-alt"></i>}
+                  fullIcon={<i className="fa fa-star"></i>}
+                  size={24}
+                />
+              </div>
+            ))}
+          <img
+            onClick={handleCardClick}
+            style={{ width: "200px", height: "auto" }}
+            src={elem.poster}
+            alt=""
+          />
+          <div
+            style={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+              maxWidth: "195px",
+            }}
+          >
+            <h2 style={{ margin: "5px 0" }}>{elem.title}</h2>
+          </div>
+          <p style={{ margin: "5px 0" }}>{elem.category}</p>
+          {/* <p style={{ margin: "5px 0" }}>{elem.slug}</p> */}
+        </div>
 
-        {averageRatings
-          .filter((item) => item.slug === elem.slug)
-          .map((filteredItem) => (
-            <div key={filteredItem.slug}>
-              <p>
-                Average Rating for {filteredItem.slug}:{" "}
-                {filteredItem.averageRating}
-              </p>
-              <ReactStars
-                value={filteredItem.averageRating}
-                activeColor="#ffd700"
-                isHalf={true}
-                count={10}
-                emptyIcon={<i className="far fa-star"></i>}
-                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                fullIcon={<i className="fa fa-star"></i>}
-                size={24}
-              />
-            </div>
-          ))}
         {isRatingVisible ? (
-          <Rating slug={elem.slug} ratings={elem.ratings} />
+          <Rating
+            slug={elem.slug}
+            ratings={elem.ratings}
+            onChange={() => getRating}
+          />
         ) : (
           <button onClick={handleRatingButtonClick}>Оценить фильм</button>
         )}
-        <button onClick={() => deleteProduct(elem.slug)}>delete</button>
-        <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
-        <button onClick={handleFavoriteToggle}>
-          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-        </button>
-        <div
-          style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
-          onClick={toggleLike}
-        >
-          <FavoriteIcon />
+        <div style={{ display: "flex", marginBottom: "5px" }}>
+          <button onClick={() => deleteProduct(elem.slug)}>delete</button>
+          <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
+          <button onClick={handleFavoriteToggle}>
+            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          </button>
+          <div
+            style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
+            onClick={toggleLike}
+          >
+            <FavoriteIcon />
+          </div>
         </div>
       </div>
     </div>

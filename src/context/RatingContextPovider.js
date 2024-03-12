@@ -58,10 +58,7 @@ const RatingContextPovider = ({ children }) => {
   };
 
   return (
-    <ratingContext.Provider value={values}>
-      {" "}
-      {console.log(state.ratings)} {children}
-    </ratingContext.Provider>
+    <ratingContext.Provider value={values}>{children}</ratingContext.Provider>
   );
 };
 
