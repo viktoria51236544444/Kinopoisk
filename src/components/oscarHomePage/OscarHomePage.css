@@ -5,6 +5,7 @@
 .oscarGamePage__container {
   background-color: #0c354d;
   margin: 0;
+  overflow: hidden;
 }
 .oscarNomineesPage__container {
   background-color: #0c354d;
@@ -31,6 +32,27 @@
 .navbarOscar__container.dark {
   background-color: #0c354d;
 }
+@media screen and (max-width: 1290px) {
+  .navbarOscar__container_logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbarOscar__container_socialIcons {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 510px) {
+  .navbarOscar_container_nav-title {
+    margin-left: 20% !important;
+  }
+}
+@media screen and (max-width: 390px) {
+  .navbarOscar_container_nav-title {
+    margin-left: 5% !important;
+  }
+}
 .navbarOscar__container_logo {
   margin-left: 170px;
   border: none;
@@ -42,20 +64,6 @@
   background-position: center;
 }
 
-@media screen and (max-width: 1080px) {
-  .navbarOscar__container_logo {
-    margin-left: 30px;
-    width: 100%;
-    height: auto;
-  }
-}
-@media screen and (max-width: 915px) {
-  .navbarOscar__container_logo {
-    margin-left: 10px;
-    width: 100%;
-    height: auto;
-  }
-}
 .navbarOscar__container_logo-title {
   font-size: 35px;
   margin-top: -40px;
@@ -302,4 +310,17 @@ iframe {
   border-radius: 1000px;
   cursor: pointer;
   background: linear-gradient(135deg, #f50 69.93%, #d6bb00);
+}
+
+@media screen and (max-width: 890px) {
+  .best {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .img-container {
+    display: flex;
+  }
 }

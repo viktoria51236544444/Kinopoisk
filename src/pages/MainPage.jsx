@@ -5,20 +5,25 @@ import FocusTicketsSection from "../homepage/FocusTicketsSection";
 import "./mainpage.css";
 import WatchSection from "../homepage/WatchSection";
 import Navbar from "../homepage/Navbar";
+import Footer from "../homepage/Footer";
 
 const MainPage = () => {
   return (
-    <div className="outer-container">
-      <div className="white-container">
-        <div className="sidebar-container">
-          <SideBar />
-        </div>
-        <div className="mainpage-content">
-          <Header />
-          <FocusTicketsSection />
-          <WatchSection />
+    <div>
+      <Navbar />
+      <div className="outer-container">
+        <div className="white-container">
+          <div className="sidebar-container">
+            <SideBar />
+          </div>
+          <div className="mainpage-content">
+            <Header />
+            <FocusTicketsSection />
+            <WatchSection />
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

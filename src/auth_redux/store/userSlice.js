@@ -48,6 +48,8 @@ export const userSlice = createSlice({
           state.registrationStatus = "SUCCESS";
           const res = action.payload;
           console.log("action payload after register", res);
+          state.user = action.payload?.userObj.email;
+          localStorage.setItem("email", action.payload?.userObj.email);
         }
       })
       .addCase(registerUser.rejected, (state, action) => {

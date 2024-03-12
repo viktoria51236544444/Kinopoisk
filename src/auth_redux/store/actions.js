@@ -18,7 +18,7 @@ export const registerUser = createAsyncThunk(
       // console.log("res", res.status);
       // console.log("res", res.statusText);
 
-      return res;
+      return { res, userObj };
     } catch (err) {
       console.log("словили ошибку", err);
       return err;
@@ -43,12 +43,14 @@ export const loginUser = createAsyncThunk("user/loginUser", async (userObj) => {
 
 export const checkUserEmail = createAsyncThunk(
   "user/email-confirm",
-  async (confirmCode) => {
+  async (useremail, confirmCode) => {
     console.log("confirmCode", confirmCode);
     try {
-      let res = await axios.post(`${API}/email-confirm/`, {
+      let res = await axios.post(`${API}/account/activate/`, {
+        email: useremail,
         code: confirmCode,
       });
+      localStorage.removeItem("email");
       return res;
     } catch (err) {
       return {
