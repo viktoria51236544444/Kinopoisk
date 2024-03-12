@@ -35,34 +35,7 @@ npm sy .pagination__button-back:hover {
   color: #fa4248;
   background-color: #edebeb;
 }
-.movies-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
-.movie-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-  }
-
-  .tagline {
-    font-style: italic;
-    color: #555;
-  }
-}
 .input {
   background-color: black;
   border-radius: 10px;
@@ -112,4 +85,48 @@ npm sy .pagination__button-back:hover {
 .input button:hover {
   background-color: wheat;
   color: #333;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  font-family: Andika;
+}
+
+.movie-card {
+  display: flex;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.movie-image img {
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+  height: 400px;
+  margin-top: 10%;
+}
+
+.movie-details {
+  width: 400px;
+  margin-left: 3%;
+}
+
+.movie-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.movie-info {
+  margin-bottom: 10px;
+}
+
+.movie-actors {
+  margin-top: 20%;
+  margin-left: 15%;
 }
