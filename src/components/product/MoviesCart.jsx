@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Rating from "./Rating";
 import AverageRating from "./AverageRating";
+
 const MoviesCart = ({ elem }) => {
-  console.log(elem.ratings);
   const { deleteProduct } = useProduct();
   const { favorite, addFavorite, removeFavorite } = useFavorite();
   const navigate = useNavigate();
@@ -47,12 +47,17 @@ const MoviesCart = ({ elem }) => {
       localStorage.removeItem(`likeStatus-${elem.slug}`);
     }
   };
-  // ! fihish like
+  // ! finish like
+
+  const handleCardClick = () => {
+    navigate(`/movies/${elem.slug}`);
+  };
 
   return (
     <div>
       <div style={{ display: "inline-block" }}>
         <img
+          onClick={handleCardClick}
           style={{ width: "200px", height: "200px" }}
           src={elem.poster}
           alt=""

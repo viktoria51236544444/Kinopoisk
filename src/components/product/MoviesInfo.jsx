@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import { PlayArrow } from "@mui/icons-material";
 
@@ -8,12 +8,38 @@ import { IconButton } from "@mui/material";
 import { BookmarkAddOutlined, Pause } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { useReviews } from "../../context/ReviewsContextProvider";
 
 const MoviesInfo = () => {
   const { products, getProducts } = useProduct();
+  const { slug } = useParams();
+  const { getReviews, reviews, deleteReviews } = useReviews();
+  const [movieReviews, setMovieReviews] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     getProducts();
   }, []);
+
+  useEffect(() => {
+    getReviews();
+  }, [getReviews]);
+
+  useEffect(() => {
+    const filteredReviews = reviews.filter(
+      (review) => review.movie.toLowerCase() === slug.toLowerCase()
+    );
+    setMovieReviews(filteredReviews);
+  }, [slug, reviews]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+  const selectedMovie = products.find((elem) => elem.slug === slug);
+
+  if (!selectedMovie) {
+    return <p>Фильм не найден</p>;
+  }
 
   return (
     <div>
@@ -89,7 +115,7 @@ const MoviesInfo = () => {
                     style={{
                       display: "flex",
                       justifyContent: "flex-start",
-                      gap: "48%",
+                      gap: "30%",
                     }}
                   >
                     <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Слоган</p>
@@ -144,8 +170,46 @@ const MoviesInfo = () => {
                 <p className="movie-info">{elem.actors}</p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
+        {movieReviews.length > 0 ? (
+          <div className="reviews-container">
+            <h2
+              style={{
+                color: "white",
+                borderBottom: "1px solid white",
+                paddingBottom: "10px",
+              }}
+            >
+              Отзывы к фильму
+            </h2>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {movieReviews.map((review) => (
+                <li key={review.id} style={{ marginBottom: "20px" }}>
+                  <p
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      marginBottom: "5px",
+                    }}
+                  >
+                    {review.name}
+                  </p>
+                  <p style={{ color: "white", margin: 0 }}>{review.text}</p>
+                  <button onClick={() => deleteReviews(review.id)}>
+                    Удалить
+                  </button>
+                  <button onClick={() => navigate(`/editReviews/${review.id}`)}>
+                    edit
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p style={{ color: "white" }}>Комментарии отсутствуют</p>
+        )}
+
         <FooterSport />
       </div>
     </div>
