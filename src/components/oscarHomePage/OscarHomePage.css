@@ -5,6 +5,7 @@
 .oscarGamePage__container {
   background-color: #0c354d;
   margin: 0;
+  overflow: hidden;
 }
 .oscarNomineesPage__container {
   background-color: #0c354d;

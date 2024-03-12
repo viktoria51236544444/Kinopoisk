@@ -159,7 +159,7 @@ const Nominees = () => {
   ];
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className="best" style={{ textAlign: "center", marginTop: "50px" }}>
       <h2 style={{ color: "white" }}>Номинанты</h2>
       <p
         style={{
@@ -238,7 +238,7 @@ const Nominees = () => {
         }}
       >
         {/* Лучшая мужская роль */}
-        <div style={{ textAlign: "left" }}>
+        <div className="actr" style={{ textAlign: "left" }}>
           <h3
             style={{
               fontSize: "15px",
@@ -251,7 +251,7 @@ const Nominees = () => {
             Лучшая мужская роль
           </h3>
           {bestActorNominees.map((actor, index) => (
-            <div key={index}>
+            <div className="aaa" key={index}>
               <p
                 style={{
                   textOverflow: "ellipsis",
