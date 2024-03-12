@@ -15,7 +15,7 @@ const SideBar = () => {
         <hr />
         <Link style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
-            <HomeIcon />
+            <HomeIcon style={{ borderBottom: "3px solid red" }} />
             Главная
           </li>
         </Link>

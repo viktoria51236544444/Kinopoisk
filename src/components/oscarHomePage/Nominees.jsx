@@ -203,20 +203,22 @@ const Nominees = () => {
               <div className="img-container" style={{ position: "relative" }}>
                 <img src={movie.imageUrl} alt="" />
                 {hoveredIndex === index && (
-                  <img
-                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/favorites.png"
-                    alt="favorites"
-                    style={{
-                      position: "absolute",
-                      top: "0",
-                      right: "0",
-                      width: "24px",
-                      height: "24px",
-                      zIndex: "1",
-                      marginTop: "7px",
-                      marginRight: "2px",
-                    }}
-                  />
+                  <a href="https://hd.kinopoisk.ru/personal" target="blank">
+                    <img
+                      src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/favorites.png"
+                      alt="favorites"
+                      style={{
+                        position: "absolute",
+                        top: "0",
+                        right: "0",
+                        width: "24px",
+                        height: "24px",
+                        zIndex: "1",
+                        marginTop: "7px",
+                        marginRight: "2px",
+                      }}
+                    />
+                  </a>
                 )}
               </div>
               <p style={{ marginLeft: "-50px" }}>{movie.title}</p>
