@@ -98,7 +98,7 @@ const Sport = () => {
               <span class="bar"></span>
             </button>
           </div>
-          <div>
+          <div className="logo_nav">
             <img
               src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTQuMjgzIDExLjIxN0M1NC4yODMgNS4zODkgNTYuOTMxLjYxIDYyLjI1NS42MWM1LjMyMyAwIDcuOTcxIDQuNzc4IDcuOTcxIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MSAxMC42MDUtNS4zMjQuMDA0LTcuOTcyLTQuNzc0LTcuOTcyLTEwLjYwNVptNy45NzIgNy41NzljMS44NyAwIDIuOTY1LTMuMzUyIDIuOTY1LTcuNTc2cy0xLjA5NS03LjU3NS0yLjk2NS03LjU3NWMtMS44NyAwLTIuOTY2IDMuMzUxLTIuOTY2IDcuNTc1LjAwNCA0LjIyNCAxLjA5NiA3LjU3NiAyLjk2NiA3LjU3NlpNLjAwMyAxLjAyaDQuMDN2Ni4yNjVsNC4yMDQtNi4yNjVoNC44OTRsLTcuMTEgNy4zNDNMMTkuMDAzIDEuMDJ2NC42NjJMNy4zNDcgMTAuMTEybDExLjY1NS0xLjEwNnY0LjQyOUw3LjM0OCAxMi4zM2wxMS42NTUgNC40Mjh2NC42NjJsLTEyLjk4LTcuMzQyIDcuMTEgNy4zNDJIOC4yMzJMNC4wMyAxNS4xNTV2Ni4yNjVIMFYxLjAyMWguMDAzWm0yMS44NzUgMGg0Ljc0N2wtLjcxOCAxMy4xOTggNS44OTktMTMuMTk4aDMuODg2djIwLjM5NmgtNC43NDhsLjcxOS0xMy4xOTgtNS45IDEzLjE5OGgtMy44ODZWMS4wMlptMjEuNDQgMEgzOC41N3YyMC4zOTZoNC43NDh2LTkuMzI0aDQuMDN2OS4zMjRoNC43NDhWMS4wMmgtNC43NDhWOC44OWgtNC4wM1YxLjAyWm00Mi43NjcgMEg3Mi40MTd2MjAuMzk2aDQuNzQ4VjQuMjI0aDQuMTcydjE3LjE5M2g0Ljc0OFYxLjAyWm0yLjE4OCAxMC4xOTZDODguMjczIDUuMzg5IDkwLjkyLjYxIDk2LjI0NC42MWM1LjMyNCAwIDcuOTcyIDQuNzc4IDcuOTcyIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MiAxMC42MDUtNS4zMjMgMC03Ljk3MS00Ljc3NC03Ljk3MS0xMC42MDVabTcuOTc1IDcuNTc5YzEuODcgMCAyLjk2NS0zLjM1MiAyLjk2NS03LjU3NnMtMS4wOTUtNy41NzUtMi45NjUtNy41NzVjLTEuODcgMC0yLjk2NiAzLjM1MS0yLjk2NiA3LjU3NXMxLjA5MiA3LjU3NiAyLjk2NiA3LjU3NlpNMTExLjE1NCAxLjAyaC00Ljc0OHYyMC4zOTZoMy44ODdsNS44OTktMTMuMTk4LS43MTkgMTMuMTk4aDQuNzQ4VjEuMDJoLTMuODg2bC01Ljg5OSAxMy4xOTguNzE4LTEzLjE5OFptMjEuNjk5IDEzLjE5OCA0LjUxOC42OTktLjE0My43Yy0uNzc4IDMuNzg5LTMuMTM2IDYuMjA0LTcuMDIyIDYuMjA0LTUuMzI0IDAtNy44MDEtNC43NzgtNy44MDEtMTAuNjA1IDAtNS44MjggMi40NzctMTAuNjA2IDcuODAxLTEwLjYwNiAzLjc0MyAwIDYuMTI5IDIuNDIgNi45NjYgNS45NzJsLjE0My42MTEtNC42MzIgMS4wNDljLS4zNDYtMi44MjUtMS4xOC00LjYwNS0yLjQ3Ny00LjYwNS0xLjg3IDAtMi43OTEgMy4zNTEtMi43OTEgNy41NzVzLjkyMSA3LjU3NiAyLjc5MSA3LjU3NmMxLjQxMi4wMDcgMi4zMDItMS44OSAyLjY0Ny00LjU3Wk0xNDQuMDc2IDEuMDJoLTQuNzQ1djIwLjM5Nmg0Ljc0OHYtOS4xOGwzLjU5NyA5LjE4SDE1M2wtNS43NTctMTAuNTE4IDUuNjE0LTkuODc4aC00Ljg5NWwtMy44ODYgOS4xNzlWMS4wMjFaIiBmaWxsPSIjZmZmIi8+PC9zdmc+"
               alt=""
@@ -117,6 +117,7 @@ const Sport = () => {
           </div>
         </div>
         <div
+          className="menus"
           style={{
             display: "flex",
             marginLeft: "20%",
@@ -125,19 +126,23 @@ const Sport = () => {
             marginTop: "1%",
           }}
         >
-          <p>Главное</p>
-          <p>Мое</p>
-          <p>Каналы</p>
+          <p className="menua">Главное</p>
+          <p className="menua">Мое</p>
+          <p className="menua">Каналы</p>
         </div>
         <div
           style={{
             marginTop: "2.5%",
             marginLeft: "25%",
           }}
+          className="theme"
         >
           <WbSunnyOutlinedIcon onClick={toggleTheme} />
         </div>
-        <div style={{ marginTop: "-4px", marginLeft: "10px" }}>
+        <div
+          className="audios"
+          style={{ marginTop: "-4px", marginLeft: "10px" }}
+        >
           <IconButton color="primary" onClick={togglePlay}>
             {isPlaying ? <Pause /> : <PlayArrow />}
           </IconButton>
