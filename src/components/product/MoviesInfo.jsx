@@ -54,121 +54,120 @@ const MoviesInfo = () => {
       </div>
       <div style={{ backgroundColor: "black" }}>
         <div className="movies-container">
-          {products.map((elem) => (
-            <div key={elem.slug} className="movie-card">
-              <div className="movie-image">
-                <img src={elem.poster} alt={elem.title} />
-              </div>
-              <div className="movie-details">
-                <h1 className="movie-title">{elem.title}</h1>
-                <button
-                  className="movie_button2"
-                  style={{ width: "200px", marginLeft: "-1%", height: "50px" }}
+          <div key={selectedMovie.slug} className="movie-card">
+            <div className="movie-image">
+              <img src={selectedMovie.poster} alt={selectedMovie.title} />
+            </div>
+            <div className="movie-details">
+              <h1 className="movie-title">{selectedMovie.title}</h1>
+              <button
+                className="movie_button2"
+                style={{ width: "200px", marginLeft: "-1%", height: "50px" }}
+              >
+                <PlayArrow />
+                <a
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                  }}
+                  href="https://hd.kinopoisk.ru/film/0252df11cc814ab08a2973faa072a96e?content_tab=overview&playingContentId=0252df11cc814ab08a2973faa072a96e&watch="
+                  target="_blank"
                 >
-                  <PlayArrow />
-                  <a
-                    style={{
-                      textDecoration: "none",
-                      color: "white",
-                    }}
-                    href="https://hd.kinopoisk.ru/film/0252df11cc814ab08a2973faa072a96e?content_tab=overview&playingContentId=0252df11cc814ab08a2973faa072a96e&watch="
-                    target="_blank"
-                  >
-                    Смотреть фильм
-                  </a>
-                </button>
-                <h3>О фильме</h3>
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "30%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>
-                      Год производства
-                    </p>
-                    <p className="movie-info">{elem.year}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "50%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Страна</p>
-                    <p className="movie-info">{elem.country}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "50%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Жанры</p>
-                    <p className="movie-info"> {elem.genres}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "30%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Слоган</p>
-                    <p className="movie-info"> {elem.tagline}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "45%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Режиссер</p>
-                    <p className="movie-info"> {elem.directors}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "48%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Бюджет</p>
-                    <p className="movie-info">${elem.budget}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "48%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Гонорар</p>
-                    <p className="movie-info">${elem.fees_in_usa}</p>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      gap: "38%",
-                    }}
-                  >
-                    <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>
-                      Сборы в мире
-                    </p>
-                    <p className="movie-info">${elem.fees_in_world}</p>
-                  </div>
+                  Смотреть фильм
+                </a>
+              </button>
+              <h3>О фильме</h3>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "23%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>
+                    Год производства
+                  </p>
+                  <p className="movie-info">{selectedMovie.year}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "35%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Страна</p>
+                  <p className="movie-info">{selectedMovie.country}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "35%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Жанры</p>
+                  <p className="movie-info"> {selectedMovie.genres}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "35%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Слоган</p>
+                  <p style={{ fontSize: "14px" }} className="movie-info2">
+                    {" "}
+                    {selectedMovie.tagline}
+                  </p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "32.5%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Режиссер</p>
+                  <p className="movie-info"> {selectedMovie.directors}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "34%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Бюджет</p>
+                  <p className="movie-info">${selectedMovie.budget}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "34%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Гонорар</p>
+                  <p className="movie-info">${selectedMovie.fees_in_usa}</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    gap: "28%",
+                  }}
+                >
+                  <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Сборы в мире</p>
+                  <p className="movie-info">${selectedMovie.fees_in_world}</p>
                 </div>
               </div>
-              <div className="movie-actors">
-                <strong>В главной роли</strong>
-                <p className="movie-info">{elem.actors}</p>
-              </div>
+            </div>
+            <div className="movie-actors">
+              <strong>В главной роли</strong>
+              <p className="movie-info">{selectedMovie.actors}</p>
             </div>
           </div>
         </div>
