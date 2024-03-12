@@ -16,11 +16,9 @@ const MoviesInfo = () => {
   const { getReviews, reviews, deleteReviews } = useReviews();
   const [movieReviews, setMovieReviews] = useState([]);
   const navigate = useNavigate();
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   useEffect(() => {
+    getProducts();
     getReviews();
   }, []);
 
@@ -171,7 +169,7 @@ const MoviesInfo = () => {
           </div>
         </div>
         <div style={{ marginTop: "7%" }}>
-          <AddReviews />
+          <AddReviews updateReviews={getReviews} />
           {movieReviews.length > 0 ? (
             <div
               className="reviews-container"

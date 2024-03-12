@@ -3,7 +3,7 @@ import { useReviews } from "../../context/ReviewsContextProvider";
 import { useProduct } from "../../context/ProductContextProvider";
 import { useParams } from "react-router-dom";
 
-const AddReviews = () => {
+const AddReviews = ({ updateReviews }) => {
   const { getReviews, addReviews } = useReviews();
   const { slug } = useParams();
   const { products, getProducts } = useProduct();
@@ -30,6 +30,7 @@ const AddReviews = () => {
     setEmail("");
     setName("");
     setText("");
+    updateReviews();
   };
 
   return (
