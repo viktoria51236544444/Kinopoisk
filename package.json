@@ -28,6 +28,7 @@
     "react-toastify": "^10.0.4",
     "sass": "^1.71.1",
     "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.7.4",
     "styled-components": "^6.1.8",
     "swiper": "^11.0.7",
     "telegraf": "^4.16.3",

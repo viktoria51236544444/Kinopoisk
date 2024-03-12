@@ -100,7 +100,7 @@ npm sy .pagination__button-back:hover {
 
 .movie-card {
   display: flex;
-  width: 70%;
+  width: 85%;
   margin-bottom: 20px;
 }
 
@@ -113,7 +113,7 @@ npm sy .pagination__button-back:hover {
 }
 
 .movie-details {
-  width: 400px;
+  width: 900px;
   margin-left: 3%;
 }
 
@@ -128,5 +128,6 @@ npm sy .pagination__button-back:hover {
 
 .movie-actors {
   margin-top: 20%;
-  margin-left: 15%;
+  margin-left: 5%;
+  width: 200px;
 }
