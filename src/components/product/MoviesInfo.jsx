@@ -24,7 +24,6 @@ const MoviesInfo = () => {
           className="nav__iframe"
           src="https://wallpapercave.com/wp/wp7006451.jpg"
         />
-
         <div style={{ width: "500px", marginLeft: "7%" }}></div>
       </div>
       <div style={{ backgroundColor: "black" }}>
@@ -32,10 +31,7 @@ const MoviesInfo = () => {
           {products.map((elem) => (
             <div key={elem.slug} className="movie-card">
               <div className="movie-image">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/ru/d/d7/%D0%A5%D0%BE%D0%BB%D0%BE%D0%BF-2_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.jpeg"
-                  alt={elem.title}
-                />
+                <img src={elem.poster} alt={elem.title} />
               </div>
               <div className="movie-details">
                 <h1 className="movie-title">{elem.title}</h1>

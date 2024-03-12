@@ -44,6 +44,11 @@ const MoviesCart = ({ elem }) => {
   return (
     <div>
       <div style={{ display: "inline-block" }}>
+        <img
+          style={{ width: "200px", height: "200px" }}
+          src={elem.poster}
+          alt=""
+        />
         <h2>{elem.title}</h2>
         <p>{elem.category}</p>
         <button onClick={() => deleteProduct(elem.slug)}>delete</button>
