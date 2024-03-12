@@ -27,7 +27,9 @@ import OscarGameCondition from "../components/oscarGamePage/OscarGameCondition";
 import MainPage from "../pages/MainPage";
 import NomineesGame from "../components/oscarGamePage/NomineesGame";
 import MoviesInfo from "../components/product/MoviesInfo";
+import Chanel from "../components/kids/Chanel";
 import ConfirmEmailCode2 from "../auth_redux/componentsAuth/confirmEmail/ConfirmEmailCode2";
+import FilmPage from "../pages/FilmPage";
 
 const MainRoutes = () => {
   return (
@@ -50,7 +52,7 @@ const MainRoutes = () => {
       <Route path="/sport" element={<Sport />} />
       <Route path="/onlineCinema" element={<OnlineCinema />} />
       <Route path="/moviesCard" element={<MoviesCart />} />
-      <Route path="/moviesList" element={<MoviesList />} />
+      <Route path="/moviesList" element={<FilmPage />} />
       <Route path="/gameCondition" element={<OscarGameCondition />} />
       <Route path="/favorite" element={<Favorite />} />
       <Route path="/addReviews" element={<AddReviews />} />
@@ -58,6 +60,7 @@ const MainRoutes = () => {
       <Route path="/editReviews/:id" element={<EditReviews />} />
       <Route path="/game" element={<NomineesGame />} />
       <Route path="/info" element={<MoviesInfo />} />
+      <Route path="/chanelKids" element={<Chanel />} />
     </Routes>
   );
 };

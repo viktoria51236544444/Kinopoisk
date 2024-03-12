@@ -3,11 +3,15 @@ import { useFavorite } from "../../context/FavoriteContextProvider";
 import { useProduct } from "../../context/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useRating } from "../../context/RatingContextPovider";
+import ReactStars from "react-rating-stars-component";
 import Rating from "./Rating";
 import AverageRating from "./AverageRating";
+
 const MoviesCart = ({ elem }) => {
-  console.log(elem.ratings);
+  // console.log(elem.ratings);
   const { deleteProduct } = useProduct();
+
   const { favorite, addFavorite, removeFavorite } = useFavorite();
   const navigate = useNavigate();
 
@@ -27,6 +31,37 @@ const MoviesCart = ({ elem }) => {
       addFavorite(elem);
     }
   };
+
+  // ! Rating
+  const { getRating, ratings } = useRating();
+  const [averageRatings, setAverageRatings] = useState([]);
+  useEffect(() => {
+    getRating();
+  }, []);
+
+  useEffect(() => {
+    const calculateAverageRatings = () => {
+      const uniqueSlugs = [...new Set(ratings.map((rating) => rating.movie))];
+      const averageRatingsData = uniqueSlugs.map((slug) => {
+        const filteredRatings = ratings.filter(
+          (rating) => rating.movie === slug
+        );
+        const totalStars = filteredRatings.reduce(
+          (sum, rating) => sum + rating.star,
+          0
+        );
+        const avgRating =
+          Math.round((totalStars / filteredRatings.length) * 2) / 2;
+        return { slug, averageRating: avgRating };
+      });
+      setAverageRatings(averageRatingsData);
+      // console.log(averageRatingsData);
+    };
+
+    calculateAverageRatings();
+  }, [ratings]);
+
+  // ! Ratings finish
 
   // ! like
   const [liked, setLiked] = useState(false);
@@ -55,9 +90,29 @@ const MoviesCart = ({ elem }) => {
         <h2>{elem.title}</h2>
         <p>{elem.category}</p>
         <p>{elem.slug}</p>
-        <AverageRating slug={elem.slug} />
+
+        {averageRatings
+          .filter((item) => item.slug === elem.slug)
+          .map((filteredItem) => (
+            <div key={filteredItem.slug}>
+              <p>
+                Average Rating for {filteredItem.slug}:{" "}
+                {filteredItem.averageRating}
+              </p>
+              <ReactStars
+                value={filteredItem.averageRating}
+                activeColor="#ffd700"
+                isHalf={true}
+                count={10}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                size={24}
+              />
+            </div>
+          ))}
         {isRatingVisible ? (
-          <Rating slug={elem.slug} />
+          <Rating slug={elem.slug} ratings={elem.ratings} />
         ) : (
           <button onClick={handleRatingButtonClick}>Оценить фильм</button>
         )}

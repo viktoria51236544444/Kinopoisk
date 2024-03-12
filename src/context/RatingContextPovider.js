@@ -35,7 +35,7 @@ const RatingContextPovider = ({ children }) => {
   const getRating = async () => {
     try {
       const { data } = await axios(`${API2}/ratings/`);
-      // console.log(data.results);
+      console.log(data.results);
 
       dispatch({
         type: "GET_RATINGS",
@@ -58,7 +58,10 @@ const RatingContextPovider = ({ children }) => {
   };
 
   return (
-    <ratingContext.Provider value={values}>{children}</ratingContext.Provider>
+    <ratingContext.Provider value={values}>
+      {" "}
+      {console.log(state.ratings)} {children}
+    </ratingContext.Provider>
   );
 };
 
