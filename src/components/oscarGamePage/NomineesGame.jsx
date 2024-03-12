@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Music from "./assets/game.mp3";
+import { IconButton } from "@mui/material";
+import { Pause, PlayArrow } from "@mui/icons-material";
 const NomineesGame = () => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState({});
@@ -170,14 +172,34 @@ const NomineesGame = () => {
     navigate("/oscarGame");
   };
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audio = document.getElementById("audio");
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
   return (
-    <div
-      className="game-container"
-      style={{ background: "linear-gradient(to bottom, #000000, #2c2c2c)" }}
-    >
+    <div className="game-container">
       <div className="nominees-game-container">
         <div className="content">
-          <h1 style={{ color: "yellow", fontSize: "20px" }}>Викторина</h1>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <h1 style={{ color: "yellow", fontSize: "20px" }}>Викторина</h1>
+            <IconButton color="primary" onClick={togglePlay}>
+              {isPlaying ? <Pause /> : <PlayArrow />}
+            </IconButton>
+            <audio
+              id="audio"
+              src={Music}
+              autoPlay={isPlaying}
+              onEnded={() => setIsPlaying(false)}
+            ></audio>
+          </div>
           {currentCategory && (
             <div>
               <h2 style={{ color: "grey", fontSize: "15px" }}>
