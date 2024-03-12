@@ -22,9 +22,11 @@ const NomineesOscarNavbar = () => {
   return (
     <div>
       <div className="navbarOscar__container dark" id="navbar">
-        <div className="navbarOscar__container_logo">
-          <img url="" />
-        </div>
+        <NavLink to={"/"}>
+          <div className="navbarOscar__container_logo">
+            <img url="" />
+          </div>
+        </NavLink>
         <div className="navbarOscar_container_nav-title">
           <NavLink
             style={{ textDecoration: "none", color: "white" }}
