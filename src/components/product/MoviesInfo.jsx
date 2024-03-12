@@ -89,7 +89,7 @@ const MoviesInfo = () => {
                     style={{
                       display: "flex",
                       justifyContent: "flex-start",
-                      gap: "30%",
+                      gap: "48%",
                     }}
                   >
                     <p style={{ color: "hsla(0, 0%, 100%, .6)" }}>Слоган</p>
