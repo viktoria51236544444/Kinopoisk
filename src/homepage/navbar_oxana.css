@@ -43,17 +43,14 @@
   height: 30px;
 }
 
-.navbar__oscar-icon-white {
+/* .navbar__oscar-icon-white {
   opacity: 0; /* Скрываем белую картинку по умолчанию */
-}
 
-.navbar__main-link:hover .navbar__link-oscar:hover .navbar__oscar-icon-white {
+/* .navbar__main-link:hover .navbar__link-oscar:hover .navbar__oscar-icon-white {
   opacity: 1; /* Показываем белую картинку при наведении */
-}
 
-.navbar__link-oscar:hover .navbar__oscar-icon-grey {
+/* .navbar__link-oscar:hover .navbar__oscar-icon-grey {
   opacity: 0; /* Скрываем серую картинку при наведении */
-}
 
 .navbar__player-text,
 .navbar__oscar-text {
@@ -138,4 +135,9 @@
   color: white;
   border: none;
   font-size: 15px;
+}
+@media screen and (max-width: 1024px) {
+  .navbar__main {
+    display: none;
+  }
 }
