@@ -46,7 +46,7 @@ const MainRoutes = () => {
 
   console.log("User:", currentUser);
   const PRIVATE_ROUTES = [
-    { id: 1, link: "/admin", element: <AdminPage /> },
+    { id: 1, link: "/admin", element: <PageAdd /> },
     { id: 2, link: "/edit/:slug", element: <EditProduct /> },
   ];
 
