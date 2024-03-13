@@ -98,7 +98,8 @@ const MoviesCart = ({ elem }) => {
           height: "500px",
           width: "320px",
           justifyContent: "flex-end",
-          backgroundColor: "white",
+          backgroundColor: "black",
+          color: "white",
         }}
       >
         <div
@@ -160,16 +161,54 @@ const MoviesCart = ({ elem }) => {
             onChange={() => getRating}
           />
         ) : (
-          <button onClick={handleRatingButtonClick}>Оценить фильм</button>
+          <button
+            style={{
+              backgroundColor: "#B8860B",
+              color: "white",
+              border: "none",
+            }}
+            onClick={handleRatingButtonClick}
+          >
+            Оценить фильм
+          </button>
         )}
         <div style={{ display: "flex", marginBottom: "5px" }}>
-          <button onClick={() => deleteProduct(elem.slug)}>delete</button>
-          <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
-          <button onClick={handleFavoriteToggle}>
-            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          <button
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              width: "100px",
+            }}
+            onClick={() => deleteProduct(elem.slug)}
+          >
+            Удалить
+          </button>
+          <button
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              width: "100px",
+            }}
+            onClick={() => navigate(`/edit/${elem.slug}`)}
+          >
+            Редактировать
+          </button>
+
+          <button
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              border: "none",
+              width: "100px",
+            }}
+            onClick={handleFavoriteToggle}
+          >
+            {isFavorite ? "Удалено" : "Добавлено"}
           </button>
           <div
-            style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
+            style={{ color: liked ? "#f50" : "white", cursor: "pointer" }}
             onClick={toggleLike}
           >
             <FavoriteIcon />

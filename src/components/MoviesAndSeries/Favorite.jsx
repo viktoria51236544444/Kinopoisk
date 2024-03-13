@@ -95,8 +95,18 @@ const Favorite = () => {
                     style={{ width: "370px", height: "500px" }}
                   />
 
-                  <button onClick={() => handleRemoveFavorite(item)}>
-                    delete
+                  <button
+                    style={{
+                      borderRadius: "5px",
+                      marginTop: "3%",
+                      padding: "10px",
+                      border: "1px solig gray",
+                      backgroundColor: "black",
+                      color: "white",
+                    }}
+                    onClick={() => handleRemoveFavorite(item)}
+                  >
+                    Удалить
                   </button>
                 </div>
               ))}
