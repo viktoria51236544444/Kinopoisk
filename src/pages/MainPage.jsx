@@ -33,6 +33,16 @@ const MainPage = () => {
               className="theme"
             >
               <WbSunnyOutlinedIcon onClick={toggleTheme} />
+              <a
+                href="https://web.telegram.org/k/#@moviesbottiik_bot"
+                target="blank"
+              >
+                <img
+                  style={{ width: "30px", marginLeft: "2%" }}
+                  src="https://img.icons8.com/officel/80/bot.png"
+                  alt="bot"
+                />{" "}
+              </a>
             </div>
             <Header />
             <FocusTicketsSection />
