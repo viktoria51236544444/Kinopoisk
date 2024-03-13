@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import OscarPage from "../pages/OscarPage";
 import OscarGamePage from "../pages/OscarGamePage";
 import OscarNomineesPage from "../pages/OscarNomineesPage";
@@ -30,8 +30,26 @@ import MoviesInfo from "../components/product/MoviesInfo";
 import Chanel from "../components/kids/Chanel";
 import ConfirmEmailCode2 from "../auth_redux/componentsAuth/confirmEmail/ConfirmEmailCode2";
 import FilmPage from "../pages/FilmPage";
+import AdminPage from "../pages/AdminPage";
+import { ADMIN } from "../helpers/const";
+import { useSelector } from "react-redux";
+import AddProduct from "../components/product/AddProduct";
 
 const MainRoutes = () => {
+  const user = useSelector(({ userSlice }) => userSlice.user);
+  const [currentUser, setCurrentUser] = useState(null);
+  const email = localStorage.getItem("email");
+
+  useEffect(() => {
+    setCurrentUser(email);
+  }, [email]);
+
+  console.log("User:", currentUser);
+  const PRIVATE_ROUTES = [
+    { id: 1, link: "/admin", element: <AdminPage /> },
+    { id: 2, link: "/edit/:slug", element: <EditProduct /> },
+  ];
+
   return (
     <Routes>
       <Route path="/oscarHome" element={<OscarPage />} />
@@ -47,7 +65,7 @@ const MainRoutes = () => {
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/confirm-email" element={<ConfirmEmailCode2 />} />
       <Route path="/add" element={<PageAdd />} />
-      <Route path="/edit/:slug" element={<EditProduct />} />
+
       <Route path="/" element={<MainPage />} />
       <Route path="/sport" element={<Sport />} />
       <Route path="/onlineCinema" element={<OnlineCinema />} />
@@ -61,6 +79,18 @@ const MainRoutes = () => {
       <Route path="/game" element={<NomineesGame />} />
       <Route path="/movies/:slug" element={<MoviesInfo />} />
       <Route path="/chanelKids" element={<Chanel />} />
+
+      {currentUser
+        ? PRIVATE_ROUTES.map((elem) => (
+            <Route
+              key={elem.id}
+              path={elem.link}
+              element={
+                currentUser === ADMIN ? elem.element : <Navigate to="*" />
+              }
+            />
+          ))
+        : null}
     </Routes>
   );
 };
