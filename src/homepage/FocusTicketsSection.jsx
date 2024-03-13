@@ -79,7 +79,6 @@ const FocusTicketsSection = () => {
           <div className="swiper-button-prev swiper-button-prev3"></div>
         </Swiper>
       </div>
-
       <div className="ticket-section-wrapper">
         <h2>Билеты в кино</h2>
         <Swiper

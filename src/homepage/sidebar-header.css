@@ -3,7 +3,6 @@
 .sideBar {
   list-style-type: none;
   margin: 0 30px;
-
   height: 100%;
   border-right: 1px solid gray;
   /* position: fixed; */
@@ -16,7 +15,7 @@
   align-items: flex-start;
   /* justify-content: start; */
   margin-right: 30px;
-  gap: 15px;
+  gap: 25px;
 }
 .sidebar__link {
   color: rgba(0, 0, 0, 0.6);
