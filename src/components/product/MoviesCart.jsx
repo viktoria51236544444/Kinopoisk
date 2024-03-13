@@ -7,6 +7,7 @@ import { useRating } from "../../context/RatingContextPovider";
 import ReactStars from "react-rating-stars-component";
 import Rating from "./Rating";
 import AverageRating from "./AverageRating";
+import { ADMIN } from "../../helpers/const";
 
 const MoviesCart = ({ elem }) => {
   // console.log(elem.ratings);
@@ -31,6 +32,14 @@ const MoviesCart = ({ elem }) => {
       addFavorite(elem);
     }
   };
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const email = localStorage.getItem("email");
+
+  useEffect(() => {
+    setCurrentUser(email);
+  }, [email]);
 
   // ! Rating
   const { getRating, ratings } = useRating();
@@ -153,27 +162,38 @@ const MoviesCart = ({ elem }) => {
           {/* <p style={{ margin: "5px 0" }}>{elem.slug}</p> */}
         </div>
 
-        {isRatingVisible ? (
-          <Rating
-            slug={elem.slug}
-            ratings={elem.ratings}
-            onChange={() => getRating}
-          />
-        ) : (
-          <button onClick={handleRatingButtonClick}>Оценить фильм</button>
-        )}
         <div style={{ display: "flex", marginBottom: "5px" }}>
-          <button onClick={() => deleteProduct(elem.slug)}>delete</button>
-          <button onClick={() => navigate(`/edit/${elem.slug}`)}>edit</button>
-          <button onClick={handleFavoriteToggle}>
-            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-          </button>
-          <div
-            style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
-            onClick={toggleLike}
-          >
-            <FavoriteIcon />
-          </div>
+          {currentUser === ADMIN && (
+            <>
+              <button onClick={() => deleteProduct(elem.slug)}>delete</button>
+              <button onClick={() => navigate(`/edit/${elem.slug}`)}>
+                edit
+              </button>
+            </>
+          )}
+
+          {currentUser !== ADMIN && (
+            <>
+              {isRatingVisible ? (
+                <Rating
+                  slug={elem.slug}
+                  ratings={elem.ratings}
+                  onChange={() => getRating}
+                />
+              ) : (
+                <button onClick={handleRatingButtonClick}>Оценить фильм</button>
+              )}
+              <button onClick={handleFavoriteToggle}>
+                {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+              </button>
+              <div
+                style={{ color: liked ? "#f50" : "black", cursor: "pointer" }}
+                onClick={toggleLike}
+              >
+                <FavoriteIcon />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
