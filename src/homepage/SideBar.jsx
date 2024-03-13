@@ -4,7 +4,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CropLandscapeIcon from "@mui/icons-material/CropLandscape";
 import MovieFilterIcon from "@mui/icons-material/MovieFilter";
 import PublicIcon from "@mui/icons-material/Public";
-import LabelIcon from "@mui/icons-material/Label";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
 import { Link } from "react-router-dom";
 import "./sidebar-header.css";
 
@@ -13,39 +13,34 @@ const SideBar = () => {
     <div className="sideBar">
       <div className="sideBar_menu">
         <hr />
-        <Link style={{ textDecorationLine: "none" }}>
+        <Link to={"/"} style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
             <HomeIcon />
             Главная
           </li>
         </Link>
-        <Link style={{ textDecorationLine: "none" }}>
+        <Link to={"/onlineCinema"} style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
             <PlayArrowIcon />
             Онлайн-кинотеатр
           </li>
         </Link>
-        <Link style={{ textDecorationLine: "none" }}>
+        <Link to={"/moviesList"} style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
             <CropLandscapeIcon />
             Фильмы
           </li>
         </Link>
-        <Link style={{ textDecorationLine: "none" }}>
-          <li className="sidebar__link">
-            <MovieFilterIcon /> Сериалы
-          </li>
-        </Link>
-        <Link style={{ textDecorationLine: "none" }}>
+        <Link to={"/sport"} style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
             <PublicIcon />
             Спорт
           </li>
         </Link>
-        <Link style={{ textDecorationLine: "none" }}>
+        <Link to={"/kids"} style={{ textDecorationLine: "none" }}>
           <li className="sidebar__link">
-            <LabelIcon />
-            Билеты в кино
+            <ChildCareIcon />
+            Дети
           </li>
         </Link>
       </div>
