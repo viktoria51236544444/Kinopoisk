@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import { useParams } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
+import Navbar from "../../homepage/Navbar";
 const EditProduct = () => {
   const {
     categories,
@@ -132,6 +133,7 @@ const EditProduct = () => {
         marginTop: "-1.5%",
       }}
     >
+      <Navbar />
       <div className="input">
         <div>
           <input

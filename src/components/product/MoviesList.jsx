@@ -26,7 +26,7 @@ const MoviesList = () => {
 
   useEffect(() => {
     getProducts();
-    setCurrentPage(1);
+    // setCurrentPage(1);
   }, [searchParams]);
 
   useEffect(() => {
