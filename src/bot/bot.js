@@ -5,7 +5,7 @@ const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, "Выберите интересующую вас тему:", {
+  bot.sendMessage(chatId, "О каком фильме хотите узнать?🍿", {
     reply_markup: {
       keyboard: [
         ["Зеленая миля", "1+1"],
