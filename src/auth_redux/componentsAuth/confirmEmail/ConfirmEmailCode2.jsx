@@ -15,16 +15,17 @@ const ConfirmEmailCode2 = () => {
   );
 
   console.log("confirmCode", confirmCode);
+  console.log("email for confirm", user);
+
+  const handleSubmit = () => {
+    dispatch(checkUserEmail(user, confirmCode));
+  };
 
   useEffect(() => {
     if (emailConfirmStatus === "SUCCESS") {
       navigate("/login");
     }
   }, [emailConfirmStatus]);
-
-  const handleSubmit = () => {
-    dispatch(checkUserEmail(user, confirmCode));
-  };
 
   return (
     <>

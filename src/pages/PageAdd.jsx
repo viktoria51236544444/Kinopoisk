@@ -1,5 +1,6 @@
 import React from "react";
 import AddProduct from "../components/product/AddProduct";
+import Navbar from "../homepage/Navbar";
 
 const PageAdd = () => {
   return (
@@ -10,6 +11,7 @@ const PageAdd = () => {
         margin: 0,
       }}
     >
+      <Navbar />
       <AddProduct />
     </div>
   );
