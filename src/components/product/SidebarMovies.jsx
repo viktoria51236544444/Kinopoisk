@@ -42,7 +42,10 @@ const SidebarMovies = () => {
 
   return (
     <div>
-      <div className="dropdown" style={{ marginLeft: "50px" }}>
+      <div
+        className="dropdown"
+        style={{ marginLeft: "50px", marginTop: "10%" }}
+      >
         <div className="btn_dropdown" onClick={() => toggleMenu("categories")}>
           КАТЕГОРИИ <ArrowDropDownIcon />
         </div>
@@ -71,7 +74,10 @@ const SidebarMovies = () => {
           </div>
         )}
       </div>
-      <div className="dropdown" style={{ marginLeft: "50px" }}>
+      <div
+        className="dropdown"
+        style={{ marginLeft: "50px", marginTop: "65%" }}
+      >
         <div className="btn_dropdown" onClick={() => toggleMenu("genres")}>
           ЖАНРЫ <ArrowDropDownIcon />
         </div>

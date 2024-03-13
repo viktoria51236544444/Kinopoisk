@@ -35,12 +35,12 @@
   position: absolute;
   top: 10px;
   left: 5px;
-  height: 30px;
+  height: 28px;
   /* transition: opacity 0.3s ease; */
 }
 
 .navbar__oscar-icon-grey {
-  height: 30px;
+  height: 28px;
 }
 
 /* .navbar__oscar-icon-white {
@@ -63,7 +63,7 @@
 }
 
 .navbar__playericon {
-  height: 8vh;
+  height: 6vh;
   background-color: black;
   fill: gray;
 }
@@ -86,6 +86,7 @@
   padding-right: 50px;
   background-color: rgb(203, 201, 201);
   height: 34px;
+  width: 320px;
 }
 
 .navbar__search-filtericon {

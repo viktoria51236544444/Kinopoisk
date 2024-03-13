@@ -19,7 +19,7 @@ import { updateToken } from "../auth_redux/helpersAuth/functions";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../auth_redux/store/actions";
 import { useProduct } from "../context/ProductContextProvider";
-import { useTheme } from "../context/Background";
+import { ADMIN } from "../helpers/const";
 
 const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -65,17 +65,6 @@ const Navbar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
 
-  useEffect(() => {
-    setSearchParams({
-      q: search,
-    });
-    getProducts();
-  }, [search]);
-
-  useEffect(() => {
-    getCategories();
-  }, []);
-
   // ! Voice search start
   function startDictation() {
     if (window.hasOwnProperty("webkitSpeechRecognition")) {
@@ -108,6 +97,17 @@ const Navbar = () => {
   };
 
   // ! Voice search finish
+
+  useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+    getProducts();
+  }, [search]);
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <div className="navbar__main">
@@ -169,8 +169,21 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar__userblock">
-        <img className="navbar__userblock-bmicon" src={bookmark} alt="" />
-        <button className="navbar__userblock-button">Расширить подписку</button>
+        {currentUser && currentUser === ADMIN && (
+          <NavLink to={"/admin"}>
+            <button
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                border: "none",
+              }}
+              className="navbar__userblock-button"
+            >
+              Админ
+            </button>
+          </NavLink>
+        )}
+
         <img
           className="navbar__userblock-usericon"
           onMouseEnter={toggleDropdown}
