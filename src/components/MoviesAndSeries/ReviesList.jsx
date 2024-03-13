@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useReviews } from "../../context/ReviewsContextProvider";
 import ReviewsCard from "./ReviewsCard";
+import MoviesInfo from "../product/MoviesInfo";
 
 const ReviesList = () => {
   const { getReviews, reviews } = useReviews();
@@ -11,7 +12,7 @@ const ReviesList = () => {
   return (
     <div>
       {reviews.map((elem) => (
-        <ReviewsCard elem={elem} key={elem.id} />
+        <MoviesInfo elem={elem} key={elem.id} />
       ))}
     </div>
   );

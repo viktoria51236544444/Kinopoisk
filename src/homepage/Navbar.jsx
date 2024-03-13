@@ -63,7 +63,7 @@ const Navbar = () => {
         <NavLink
           style={{ textDecoration: "none" }}
           className="navbar__main-link"
-          to="/"
+          to="/onlineCinema"
         >
           <div className="navbar__link-cinema">
             <img className="navbar__playericon" src={player} alt="" />

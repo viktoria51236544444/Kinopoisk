@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useReviews } from "../../context/ReviewsContextProvider";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditReviews = () => {
   const { getOneReviews, oneReview, editReviews } = useReviews();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getOneReviews(id);
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (oneReview) {
@@ -24,14 +25,17 @@ const EditReviews = () => {
   const [text, setText] = useState("");
   const [movie, setMovie] = useState("");
 
-  const handleClick = () => {
-    const newEditReview = new FormData();
-    newEditReview.append("email", email);
-    newEditReview.append("name", name);
-    newEditReview.append("text", text);
-    newEditReview.append("movie", movie);
+  const handleSave = async () => {
+    const newEditReview = {
+      email: email,
+      name: name,
+      text: text,
+      movie: movie,
+    };
 
-    editReviews(id, newEditReview);
+    await editReviews(id, newEditReview);
+
+    navigate(`/movies/${movie}`);
   };
 
   return (
@@ -57,7 +61,7 @@ const EditReviews = () => {
         onChange={(e) => setMovie(e.target.value)}
       />
 
-      <button onClick={handleClick}>save</button>
+      <button onClick={handleSave}>Сохранить</button>
     </div>
   );
 };

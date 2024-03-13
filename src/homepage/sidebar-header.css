@@ -28,18 +28,20 @@
   justify-content: center;
   align-items: center;
 }
+.sidebar__link li {
+  font-family: Graphik Kinopoisk LC Web, Tahoma, Arial, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 18px;
+}
 .sidebar__link:hover {
-  color: black;
-  border-bottom: 2px solid black;
+  transform: scale(1.1);
 }
 
 .header {
-  /* padding-left: 100%; */
   margin: 80px 0px;
   width: 100%;
-  /* position: absolute;
-  left: 20%;
-  top: 23%; */
   overflow: hidden;
 }
 
@@ -53,10 +55,10 @@
   overflow: hidden;
 }
 @media screen and (max-width: 1439px) {
-  .header_trailer {
-    height: 100vh;
+  /* .header_trailer {
+    height: 60vh;
     width: 80%;
-  }
+  } */
   .contentContainer-watch {
     display: none;
   }
@@ -76,7 +78,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 85%;
+  width: 70%;
   height: 100%;
   background: linear-gradient(
     90deg,

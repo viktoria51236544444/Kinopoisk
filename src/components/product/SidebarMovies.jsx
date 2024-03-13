@@ -42,7 +42,7 @@ const SidebarMovies = () => {
               <button
                 // type="button"
                 key={elem.id}
-                onClick={() => fetchByParams("category", elem.name)}
+                onClick={() => fetchByParams("category", elem.slug)}
               >
                 {elem.name}
               </button>

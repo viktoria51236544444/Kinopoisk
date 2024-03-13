@@ -100,7 +100,7 @@ npm sy .pagination__button-back:hover {
 
 .movie-card {
   display: flex;
-  width: 70%;
+  width: 85%;
   margin-bottom: 20px;
 }
 
@@ -113,7 +113,7 @@ npm sy .pagination__button-back:hover {
 }
 
 .movie-details {
-  width: 400px;
+  width: 900px;
   margin-left: 3%;
 }
 
@@ -128,5 +128,38 @@ npm sy .pagination__button-back:hover {
 
 .movie-actors {
   margin-top: 20%;
-  margin-left: 15%;
+  margin-left: 5%;
+  width: 200px;
+}
+
+.revies__button {
+  background-color: #9370db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.revies__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(50deg, #9370db, #ffc0cb, #9370db);
+  z-index: -1;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.revies__button:hover {
+  transform: scale(1.1);
+}
+
+.revies__button:hover::after {
+  opacity: 1;
 }

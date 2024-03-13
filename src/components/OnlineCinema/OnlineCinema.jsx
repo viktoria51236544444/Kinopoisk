@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import css from "../sportComponents/sport.css";
 import { IconButton } from "@mui/material";
 import { BookmarkAddOutlined, Pause, PlayArrow } from "@mui/icons-material";
@@ -7,6 +7,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FooterSport from "../sportComponents/FooterSport";
 import Music from "./assets/hungryGame.mp3";
+import { NavLink } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import CropLandscapeIcon from "@mui/icons-material/CropLandscape";
+import MovieFilterIcon from "@mui/icons-material/MovieFilter";
+import PublicIcon from "@mui/icons-material/Public";
+import LabelIcon from "@mui/icons-material/Label";
 const OnlineCinema = () => {
   const SampleNextArrow = (props) => {
     const { onClick } = props;
@@ -134,6 +141,31 @@ const OnlineCinema = () => {
       setIsPlaying(false);
     }
   };
+  // ! Burger menu
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMenuItemClick = () => {
+    setIsOpen(false); // Закрываем меню после выбора пункта
+  };
+
   return (
     <div>
       <div>
@@ -148,30 +180,154 @@ const OnlineCinema = () => {
           }}
         >
           <div style={{ display: "flex", marginLeft: "6%", marginTop: "2%" }}>
-            <div>
-              <button class="burger-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-              </button>
-            </div>
-            <div className="logo_nav">
-              <img
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTQuMjgzIDExLjIxN0M1NC4yODMgNS4zODkgNTYuOTMxLjYxIDYyLjI1NS42MWM1LjMyMyAwIDcuOTcxIDQuNzc4IDcuOTcxIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MSAxMC42MDUtNS4zMjQuMDA0LTcuOTcyLTQuNzc0LTcuOTcyLTEwLjYwNVptNy45NzIgNy41NzljMS44NyAwIDIuOTY1LTMuMzUyIDIuOTY1LTcuNTc2cy0xLjA5NS03LjU3NS0yLjk2NS03LjU3NWMtMS44NyAwLTIuOTY2IDMuMzUxLTIuOTY2IDcuNTc1LjAwNCA0LjIyNCAxLjA5NiA3LjU3NiAyLjk2NiA3LjU3NlpNLjAwMyAxLjAyaDQuMDN2Ni4yNjVsNC4yMDQtNi4yNjVoNC44OTRsLTcuMTEgNy4zNDNMMTkuMDAzIDEuMDJ2NC42NjJMNy4zNDcgMTAuMTEybDExLjY1NS0xLjEwNnY0LjQyOUw3LjM0OCAxMi4zM2wxMS42NTUgNC40Mjh2NC42NjJsLTEyLjk4LTcuMzQyIDcuMTEgNy4zNDJIOC4yMzJMNC4wMyAxNS4xNTV2Ni4yNjVIMFYxLjAyMWguMDAzWm0yMS44NzUgMGg0Ljc0N2wtLjcxOCAxMy4xOTggNS44OTktMTMuMTk4aDMuODg2djIwLjM5NmgtNC43NDhsLjcxOS0xMy4xOTgtNS45IDEzLjE5OGgtMy44ODZWMS4wMlptMjEuNDQgMEgzOC41N3YyMC4zOTZoNC43NDh2LTkuMzI0aDQuMDN2OS4zMjRoNC43NDhWMS4wMmgtNC43NDhWOC44OWgtNC4wM1YxLjAyWm00Mi43NjcgMEg3Mi40MTd2MjAuMzk2aDQuNzQ4VjQuMjI0aDQuMTcydjE3LjE5M2g0Ljc0OFYxLjAyWm0yLjE4OCAxMC4xOTZDODguMjczIDUuMzg5IDkwLjkyLjYxIDk2LjI0NC42MWM1LjMyNCAwIDcuOTcyIDQuNzc4IDcuOTcyIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MiAxMC42MDUtNS4zMjMgMC03Ljk3MS00Ljc3NC03Ljk3MS0xMC42MDVabTcuOTc1IDcuNTc5YzEuODcgMCAyLjk2NS0zLjM1MiAyLjk2NS03LjU3NnMtMS4wOTUtNy41NzUtMi45NjUtNy41NzVjLTEuODcgMC0yLjk2NiAzLjM1MS0yLjk2NiA3LjU3NXMxLjA5MiA3LjU3NiAyLjk2NiA3LjU3NlpNMTExLjE1NCAxLjAyaC00Ljc0OHYyMC4zOTZoMy44ODdsNS44OTktMTMuMTk4LS43MTkgMTMuMTk4aDQuNzQ4VjEuMDJoLTMuODg2bC01Ljg5OSAxMy4xOTguNzE4LTEzLjE5OFptMjEuNjk5IDEzLjE5OCA0LjUxOC42OTktLjE0My43Yy0uNzc4IDMuNzg5LTMuMTM2IDYuMjA0LTcuMDIyIDYuMjA0LTUuMzI0IDAtNy44MDEtNC43NzgtNy44MDEtMTAuNjA1IDAtNS44MjggMi40NzctMTAuNjA2IDcuODAxLTEwLjYwNiAzLjc0MyAwIDYuMTI5IDIuNDIgNi45NjYgNS45NzJsLjE0My42MTEtNC42MzIgMS4wNDljLS4zNDYtMi44MjUtMS4xOC00LjYwNS0yLjQ3Ny00LjYwNS0xLjg3IDAtMi43OTEgMy4zNTEtMi43OTEgNy41NzVzLjkyMSA3LjU3NiAyLjc5MSA3LjU3NmMxLjQxMi4wMDcgMi4zMDItMS44OSAyLjY0Ny00LjU3Wk0xNDQuMDc2IDEuMDJoLTQuNzQ1djIwLjM5Nmg0Ljc0OHYtOS4xOGwzLjU5NyA5LjE4SDE1M2wtNS43NTctMTAuNTE4IDUuNjE0LTkuODc4aC00Ljg5NWwtMy44ODYgOS4xNzlWMS4wMjFaIiBmaWxsPSIjZmZmIi8+PC9zdmc+"
-                alt=""
-              />
-              <img
-                className="nav__planet-animation"
+            <div style={{ position: "relative", marginRight: "20px" }}>
+              <div
                 style={{
-                  backgroundColor: "gray",
-                  width: "23px",
-                  borderRadius: "90px",
-                  marginLeft: "8px",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                  marginRight: "6%",
+                  marginTop: "2%",
                 }}
-                src="https://img.icons8.com/pastel-glyph/64/earth-planet.png"
-                alt="earth-planet"
-              />
+              >
+                <button className="burger-button" onClick={toggleMenu}>
+                  <span className="bar"></span>
+                  <span className="bar"></span>
+                  <span className="bar"></span>
+                </button>
+              </div>
+              {isOpen && (
+                <ul
+                  className="dropdown-menu"
+                  ref={menuRef}
+                  style={{
+                    position: "absolute",
+                    top: "285%",
+                    left: "570%",
+                    transform: "translate(-50%, -50%)",
+                    minWidth: "200px",
+                    padding: "20px",
+                    borderRadius: "10px",
+                    backgroundColor: "rgba(1, 1, 2, 0.76)",
+                    boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
+                    zIndex: "1",
+                    listStyle: "none",
+                  }}
+                >
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/"}
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <HomeIcon style={{ marginRight: "5px" }} />
+                      Главная
+                    </NavLink>
+                  </li>
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/onlineCinema"}
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <PlayArrowIcon style={{ marginRight: "5px" }} />
+                      Онлайн-Кинотеатр
+                    </NavLink>
+                  </li>
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/moviesList"}
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <CropLandscapeIcon style={{ marginRight: "5px" }} />
+                      Фильмы
+                    </NavLink>
+                  </li>
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/moviesList"}
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <MovieFilterIcon style={{ marginRight: "5px" }} />
+                      Сериалы
+                    </NavLink>
+                  </li>
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/sport"}
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <PublicIcon style={{ marginRight: "5px" }} />
+                      Спорт
+                    </NavLink>
+                  </li>
+                  <li className="mainHover">
+                    <NavLink
+                      to={"/oscarHome"}
+                      href="#"
+                      onClick={handleMenuItemClick}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: "16px",
+                      }}
+                    >
+                      <LabelIcon style={{ marginRight: "5px" }} />
+                      Оскар
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
             </div>
+
+            <NavLink to={"/"}>
+              <div className="logo_nav">
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTQuMjgzIDExLjIxN0M1NC4yODMgNS4zODkgNTYuOTMxLjYxIDYyLjI1NS42MWM1LjMyMyAwIDcuOTcxIDQuNzc4IDcuOTcxIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MSAxMC42MDUtNS4zMjQuMDA0LTcuOTcyLTQuNzc0LTcuOTcyLTEwLjYwNVptNy45NzIgNy41NzljMS44NyAwIDIuOTY1LTMuMzUyIDIuOTY1LTcuNTc2cy0xLjA5NS03LjU3NS0yLjk2NS03LjU3NWMtMS44NyAwLTIuOTY2IDMuMzUxLTIuOTY2IDcuNTc1LjAwNCA0LjIyNCAxLjA5NiA3LjU3NiAyLjk2NiA3LjU3NlpNLjAwMyAxLjAyaDQuMDN2Ni4yNjVsNC4yMDQtNi4yNjVoNC44OTRsLTcuMTEgNy4zNDNMMTkuMDAzIDEuMDJ2NC42NjJMNy4zNDcgMTAuMTEybDExLjY1NS0xLjEwNnY0LjQyOUw3LjM0OCAxMi4zM2wxMS42NTUgNC40Mjh2NC42NjJsLTEyLjk4LTcuMzQyIDcuMTEgNy4zNDJIOC4yMzJMNC4wMyAxNS4xNTV2Ni4yNjVIMFYxLjAyMWguMDAzWm0yMS44NzUgMGg0Ljc0N2wtLjcxOCAxMy4xOTggNS44OTktMTMuMTk4aDMuODg2djIwLjM5NmgtNC43NDhsLjcxOS0xMy4xOTgtNS45IDEzLjE5OGgtMy44ODZWMS4wMlptMjEuNDQgMEgzOC41N3YyMC4zOTZoNC43NDh2LTkuMzI0aDQuMDN2OS4zMjRoNC43NDhWMS4wMmgtNC43NDhWOC44OWgtNC4wM1YxLjAyWm00Mi43NjcgMEg3Mi40MTd2MjAuMzk2aDQuNzQ4VjQuMjI0aDQuMTcydjE3LjE5M2g0Ljc0OFYxLjAyWm0yLjE4OCAxMC4xOTZDODguMjczIDUuMzg5IDkwLjkyLjYxIDk2LjI0NC42MWM1LjMyNCAwIDcuOTcyIDQuNzc4IDcuOTcyIDEwLjYwNiAwIDUuODI3LTIuNjQ4IDEwLjYwNS03Ljk3MiAxMC42MDUtNS4zMjMgMC03Ljk3MS00Ljc3NC03Ljk3MS0xMC42MDVabTcuOTc1IDcuNTc5YzEuODcgMCAyLjk2NS0zLjM1MiAyLjk2NS03LjU3NnMtMS4wOTUtNy41NzUtMi45NjUtNy41NzVjLTEuODcgMC0yLjk2NiAzLjM1MS0yLjk2NiA3LjU3NXMxLjA5MiA3LjU3NiAyLjk2NiA3LjU3NlpNMTExLjE1NCAxLjAyaC00Ljc0OHYyMC4zOTZoMy44ODdsNS44OTktMTMuMTk4LS43MTkgMTMuMTk4aDQuNzQ4VjEuMDJoLTMuODg2bC01Ljg5OSAxMy4xOTguNzE4LTEzLjE5OFptMjEuNjk5IDEzLjE5OCA0LjUxOC42OTktLjE0My43Yy0uNzc4IDMuNzg5LTMuMTM2IDYuMjA0LTcuMDIyIDYuMjA0LTUuMzI0IDAtNy44MDEtNC43NzgtNy44MDEtMTAuNjA1IDAtNS44MjggMi40NzctMTAuNjA2IDcuODAxLTEwLjYwNiAzLjc0MyAwIDYuMTI5IDIuNDIgNi45NjYgNS45NzJsLjE0My42MTEtNC42MzIgMS4wNDljLS4zNDYtMi44MjUtMS4xOC00LjYwNS0yLjQ3Ny00LjYwNS0xLjg3IDAtMi43OTEgMy4zNTEtMi43OTEgNy41NzVzLjkyMSA3LjU3NiAyLjc5MSA3LjU3NmMxLjQxMi4wMDcgMi4zMDItMS44OSAyLjY0Ny00LjU3Wk0xNDQuMDc2IDEuMDJoLTQuNzQ1djIwLjM5Nmg0Ljc0OHYtOS4xOGwzLjU5NyA5LjE4SDE1M2wtNS43NTctMTAuNTE4IDUuNjE0LTkuODc4aC00Ljg5NWwtMy44ODYgOS4xNzlWMS4wMjFaIiBmaWxsPSIjZmZmIi8+PC9zdmc+"
+                  alt=""
+                />
+                <img
+                  className="nav__planet-animation"
+                  style={{
+                    backgroundColor: "gray",
+                    width: "23px",
+                    borderRadius: "90px",
+                    marginLeft: "8px",
+                  }}
+                  src="https://img.icons8.com/pastel-glyph/64/earth-planet.png"
+                  alt="earth-planet"
+                />
+              </div>
+            </NavLink>
           </div>
           <div
             className="menuaa"
@@ -183,9 +339,20 @@ const OnlineCinema = () => {
               marginTop: "1%",
             }}
           >
-            <p>Главное</p>
-            <p>Мое</p>
-            <p>Каналы</p>
+            <p style={{ cursor: "pointer" }}>Главное</p>
+            <NavLink
+              style={{ textDecoration: "none", color: "white" }}
+              to={"/favorite"}
+            >
+              <p>Мое</p>
+            </NavLink>
+            <a
+              style={{ textDecoration: "none", color: "white" }}
+              href="https://hd.kinopoisk.ru/channels"
+              target="blank"
+            >
+              <p>Каналы</p>
+            </a>
           </div>
           <div>
             <img src="" alt="" />
@@ -243,15 +410,20 @@ const OnlineCinema = () => {
                 Трейлер
               </a>
             </button>
-            <IconButton
-              sx={{
-                backgroundColor: "black",
-                marginBottom: "-4%",
-                color: "white",
-              }}
+            <NavLink
+              style={{ textDecoration: "none", color: "white" }}
+              to={"/favorite"}
             >
-              <BookmarkAddOutlined />
-            </IconButton>
+              <IconButton
+                sx={{
+                  backgroundColor: "black",
+                  marginBottom: "-4%",
+                  color: "white",
+                }}
+              >
+                <BookmarkAddOutlined />
+              </IconButton>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -783,7 +955,7 @@ const OnlineCinema = () => {
                     target="blank"
                   >
                     <img
-                      src="https://media.alphanews.am/wp-content/uploads/2023/10/11155928/photo_2023-10-11_10-29-43.jpg"
+                      src="https://i.ytimg.com/vi/Mp62TKZIZ8Q/maxresdefault.jpg"
                       alt="Match 4"
                     />
                   </a>
