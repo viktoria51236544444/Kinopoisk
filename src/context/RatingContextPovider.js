@@ -35,7 +35,6 @@ const RatingContextPovider = ({ children }) => {
   const getRating = async () => {
     try {
       const { data } = await axios(`${API2}/ratings/`);
-      console.log(data.results);
 
       dispatch({
         type: "GET_RATINGS",
