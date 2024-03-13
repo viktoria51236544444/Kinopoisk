@@ -7,6 +7,7 @@ import { useRating } from "../../context/RatingContextPovider";
 import ReactStars from "react-rating-stars-component";
 import Rating from "./Rating";
 import AverageRating from "./AverageRating";
+import { ADMIN } from "../../helpers/const";
 
 const MoviesCart = ({ elem }) => {
   // console.log(elem.ratings);
@@ -31,6 +32,14 @@ const MoviesCart = ({ elem }) => {
       addFavorite(elem);
     }
   };
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const email = localStorage.getItem("email");
+
+  useEffect(() => {
+    setCurrentUser(email);
+  }, [email]);
 
   // ! Rating
   const { getRating, ratings } = useRating();
@@ -154,65 +163,73 @@ const MoviesCart = ({ elem }) => {
           {/* <p style={{ margin: "5px 0" }}>{elem.slug}</p> */}
         </div>
 
-        {isRatingVisible ? (
-          <Rating
-            slug={elem.slug}
-            ratings={elem.ratings}
-            onChange={() => getRating}
-          />
-        ) : (
-          <button
-            style={{
-              backgroundColor: "#B8860B",
-              color: "white",
-              border: "none",
-            }}
-            onClick={handleRatingButtonClick}
-          >
-            Оценить фильм
-          </button>
-        )}
         <div style={{ display: "flex", marginBottom: "5px" }}>
-          <button
-            style={{
-              backgroundColor: "black",
-              color: "white",
-              border: "none",
-              width: "100px",
-            }}
-            onClick={() => deleteProduct(elem.slug)}
-          >
-            Удалить
-          </button>
-          <button
-            style={{
-              backgroundColor: "black",
-              color: "white",
-              border: "none",
-              width: "100px",
-            }}
-            onClick={() => navigate(`/edit/${elem.slug}`)}
-          >
-            Редактировать
-          </button>
-
-          <button
-            style={{
-              backgroundColor: "black",
-              color: "white",
-              border: "none",
-              width: "100px",
-            }}
-            onClick={handleFavoriteToggle}
-          >
-            {isFavorite ? "Удалено" : "Добавлено"}
-          </button>
-          <div
-            style={{ color: liked ? "#f50" : "white", cursor: "pointer" }}
-            onClick={toggleLike}
-          >
-            <FavoriteIcon />
-          </div>
+          {currentUser && currentUser === ADMIN ? (
+            <>
+              <button
+                style={{
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "none",
+                  width: "100px",
+                }}
+                onClick={() => deleteProduct(elem.slug)}
+              >
+                Удалить
+              </button>
+              <button
+                style={{
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "none",
+                  width: "100px",
+                }}
+                onClick={() => navigate(`/edit/${elem.slug}`)}
+              >
+                Редактировать
+              </button>
+            </>
+          ) : (
+            <div>
+              {isRatingVisible ? (
+                <Rating
+                  slug={elem.slug}
+                  ratings={elem.ratings}
+                  onChange={getRating} // Вызываем функцию getRating при изменении оценки
+                />
+              ) : (
+                <button
+                  style={{
+                    backgroundColor: "#B8860B",
+                    color: "white",
+                    border: "none",
+                  }}
+                  onClick={handleRatingButtonClick}
+                >
+                  Оценить фильм
+                </button>
+              )}
+              <div>
+                <button
+                  style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "none",
+                    width: "100px",
+                  }}
+                  onClick={handleFavoriteToggle}
+                >
+                  {isFavorite ? "Удалить" : "Добавить"}
+                </button>
+                <div
+                  style={{ color: liked ? "#f50" : "white", cursor: "pointer" }}
+                  onClick={toggleLike}
+                >
+                  <FavoriteIcon />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
