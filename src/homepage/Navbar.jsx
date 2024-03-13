@@ -110,10 +110,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
-      className="navbar__main"
-      // onMouseLeave={() => setDropdownVisible(false)}
-    >
+    <div className="navbar__main">
       <NavLink className="navbar__main-link" to="/">
         <div className="navbar__logo">
           <img className="navbar__logo-kinopoisk" src={logo} alt="" />

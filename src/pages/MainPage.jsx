@@ -7,9 +7,17 @@ import WatchSection from "../homepage/WatchSection";
 import Navbar from "../homepage/Navbar";
 import Footer from "../homepage/Footer";
 
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+import { useTheme } from "../context/Background";
 const MainPage = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <div>
+    <div
+      style={{
+        background: theme === "light" ? "#fff" : "black",
+        color: theme === "light" ? "#000" : "#fff",
+      }}
+    >
       <Navbar />
       <div className="outer-container">
         <div className="white-container">
@@ -17,6 +25,15 @@ const MainPage = () => {
             <SideBar />
           </div>
           <div className="mainpage-content">
+            <div
+              style={{
+                marginTop: "1%",
+                marginLeft: "90%",
+              }}
+              className="theme"
+            >
+              <WbSunnyOutlinedIcon onClick={toggleTheme} />
+            </div>
             <Header />
             <FocusTicketsSection />
             <WatchSection />
