@@ -5,15 +5,16 @@
   padding: 10px 15px;
   border: none;
   background: none;
-  color: #fff;
+  color: white;
 }
 
 .dropdown_content {
   display: block;
   position: absolute;
-  background-color: #333;
+  background-color: #3b0000;
   min-width: 160px;
   z-index: 1;
+  border-radius: 5px;
 }
 
 .dropdown_item {
@@ -34,7 +35,7 @@
 
 .category_button,
 .genre_button {
-  background: linear-gradient(to bottom, #a79696, #221b1b);
+  background: black;
   color: #fff;
   border: none;
   padding: 10px 15px;
