@@ -8,13 +8,6 @@ const MoviesList = () => {
   const { products, getProducts, pages } = useProduct();
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentUser, setCurrentUser] = useState(null);
-
-  const email = localStorage.getItem("email");
-
-  useEffect(() => {
-    setCurrentUser(email);
-  }, [email]);
 
   const getPagesCount = () => {
     const pageCountArr = [];

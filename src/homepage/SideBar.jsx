@@ -2,7 +2,7 @@ import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CropLandscapeIcon from "@mui/icons-material/CropLandscape";
-import MovieFilterIcon from "@mui/icons-material/MovieFilter";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import PublicIcon from "@mui/icons-material/Public";
 import ChildCareIcon from "@mui/icons-material/ChildCare";
 import { Link } from "react-router-dom";
@@ -41,6 +41,12 @@ const SideBar = () => {
           <li className="sidebar__link">
             <ChildCareIcon />
             Дети
+          </li>
+        </Link>
+        <Link to={"/favorite"} style={{ textDecorationLine: "none" }}>
+          <li className="sidebar__link">
+            <FavoriteIcon />
+            Моё
           </li>
         </Link>
       </div>

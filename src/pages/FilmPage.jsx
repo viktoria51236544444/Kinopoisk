@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import MoviesList from "../components/product/MoviesList";
-import SidebarMovies from "../components/product/SidebarMovies";
+
 import "./filmpage.css";
 import Navbar from "../homepage/Navbar";
+import SidebarMovies from "../components/product/SidebarMovies";
 
 const FilmPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -65,7 +65,6 @@ const MainRoutes = () => {
       <Route path="/register" element={<RegistrationForm />} />
       <Route path="/confirm-email" element={<ConfirmEmailCode2 />} />
       <Route path="/add" element={<PageAdd />} />
-
       <Route path="/" element={<MainPage />} />
       <Route path="/sport" element={<Sport />} />
       <Route path="/onlineCinema" element={<OnlineCinema />} />
