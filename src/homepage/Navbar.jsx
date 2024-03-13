@@ -19,6 +19,7 @@ import { updateToken } from "../auth_redux/helpersAuth/functions";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../auth_redux/store/actions";
 import { useProduct } from "../context/ProductContextProvider";
+import { useTheme } from "../context/Background";
 
 const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -109,10 +110,7 @@ const Navbar = () => {
   // ! Voice search finish
 
   return (
-    <div
-      className="navbar__main"
-      // onMouseLeave={() => setDropdownVisible(false)}
-    >
+    <div className="navbar__main">
       <NavLink className="navbar__main-link" to="/">
         <div className="navbar__logo">
           <img className="navbar__logo-kinopoisk" src={logo} alt="" />
