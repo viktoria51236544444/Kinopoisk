@@ -137,11 +137,11 @@ const Navbar = () => {
           to={"/oscarHome"}
         >
           <div className="navbar__link-oscar">
-            <img
+            {/* <img
               className="navbar__oscar-icon-white"
               src="https://avatars.mds.yandex.net/get-bunker/61205/8c9f6ee8aa3155e3fad799027d8c5fdd697c5f55/orig"
               alt=""
-            />
+            /> */}
             <img
               className="navbar__oscar-icon-grey"
               src="https://avatars.mds.yandex.net/get-bunker/60661/f1e8b5500c4808d22ef28d0102e8ac158155c247/orig"
