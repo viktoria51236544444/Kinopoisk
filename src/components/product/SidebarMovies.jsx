@@ -17,10 +17,10 @@ const SidebarMovies = () => {
   } = useProduct();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
+  const [search, setSearch] = useState(searchParams.get("search") || "");
 
   useEffect(() => {
-    setSearchParams({ q: search });
+    setSearchParams({ search: search });
     getProducts();
   }, [search]);
 

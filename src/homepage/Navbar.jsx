@@ -63,7 +63,7 @@ const Navbar = () => {
   const { categories, getCategories, fetchByParams, getProducts } =
     useProduct();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
+  const [search, setSearch] = useState(searchParams.get("search") || "");
 
   // ! Voice search start
   function startDictation() {
@@ -100,7 +100,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setSearchParams({
-      q: search,
+      search: search,
     });
     getProducts();
   }, [search]);
