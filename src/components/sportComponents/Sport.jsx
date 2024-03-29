@@ -72,18 +72,18 @@ const Sport = () => {
   };
   const { theme, toggleTheme } = useTheme();
   //! Music
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
 
-  const togglePlay = () => {
-    const audio = document.getElementById("audio");
-    if (audio.paused) {
-      audio.play();
-      setIsPlaying(true);
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
-  };
+  // const togglePlay = () => {
+  //   const audio = document.getElementById("audio");
+  //   if (audio.paused) {
+  //     audio.play();
+  //     setIsPlaying(true);
+  //   } else {
+  //     audio.pause();
+  //     setIsPlaying(false);
+  //   }
+  // };
   // ! Burger menu
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
@@ -298,7 +298,7 @@ const Sport = () => {
         >
           <WbSunnyOutlinedIcon onClick={toggleTheme} />
         </div>
-        <div
+        {/* <div
           className="audios"
           style={{ marginTop: "25px", marginLeft: "10px" }}
         >
@@ -311,7 +311,7 @@ const Sport = () => {
             autoPlay={isPlaying}
             onEnded={() => setIsPlaying(false)}
           ></audio>
-        </div>
+        </div> */}
       </nav>
       <div>
         <div className="header__sport">
